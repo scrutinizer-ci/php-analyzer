@@ -52,14 +52,13 @@ class BuildTestDatabaseCommand extends Command
         $packageScanner = new PackageScanner($analyzer);
         $packageScanner->setLogger(new OutputLogger($output, $input->getOption('verbose')));
 
-        $output->writeln('Scanning PHP 5.4 files... ');
         $package = new Package('PHP');
-        $packageVersion = $package->createVersion('5.4');
+        $packageVersion = $package->createVersion('5.3');
         $packageVersion->setUuid(uniqid(mt_rand(), true));
-        $packageScanner->scanDirectory($packageVersion, __DIR__.'/../../../../res/php-5.4-core-api');
+        $packageScanner->scanDirectory($packageVersion, __DIR__.'/../../../../res/php-5.3-core-api');
         $output->writeln('Files scanned.');
 
-        $output->write('Persisting PHP 5.4 files... ');
+        $output->write('Persisting results... ');
         $em->persist($package);
         $em->flush();
         $output->writeln('Done');
