@@ -24,6 +24,7 @@ use Scrutinizer\PhpAnalyzer\Model\FileCollection;
 use Scrutinizer\PhpAnalyzer\Util\TestUtils;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -35,6 +36,7 @@ class RunCommand extends Command
             ->setName('run')
             ->setDescription('Runs the PHP Analyzer on source code.')
             ->addArgument('dir', InputArgument::REQUIRED, 'The directory to scan.')
+            ->addOption('format', 'f', InputOption::VALUE_REQUIRED, 'The output format ("text", "xml")', 'text')
         ;
     }
 
@@ -56,31 +58,15 @@ class RunCommand extends Command
         $analyzer = Analyzer::create(TestUtils::createTestEntityManager());
         $analyzer->setLogger(new OutputLogger($output, $input->getOption('verbose')));
         $analyzer->analyze($files);
-        $output->writeln('---------------------------------------------');
-        $output->writeln('');
 
-        foreach ($files as $file) {
-            /** @var $file File */
-
-            if ( ! $file->hasComments()) {
-                continue;
-            }
-
-            $output->writeln('');
-            $output->writeln($file->getName());
-            $output->writeln(str_repeat('=', strlen($file->getName())));
-
-            $comments = $file->getComments();
-            ksort($comments);
-
-            foreach ($comments as $line => $lineComments) {
-                foreach ($lineComments as $comment) {
-                    $output->writeln('Line '.$line.': '.$comment);
-                }
-            }
+        switch ($input->getOption('format')) {
+            case 'xml':
+                $formatter = new OutputFormatter\XmlFormatter();
+                break;
+            case 'text':
+            default:
+                $formatter = new OutputFormatter\TextFormatter();
         }
-
-        $output->writeln('');
-        $output->writeln('Done');
+        $formatter->write($output, $files);
     }
 }
