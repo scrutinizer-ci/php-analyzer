@@ -13,10 +13,12 @@
 >
 
     <php>
-        <!-- <server name="MYSQL_USER" value="" /> -->
-        <!-- <server name="MYSQL_PASSWORD" value="" /> -->
-        <!-- <server name="MYSQL_DATABASE" value="" /> -->
-        <!-- <server name="MYSQL_HOST" value="" /> -->
+        <!--
+        <server name="MYSQL_USER" value="root" />
+        <server name="MYSQL_PASSWORD" value="" />
+        <server name="MYSQL_DATABASE" value="php_analyzer" />
+        <server name="MYSQL_HOST" value="localhost" /> 
+        -->
     </php>
 
     <testsuites>

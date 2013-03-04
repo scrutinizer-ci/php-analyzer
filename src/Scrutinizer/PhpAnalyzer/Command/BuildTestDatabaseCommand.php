@@ -50,15 +50,16 @@ class BuildTestDatabaseCommand extends Command
 
         $analyzer = Analyzer::create($em, PassConfig::createForTypeScanning());
         $packageScanner = new PackageScanner($analyzer);
+        $packageScanner->setLogger(new OutputLogger($output, $input->getOption('verbose')));
 
-        $output->write('Scanning PHP 5.3 files... ');
+        $output->writeln('Scanning PHP 5.4 files... ');
         $package = new Package('PHP');
-        $packageVersion = $package->createVersion('5.3');
+        $packageVersion = $package->createVersion('5.4');
         $packageVersion->setUuid(uniqid(mt_rand(), true));
-        $packageScanner->scanDirectory($packageVersion, __DIR__.'/../res/php-5.3-core-api');
-        $output->writeln('Done');
+        $packageScanner->scanDirectory($packageVersion, __DIR__.'/../../../../res/php-5.4-core-api');
+        $output->writeln('Files scanned.');
 
-        $output->write('Persisting PHP 5.3 files... ');
+        $output->write('Persisting PHP 5.4 files... ');
         $em->persist($package);
         $em->flush();
         $output->writeln('Done');

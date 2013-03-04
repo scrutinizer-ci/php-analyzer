@@ -48,14 +48,20 @@ class RunCommand extends Command
         }
         $dir = realpath($dir);
 
-        $output->writeln('<comment>Caution: This command is currently only designed for small libraries; it might be slow and/or memory expensive to analyze bigger libraries.</comment>');
+        if (extension_loaded('xdebug')) {
+            $output->writeln('<error>It is highly recommended to disable the XDebug extension before invoking this command.</error>');
+        }
 
         $output->write('Scanning directory... ');
         $files = FileCollection::createFromDirectory($dir);
         $output->writeln(sprintf('found <info>%d files</info>', count($files)));
 
+        if (count($files) > 100) {
+            $output->writeln('<comment>Caution: You are trying to scan a lot of files; this might be slow. For bigger libraries, consider setting up a dedicated platform or using scrutinizer-ci.com.</comment>');
+        }
+
         $output->writeln('Starting analysis...');
-        $analyzer = Analyzer::create(TestUtils::createTestEntityManager());
+        $analyzer = Analyzer::create($em = TestUtils::createTestEntityManager());
         $analyzer->setLogger(new OutputLogger($output, $input->getOption('verbose')));
         $analyzer->analyze($files);
 

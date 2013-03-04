@@ -214,17 +214,24 @@ class EntityTypeProvider implements PackageAwareTypeProviderInterface
         return null;
     }
 
-
     private function addPackageCondition(QueryBuilder $qb, $alias)
     {
-        if (null === $this->packageVersions) {
+        if (null === $this->packageVersions ) {
             return;
         }
 
         $packages = array();
         foreach ($this->packageVersions as $packageVersion) {
+            if ($packageVersion->getId() === null) {
+                continue;
+            }
+
             $packages[] = $qb->expr()->eq($alias.'.packageVersion', ':package'.($i = count($packages)));
             $qb->setParameter('package'.$i, $packageVersion);
+        }
+
+        if (empty($packages)) {
+            return;
         }
 
         $qb->andWhere(call_user_func_array(array($qb->expr(), 'orX'), $packages));
