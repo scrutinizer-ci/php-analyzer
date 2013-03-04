@@ -1,0 +1,118 @@
+"PHPParser_Node_Stmt_Class":
+    type: undefined
+    children:
+        "stmts":
+            "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                type: undefined
+                children:
+                    0:
+                        "PHPParser_Node_Stmt_Property":
+                            type: undefined
+                            children:
+                                "props":
+                                    0:
+                                        "PHPParser_Node_Stmt_PropertyProperty":
+                                            type: "null|object<X>"
+                    1:
+                        "PHPParser_Node_Stmt_ClassMethod":
+                            type: undefined
+                            children:
+                                "params":
+                                    0:
+                                        "PHPParser_Node_Param":
+                                            type: "null|object<X>"
+                                            children:
+                                                "default":
+                                                    "PHPParser_Node_Expr_ConstFetch":
+                                                        type: "null"
+                                                        children:
+                                                            "name":
+                                                                "PHPParser_Node_Name":
+                                                                    type: undefined
+                                                "type":
+                                                    "PHPParser_Node_Name_FullyQualified":
+                                                        type: "object<X>"
+                                "stmts":
+                                    "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                        type: undefined
+                                        children:
+                                            0:
+                                                "PHPParser_Node_Expr_Assign":
+                                                    type: "null|object<X>"
+                                                    children:
+                                                        "var":
+                                                            "PHPParser_Node_Expr_PropertyFetch":
+                                                                type: "null|object<X>"
+                                                                children:
+                                                                    "var":
+                                                                        "PHPParser_Node_Expr_Variable":
+                                                                            type: "this<A>"
+                                                        "expr":
+                                                            "PHPParser_Node_Expr_Variable":
+                                                                type: "null|object<X>"
+                    2:
+                        "PHPParser_Node_Stmt_ClassMethod":
+                            type: undefined
+                            children:
+                                "stmts":
+                                    "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                        type: undefined
+                                        children:
+                                            0:
+                                                "PHPParser_Node_Expr_PropertyFetch":
+                                                    type: "null|object<X>"
+                                                    children:
+                                                        "var":
+                                                            "PHPParser_Node_Expr_Variable":
+                                                                type: "this<A>"
+                                            1:
+                                                "PHPParser_Node_Stmt_While":
+                                                    type: undefined
+                                                    children:
+                                                        "cond":
+                                                            "PHPParser_Node_Expr_ConstFetch":
+                                                                type: "boolean"
+                                                                children:
+                                                                    "name":
+                                                                        "PHPParser_Node_Name":
+                                                                            type: undefined
+                                                        "stmts":
+                                                            "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                                type: undefined
+                                                                children:
+                                                                    0:
+                                                                        "PHPParser_Node_Stmt_If":
+                                                                            type: undefined
+                                                                            children:
+                                                                                "stmts":
+                                                                                    "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                                                        type: undefined
+                                                                                        children:
+                                                                                            0:
+                                                                                                "PHPParser_Node_Expr_PropertyFetch":
+                                                                                                    type: "object<X>"
+                                                                                                    children:
+                                                                                                        "var":
+                                                                                                            "PHPParser_Node_Expr_Variable":
+                                                                                                                type: "this<A>"
+                                                                                "cond":
+                                                                                    "PHPParser_Node_Expr_NotIdentical":
+                                                                                        type: "boolean"
+                                                                                        children:
+                                                                                            "left":
+                                                                                                "PHPParser_Node_Expr_ConstFetch":
+                                                                                                    type: "null"
+                                                                                                    children:
+                                                                                                        "name":
+                                                                                                            "PHPParser_Node_Name":
+                                                                                                                type: undefined
+                                                                                            "right":
+                                                                                                "PHPParser_Node_Expr_PropertyFetch":
+                                                                                                    type: "null|object<X>"
+                                                                                                    children:
+                                                                                                        "var":
+                                                                                                            "PHPParser_Node_Expr_Variable":
+                                                                                                                type: "this<A>"
+        "namespacedName":
+            "PHPParser_Node_Name":
+                type: undefined

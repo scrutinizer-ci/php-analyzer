@@ -1,0 +1,17 @@
+<?php
+
+class Foo
+{
+    public function getFoo()
+    {
+        if ($foo) {
+            return 'bar';
+        }
+        
+        return false;
+    }
+}
+
+-- CONFIG --
+return array('checkstyle' => array('enabled' => true));
+

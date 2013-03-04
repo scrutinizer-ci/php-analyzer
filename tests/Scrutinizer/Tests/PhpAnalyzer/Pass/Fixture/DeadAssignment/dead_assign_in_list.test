@@ -1,0 +1,7 @@
+<?php
+
+list($a, $b) = foo();
+echo $b;
+
+-- COMMENTS --
+Line 3: The assignment to ``$a`` is dead. Consider omitting it like so ``list($first,,$third)``.

@@ -1,0 +1,23 @@
+-- BEFORE --
+<?php
+
+use A;
+use B, C, D;
+use E;
+
+-- AFTER --
+<?php
+
+use A;
+use B,
+    C,
+    D;
+use E;
+
+-- CONFIG --
+return array('use_statement_fixes' => array(
+    'remove_unused' => false,
+    'preserve_multiple' => true,
+));
+
+-- END --

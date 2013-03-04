@@ -1,0 +1,19 @@
+<?php
+
+class Foo
+{
+    public $foo, $foobar;
+    private $bar;
+    protected $baz;
+}
+
+-- DIFF --
+@@ -5,1 +5,2 @@
+-    public $foo;
++    public $foo, $foobar;
++    private $bar;
+
+-- COMMENTS --
+Line 5: Please use a separate statement for each property.
+Line 6: Please order properties by their visibility; "public" before "protected" before "private" properties.
+ 

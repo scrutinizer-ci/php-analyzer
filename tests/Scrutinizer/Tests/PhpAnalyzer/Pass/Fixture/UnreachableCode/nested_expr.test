@@ -1,0 +1,12 @@
+<?php
+
+try {
+    array(foo());
+} catch (\Exception $ex) { }
+
+try {
+    echo 'foo';
+} catch (\Exception $ex) { }
+
+-- COMMENTS --
+Line 9: is not reachable.

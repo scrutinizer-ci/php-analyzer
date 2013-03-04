@@ -1,0 +1,14 @@
+<?php
+
+class Foo
+{
+    public function foo() { }
+    private $foo;
+}
+
+-- DIFF --
+@@ -0,0 +6,1 @@
++    private $foo;
+
+-- COMMENTS --
+Line 6: Please move properties before all method declarations in this class.

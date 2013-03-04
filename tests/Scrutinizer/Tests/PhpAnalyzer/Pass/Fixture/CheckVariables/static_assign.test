@@ -1,0 +1,6 @@
+<?php
+
+static $foo = 'foo';
+echo $foo;
+
+-- COMMENTS --

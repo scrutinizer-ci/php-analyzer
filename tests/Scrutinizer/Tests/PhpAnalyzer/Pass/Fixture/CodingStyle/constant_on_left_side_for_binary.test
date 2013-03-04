@@ -1,0 +1,6 @@
+<?php
+
+if ($foo === 'bar') { }
+
+-- COMMENTS --
+Line 3: Please move the constant to the left side, e.g. 'bar' === $foo. This prevents you from accidentally overwriting the variable.

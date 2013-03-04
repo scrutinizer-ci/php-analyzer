@@ -1,0 +1,29 @@
+<?php
+
+function foo() {
+    return true;
+}
+
+function bar() {
+    return false;
+}
+
+function test() {
+    if (!foo() && bar()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+-- CONFIG --
+return array(
+    'checkstyle' => true,
+    'simplify_boolean_return' => true,
+);
+
+-- COMMENTS --
+Line 3: ``function foo()`` does not seem to conform to the naming convention (``^(?:is|has|should|may|supports)``
+Line 7: ``function bar()`` does not seem to conform to the naming convention (``^(?:is|has|should|may|supports)``)
+Line 11: ``function test()`` does not seem to conform to the naming convention (``^(?:is|has|should|may|supports)``)
+Line 12: The ``if``-``else`` statement can be simplified to ``return !foo() && bar();``.

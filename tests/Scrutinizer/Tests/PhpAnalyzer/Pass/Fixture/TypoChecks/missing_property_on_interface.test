@@ -1,0 +1,12 @@
+<?php
+
+interface Foo { }
+
+class Bar {
+    public function foo(Foo $foo) {
+        $foo->bar;
+    }
+}
+
+-- COMMENTS --
+Line 7: Accessing "bar" on the interface "Foo" suggest that you code against a concrete implementation. How about adding an ``instanceof`` check?

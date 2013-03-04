@@ -1,0 +1,10 @@
+@@ -19,9 +19,7 @@
+ namespace CG\Proxy;
+ 
+ use CG\Core\ClassUtils;
+-
+ use CG\Core\ReflectionUtils;
+-
+ use CG\Generator\PhpParameter;
+ use CG\Generator\PhpProperty;
+ use CG\Generator\PhpMethod;

@@ -1,0 +1,14 @@
+-- BEFORE --
+<?php
+
+use A, // This is nice
+    B;
+use C;
+
+-- AFTER --
+<?php
+
+use A, // This is nice
+    B;
+
+-- END --

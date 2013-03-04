@@ -1,0 +1,51 @@
+{
+    "name": "scrutinizer/php-analyzer",
+    "description": "Advanced Static Analysis of and Auto-Fixer for PHP Code",
+    "license": "Apache2",
+
+    "authors": [
+        {"name": "Johannes Schmitt", "email": "schmittjoh@gmail.com"}
+    ],
+
+    "repositories": [
+        {"type": "vcs", "url": "https://github.com/schmittjoh/PHP-Parser"}
+    ],
+
+    "minimum-stability": "dev",
+
+    "require": {
+        "php": ">=5.4",
+        "scrutinizer/utils": "dev-master",
+        "jms/composer-deps-analyzer": "dev-master",
+        "jms/php-manipulator": "dev-master",
+        "jms/parser-lib": "1.*",
+        "jms/serializer": "0.12.*",
+        "nikic/php-parser": "dev-master",
+        "doctrine/common": "2.3.*",
+        "doctrine/dbal": "*",
+        "doctrine/orm": "*",
+        "symfony/finder": "2.*",
+        "symfony/filesystem": "2.*",
+        "symfony/process": "2.*",
+        "symfony/config": "2.*",
+        "symfony/console": "2.*",
+        "phpoption/phpoption": "1.*",
+        "phpcollection/phpcollection": "0.2.*",
+        "psr/log": "1.0.*"
+    },
+
+    "require-dev": {
+        "ext-pdo": "*",
+        "ext-pdo_sqlite": "*",
+        "ext-pdo_mysql": "*",
+        "doctrine/data-fixtures": "1.0.*@dev"
+    },
+
+    "bin": ["bin/phpalizer"],
+
+    "autoload": {
+        "psr-0": {
+            "Scrutinizer": "src/"
+        }
+    }
+}

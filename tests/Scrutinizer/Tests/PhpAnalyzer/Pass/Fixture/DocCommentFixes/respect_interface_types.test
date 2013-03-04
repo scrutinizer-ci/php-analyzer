@@ -1,0 +1,86 @@
+-- BEFORE --
+<?php
+
+interface B { }
+class A implements B { }
+class C implements B { }
+
+interface I
+{
+    /**
+     * @param B $foo
+     *
+     * @return B
+     */
+    public function test($foo);
+}
+
+class D implements I 
+{
+    /**
+     * @param B $foo
+     *
+     * @return B
+     */
+    public function test($foo)
+    {
+        throw new \RuntimeException('Not Supported.');
+    }
+    
+    /**
+     * @return B
+     */
+    public function asdf()
+    {
+        return new C();
+    }
+}
+
+$d = new D();
+$d->test(new A());
+
+-- AFTER --
+<?php
+
+interface B { }
+class A implements B { }
+class C implements B { }
+
+interface I
+{
+    /**
+     * @param B $foo
+     *
+     * @return B
+     */
+    public function test($foo);
+}
+
+class D implements I 
+{
+    /**
+     * @param B $foo
+     *
+     * @return B
+     */
+    public function test($foo)
+    {
+        throw new \RuntimeException('Not Supported.');
+    }
+    
+    /**
+     * @return B
+     */
+    public function asdf()
+    {
+        return new C();
+    }
+}
+
+$d = new D();
+$d->test(new A());
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

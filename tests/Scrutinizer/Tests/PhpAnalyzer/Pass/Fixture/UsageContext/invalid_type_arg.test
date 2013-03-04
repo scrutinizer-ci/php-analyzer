@@ -1,0 +1,22 @@
+<?php
+
+class Foo
+{
+    /**
+     * @param string $foo
+     */
+    public function foo(Bar $bar, $foo, $bool = true) { }
+}
+
+class Bar { }
+
+$foo = new Foo();
+$foo->foo(
+    'bar',
+    new Bar(),
+    1);
+
+-- COMMENTS --
+Line 15: ``'bar'`` of type ``string`` is not a sub-type of ``object<Bar>``.
+Line 16: ``new \Bar()`` of type ``object<Bar>`` is not a sub-type of ``string``.
+Line 17: ``1`` of type ``integer`` is not a sub-type of ``boolean``.

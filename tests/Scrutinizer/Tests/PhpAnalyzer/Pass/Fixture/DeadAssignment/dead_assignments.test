@@ -1,0 +1,9 @@
+<?php
+
+$foo = 'bar';
+$baz = 'foo';
+
+echo $baz;
+
+-- COMMENTS --
+Line 3: The assignment to ``$foo`` is dead and can be removed.

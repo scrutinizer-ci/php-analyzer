@@ -1,0 +1,8 @@
+<?php
+
+$foo = 'foo';
+$bar = &$foo;
+
+echo $bar;
+
+-- COMMENTS --

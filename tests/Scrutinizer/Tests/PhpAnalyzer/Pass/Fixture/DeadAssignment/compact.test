@@ -1,0 +1,39 @@
+<?php
+
+function() {
+    $a = 'foo';
+    $b = 'bar';
+
+    $c = compact(array('a'), 'b');
+};
+
+function() {
+    $a = 'foo';
+    $c = compact($b);
+};
+
+function() {
+    $a = 'foo';
+    $b = 'bar';
+    $c = compact('a', $foo);
+};
+
+function() {
+    $a = 'foo';
+    $b = 'bar';
+    $c = compact('a', array($foo));
+};
+
+function() {
+    $a = 'a';
+    $b = 'b';
+    $c = 'c';
+    compact('a', array('b'));
+};
+
+-- COMMENTS --
+Line 7: The assignment to ``$c`` is dead and can be removed.
+Line 12: The assignment to ``$c`` is dead and can be removed.
+Line 18: The assignment to ``$c`` is dead and can be removed.
+Line 24: The assignment to ``$c`` is dead and can be removed.
+Line 30: The assignment to ``$c`` is dead and can be removed.

@@ -1,0 +1,21 @@
+<?php
+
+class A {
+    private $a;
+
+    public function __construct(A $a = null) {
+        $this->a = $a;
+    }
+
+    public function foo()
+    {
+        $this->a->foo();
+    }
+}
+
+$x = 5;
+$x->foo();
+
+-- COMMENTS --
+Line 17: The method ``foo`` cannot be called on ``$x`` (of type ``integer``).
+

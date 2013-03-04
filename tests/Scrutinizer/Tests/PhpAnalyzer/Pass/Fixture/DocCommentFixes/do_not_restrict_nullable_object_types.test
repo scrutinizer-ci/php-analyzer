@@ -1,0 +1,52 @@
+-- BEFORE --
+<?php
+
+abstract class A
+{
+    /**
+     * @return B|null
+     */
+    public function toMaybeB()
+    {
+        return null;
+    }
+}
+
+class B extends A
+{ 
+    public function toMaybeB()
+    {
+        return $this;
+    }
+}
+
+class C extends A { }
+
+-- AFTER --
+<?php
+
+abstract class A
+{
+    /**
+     * @return B|null
+     */
+    public function toMaybeB()
+    {
+        return null;
+    }
+}
+
+class B extends A
+{ 
+    public function toMaybeB()
+    {
+        return $this;
+    }
+}
+
+class C extends A { }
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

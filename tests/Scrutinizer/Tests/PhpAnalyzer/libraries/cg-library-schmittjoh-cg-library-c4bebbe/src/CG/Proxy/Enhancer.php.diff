@@ -1,0 +1,8 @@
+@@ -19,7 +19,6 @@
+ namespace CG\Proxy;
+ 
+ use CG\Core\NamingStrategyInterface;
+-
+ use CG\Generator\Writer;
+ use CG\Generator\PhpMethod;
+ use CG\Generator\PhpClass;

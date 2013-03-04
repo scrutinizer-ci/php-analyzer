@@ -1,0 +1,9 @@
+<?php
+
+function() use ($a, &$b) {
+    $a = 'foo';
+    $b = 'bar';
+};
+
+-- COMMENTS --
+Line 4: Consider using a different name than the imported variable ``$a``, or did you forget to import by reference?

@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @param mixed $x
+ */
+function foo($x) {
+    $y = 1;
+
+    foreach ($x as $z);
+    foreach ($y as $z);
+}
+
+-- COMMENTS --
+Line 10: The expression ``$y`` of type ``integer`` is not traversable.

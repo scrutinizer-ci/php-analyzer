@@ -1,0 +1,15 @@
+-- BEFORE --
+<?php
+
+use B; // Do not remove.
+use C;
+use D; /** Do not remove. */
+use E;
+
+-- AFTER --
+<?php
+
+use B; // Do not remove.
+use D; /** Do not remove. */
+
+-- END --

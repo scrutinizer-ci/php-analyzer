@@ -1,0 +1,15 @@
+<?php
+
+class stdClass { }
+class A { }
+
+$x = new stdClass;
+$x->foo = 'bar';
+echo $x->foo;
+
+$x = new A();
+$x->foo = 'bar';
+echo $x->foo;
+
+-- COMMENTS --
+Line 11: The property "foo" does not exist.

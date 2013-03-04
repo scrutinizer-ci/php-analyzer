@@ -1,0 +1,17 @@
+<?php
+
+class Foo
+{
+    public static function bar()
+    {
+        echo $this;
+    }
+
+    public function baz()
+    {
+        echo $this;
+    }
+}
+
+-- COMMENTS --
+Line 7: The variable ``$this`` does not exist. Did you forget to declare it?

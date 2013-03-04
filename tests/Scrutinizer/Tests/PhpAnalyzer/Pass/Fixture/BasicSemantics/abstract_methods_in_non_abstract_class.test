@@ -1,0 +1,20 @@
+<?php
+
+interface Foo {
+    function foo();
+}
+
+class Bar implements Foo { }
+
+abstract class Baz implements Foo { }
+
+abstract class FooBar {
+    abstract public function getFoo();
+    abstract public function getBar();
+}
+
+class FooBarBaz extends FooBar { }
+
+-- COMMENTS --
+Line 7: There is one abstract method ``foo`` in this class; you could implement it, or declare this class as abstract.
+Line 16: There is at least one abstract method in this class. Maybe declare it as abstract, or implement the remaining methods: getFoo, getBar

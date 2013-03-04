@@ -1,0 +1,19 @@
+<?php
+
+class Foo
+{
+    private $foo = array();
+    
+    public function bar()
+    {
+        return 'foo';
+    }
+    
+    public function foo()
+    {
+        if ($uid = $this->bar()) {
+            $this->foo[$uid] = 'bar';
+            echo $uid;
+        } 
+    }
+}

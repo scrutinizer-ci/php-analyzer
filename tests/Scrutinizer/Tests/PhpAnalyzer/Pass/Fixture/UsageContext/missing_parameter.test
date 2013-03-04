@@ -1,0 +1,26 @@
+<?php
+
+// This function takes a variable number of arguments.
+function foo() { }
+
+class Foo
+{
+    public function foo(Bar $bar, $baz, $moo = null)
+    {
+    }
+}
+
+abstract class Bar { }
+class SubBar extends Bar { }
+
+function test() {
+    foo('a', 'b', 'c'); // No error at least for now.
+
+    $foo = new Foo();
+    $foo->foo('a', 'b');
+    $foo->foo(new SubBar());
+}
+
+-- COMMENTS --
+Line 20: ``'a'`` of type ``string`` is not a sub-type of ``object<Bar>``.
+Line 21: The call to ``foo()`` misses a required argument ``$baz``.

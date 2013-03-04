@@ -1,0 +1,38 @@
+-- BEFORE --
+<?php
+
+interface I {
+    /**
+     * @return array
+     */
+    function getFoos();
+}
+
+class C implements I {
+    public function getFoos()
+    {
+        return array('foo');
+    }
+}
+
+-- AFTER --
+<?php
+
+interface I {
+    /**
+     * @return array<string>
+     */
+    function getFoos();
+}
+
+class C implements I {
+    public function getFoos()
+    {
+        return array('foo');
+    }
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

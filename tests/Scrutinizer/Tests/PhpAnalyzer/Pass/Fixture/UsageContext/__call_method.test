@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @method string foo(string $foo, $bar)
+ * @method bar($foo, array $bar)
+ */
+class A { }
+class stdClass { }
+
+$a = new A();
+$a->foo();
+$a->foo(new stdClass, 'bar');
+$a->bar('foo', 'bar');
+
+-- COMMENTS --
+Line 11: The call to ``foo()`` misses some required arguments starting with ``$foo``.
+Line 12: ``new \stdClass()`` of type ``object<stdClass>`` is not a sub-type of ``string``.
+Line 13: ``'bar'`` of type ``string`` is not a sub-type of ``array``.

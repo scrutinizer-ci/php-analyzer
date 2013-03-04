@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+         bootstrap="./tests/bootstrap.php"
+>
+
+    <php>
+        <!-- <server name="MYSQL_USER" value="" /> -->
+        <!-- <server name="MYSQL_PASSWORD" value="" /> -->
+        <!-- <server name="MYSQL_DATABASE" value="" /> -->
+        <!-- <server name="MYSQL_HOST" value="" /> -->
+    </php>
+
+    <testsuites>
+        <testsuite name="PHP Analyzer Test Suite">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <groups>
+        <exclude>
+            <group>performance</group>
+        </exclude>
+    </groups>
+</phpunit>

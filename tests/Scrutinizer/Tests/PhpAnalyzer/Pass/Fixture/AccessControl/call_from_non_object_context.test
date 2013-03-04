@@ -1,0 +1,34 @@
+<?php
+
+class A 
+{
+    private $a;
+    protected $b;
+    
+    private function a() { }
+    protected function b() { }
+}
+
+$a = new A();
+$a->a;
+$a->a();
+$a->b;
+$a->b();
+
+function foo() {
+    $a = new A();
+    $a->a;
+    $a->a();
+    $a->b;
+    $a->b();
+}
+
+-- COMMENTS --
+Line 13: The property "a" cannot be accessed from this context as it is declared private in class "A"?
+Line 14: The method "a()" cannot be called from this context as it is declared private in class "A"?
+Line 15: The property "b" cannot be accessed from this context as it is declared protected in class "A"?
+Line 16: The method "b()" cannot be called from this context as it is declared protected in class "A"?
+Line 20: The property "a" cannot be accessed from this context as it is declared private in class "A"?
+Line 21: The method "a()" cannot be called from this context as it is declared private in class "A"?
+Line 22: The property "b" cannot be accessed from this context as it is declared protected in class "A"?
+Line 23: The method "b()" cannot be called from this context as it is declared protected in class "A"?

@@ -1,0 +1,226 @@
+"JMS\\PhpManipulator\\PhpParser\\BlockNode":
+    line: -1
+    type: undefined
+    children:
+        0:
+            "PHPParser_Node_Stmt_Class":
+                line: 3
+                type: undefined
+                children:
+                    "stmts":
+                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                            line: 3
+                            type: undefined
+                            children:
+                                0:
+                                    "PHPParser_Node_Stmt_ClassMethod":
+                                        line: 5
+                                        type: undefined
+                                        children:
+                                            "stmts":
+                                                "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                    line: 5
+                                                    type: undefined
+                    "namespacedName":
+                        "PHPParser_Node_Name":
+                            line: 3
+                            type: undefined
+        1:
+            "PHPParser_Node_Stmt_Class":
+                line: 8
+                type: undefined
+                children:
+                    "stmts":
+                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                            line: 8
+                            type: undefined
+                            children:
+                                0:
+                                    "PHPParser_Node_Stmt_Property":
+                                        line: 10
+                                        type: undefined
+                                        children:
+                                            "props":
+                                                0:
+                                                    "PHPParser_Node_Stmt_PropertyProperty":
+                                                        line: 10
+                                                        type: "false|object<A>"
+                                1:
+                                    "PHPParser_Node_Stmt_ClassMethod":
+                                        line: 12
+                                        type: undefined
+                                        children:
+                                            "stmts":
+                                                "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                    line: 12
+                                                    type: undefined
+                                                    children:
+                                                        0:
+                                                            "PHPParser_Node_Stmt_If":
+                                                                line: 14
+                                                                type: undefined
+                                                                children:
+                                                                    "stmts":
+                                                                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                                            line: 14
+                                                                            type: undefined
+                                                                            children:
+                                                                                0:
+                                                                                    "PHPParser_Node_Stmt_If":
+                                                                                        line: 15
+                                                                                        type: undefined
+                                                                                        children:
+                                                                                            "stmts":
+                                                                                                "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                                                                    line: 15
+                                                                                                    type: undefined
+                                                                                                    children:
+                                                                                                        0:
+                                                                                                            "PHPParser_Node_Expr_Assign":
+                                                                                                                line: 16
+                                                                                                                type: "false"
+                                                                                                                children:
+                                                                                                                    "var":
+                                                                                                                        "PHPParser_Node_Expr_StaticPropertyFetch":
+                                                                                                                            line: 16
+                                                                                                                            type: "false"
+                                                                                                                            children:
+                                                                                                                                "class":
+                                                                                                                                    "PHPParser_Node_Name":
+                                                                                                                                        line: 16
+                                                                                                                                        type: "object<B>"
+                                                                                                                    "expr":
+                                                                                                                        "PHPParser_Node_Expr_ConstFetch":
+                                                                                                                            line: 16
+                                                                                                                            type: "false"
+                                                                                                                            children:
+                                                                                                                                "name":
+                                                                                                                                    "PHPParser_Node_Name":
+                                                                                                                                        line: 16
+                                                                                                                                        type: undefined
+                                                                                            "else":
+                                                                                                "PHPParser_Node_Stmt_Else":
+                                                                                                    line: 17
+                                                                                                    type: undefined
+                                                                                                    children:
+                                                                                                        "stmts":
+                                                                                                            "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                                                                                line: 17
+                                                                                                                type: undefined
+                                                                                                                children:
+                                                                                                                    0:
+                                                                                                                        "PHPParser_Node_Expr_Assign":
+                                                                                                                            line: 18
+                                                                                                                            type: "object<A>"
+                                                                                                                            children:
+                                                                                                                                "var":
+                                                                                                                                    "PHPParser_Node_Expr_StaticPropertyFetch":
+                                                                                                                                        line: 18
+                                                                                                                                        type: "object<A>"
+                                                                                                                                        children:
+                                                                                                                                            "class":
+                                                                                                                                                "PHPParser_Node_Name":
+                                                                                                                                                    line: 18
+                                                                                                                                                    type: "object<B>"
+                                                                                                                                "expr":
+                                                                                                                                    "PHPParser_Node_Expr_New":
+                                                                                                                                        line: 18
+                                                                                                                                        type: "object<A>"
+                                                                                                                                        children:
+                                                                                                                                            "class":
+                                                                                                                                                "PHPParser_Node_Name_FullyQualified":
+                                                                                                                                                    line: 18
+                                                                                                                                                    type: "object<A>"
+                                                                                            "cond":
+                                                                                                "PHPParser_Node_Expr_BooleanNot":
+                                                                                                    line: 15
+                                                                                                    type: "boolean"
+                                                                                                    children:
+                                                                                                        "expr":
+                                                                                                            "PHPParser_Node_Expr_Variable":
+                                                                                                                line: 15
+                                                                                                                type: undefined
+                                                                    "cond":
+                                                                        "PHPParser_Node_Expr_Identical":
+                                                                            line: 14
+                                                                            type: "boolean"
+                                                                            children:
+                                                                                "left":
+                                                                                    "PHPParser_Node_Expr_ConstFetch":
+                                                                                        line: 14
+                                                                                        type: "null"
+                                                                                        children:
+                                                                                            "name":
+                                                                                                "PHPParser_Node_Name":
+                                                                                                    line: 14
+                                                                                                    type: undefined
+                                                                                "right":
+                                                                                    "PHPParser_Node_Expr_StaticPropertyFetch":
+                                                                                        line: 14
+                                                                                        type: "false|object<A>"
+                                                                                        children:
+                                                                                            "class":
+                                                                                                "PHPParser_Node_Name":
+                                                                                                    line: 14
+                                                                                                    type: "object<B>"
+                                2:
+                                    "PHPParser_Node_Stmt_ClassMethod":
+                                        line: 23
+                                        type: undefined
+                                        children:
+                                            "stmts":
+                                                "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                    line: 23
+                                                    type: undefined
+                                                    children:
+                                                        0:
+                                                            "PHPParser_Node_Stmt_If":
+                                                                line: 25
+                                                                type: undefined
+                                                                children:
+                                                                    "stmts":
+                                                                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                                            line: 25
+                                                                            type: undefined
+                                                                            children:
+                                                                                0:
+                                                                                    "PHPParser_Node_Expr_MethodCall":
+                                                                                        line: 26
+                                                                                        type: "null"
+                                                                                        children:
+                                                                                            "var":
+                                                                                                "PHPParser_Node_Expr_StaticPropertyFetch":
+                                                                                                    line: 26
+                                                                                                    type: "object<A>"
+                                                                                                    children:
+                                                                                                        "class":
+                                                                                                            "PHPParser_Node_Name":
+                                                                                                                line: 26
+                                                                                                                type: "object<B>"
+                                                                    "cond":
+                                                                        "PHPParser_Node_Expr_NotIdentical":
+                                                                            line: 25
+                                                                            type: "boolean"
+                                                                            children:
+                                                                                "left":
+                                                                                    "PHPParser_Node_Expr_ConstFetch":
+                                                                                        line: 25
+                                                                                        type: "false"
+                                                                                        children:
+                                                                                            "name":
+                                                                                                "PHPParser_Node_Name":
+                                                                                                    line: 25
+                                                                                                    type: undefined
+                                                                                "right":
+                                                                                    "PHPParser_Node_Expr_StaticPropertyFetch":
+                                                                                        line: 25
+                                                                                        type: "false|object<A>"
+                                                                                        children:
+                                                                                            "class":
+                                                                                                "PHPParser_Node_Name":
+                                                                                                    line: 25
+                                                                                                    type: "object<B>"
+                    "namespacedName":
+                        "PHPParser_Node_Name":
+                            line: 8
+                            type: undefined

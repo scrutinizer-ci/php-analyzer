@@ -1,0 +1,22 @@
+<?php
+
+class ReflectionClass { }
+
+class ReflectionMethod {
+    public function getDeclaringClass()
+    {
+        return new ReflectionClass();
+    }
+}
+
+$ref = new ReflectionClass('Foo');
+$ref->getName();
+
+$ref = new ReflectionMethod('Foo', 'foo');
+$ref->getDeclaringClass()->getName();
+$ref->getName();
+
+-- COMMENTS --
+Line 13: Consider using ``$ref->name``. There is [an issue](https://bugs.php.net/bug.php?id=61384) with ``getName()`` and APC-enabled PHP versions.
+Line 16: Consider using ``$ref->class``. There is [an issue](https://bugs.php.net/bug.php?id=61384) with ``getName()`` and APC-enabled PHP versions.
+Line 17: Consider using ``$ref->name``. There is [an issue](https://bugs.php.net/bug.php?id=61384) with ``getName()`` and APC-enabled PHP versions.

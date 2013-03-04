@@ -1,0 +1,19 @@
+<?php
+
+switch (true) {
+    case 'foo':
+        if ($a) {
+            break;
+        } else {
+            break;
+        }
+        
+    case 'bar':
+        echo 'foo';
+        
+    default:
+        echo 'bar';
+}
+
+-- COMMENTS --
+Line 12: Consider adding a comment if this fall-through is intended.

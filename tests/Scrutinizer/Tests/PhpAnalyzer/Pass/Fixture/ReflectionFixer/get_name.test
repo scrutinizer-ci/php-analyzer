@@ -1,0 +1,64 @@
+-- BEFORE --
+<?php
+
+class ReflectionClass { }
+
+class ReflectionMethod {
+    public function getDeclaringClass()
+    {
+        return new ReflectionClass();
+    }
+}
+
+class ReflectionProperty {
+    public function getDeclaringClass()
+    {
+        return new ReflectionClass();
+    }
+}
+
+$foo->getName();
+
+$class = new ReflectionClass('Foo');
+$class->getName();
+
+$method = new ReflectionMethod('foo', 'bar');
+$method->getDeclaringClass()->getName();
+
+$property = new ReflectionProperty('foo', 'bar');
+$property->getDeclaringClass()->getName();
+
+-- AFTER --
+<?php
+
+class ReflectionClass { }
+
+class ReflectionMethod {
+    public function getDeclaringClass()
+    {
+        return new ReflectionClass();
+    }
+}
+
+class ReflectionProperty {
+    public function getDeclaringClass()
+    {
+        return new ReflectionClass();
+    }
+}
+
+$foo->getName();
+
+$class = new ReflectionClass('Foo');
+$class->name;
+
+$method = new ReflectionMethod('foo', 'bar');
+$method->class;
+
+$property = new ReflectionProperty('foo', 'bar');
+$property->class;
+
+-- CONFIG --
+return array('reflection_fixes' => true);
+
+-- END --

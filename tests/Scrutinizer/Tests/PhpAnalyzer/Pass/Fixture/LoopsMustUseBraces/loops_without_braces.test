@@ -1,0 +1,19 @@
+<?php
+
+if ($foo) echo 'bar';
+elseif ($bar) echo 'foo';
+else echo 'baz';
+while ($foo) echo $foo;
+for ($i=0; $i<10; $i++) echo $i;
+foreach ($foo as $bar) echo $bar;
+
+-- CONFIG --
+return array('loops_must_use_braces' => true);
+
+-- COMMENTS --
+Line 3: Please always use braces to surround the code block of IF statements.
+Line 4: Please always use braces to surround the code block of ELSEIF statements.
+Line 5: Please always use braces to surround the code block of ELSE statements.
+Line 6: Please always use braces to surround the code block of WHILE statements.
+Line 7: Please always use braces to surround the code block of FOR statements.
+Line 8: Please always use braces to surround the code block of FOREACH statements.

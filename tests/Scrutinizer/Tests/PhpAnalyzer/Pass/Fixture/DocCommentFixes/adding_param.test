@@ -1,0 +1,50 @@
+-- BEFORE --
+<?php
+
+/**
+ * @param string $baz
+ * @param string $bar This is a super long
+ *                    multiline description.
+ */
+function foo($foo, $bar, $baz) { }
+
+/**
+ * @param string $foo
+ *
+ * @return void
+ */
+function baz($foo, $bar) { }
+
+function bar() {
+    foo('foo', 'bar');
+    baz('foo', 'bar');
+}
+
+-- AFTER --
+<?php
+
+/**
+ * @param string $baz
+ * @param string $bar This is a super long
+ *                    multiline description.
+ * @param string $foo
+ */
+function foo($foo, $bar, $baz) { }
+
+/**
+ * @param string $foo
+ * @param string $bar
+ *
+ * @return void
+ */
+function baz($foo, $bar) { }
+
+function bar() {
+    foo('foo', 'bar');
+    baz('foo', 'bar');
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

@@ -1,0 +1,10 @@
+<?php
+
+foreach ($foo as $bar);
+while ($foo);
+
+// NO COMMENTS
+
+-- CONFIG --
+return array('loops_must_use_braces' => true);
+

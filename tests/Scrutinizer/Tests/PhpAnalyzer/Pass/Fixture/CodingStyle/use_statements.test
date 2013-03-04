@@ -1,0 +1,8 @@
+<?php
+
+use Foo,
+    Bar,
+    Baz;
+
+-- COMMENTS --
+Line 3: Please use one "use" statement for each namespace that you import.

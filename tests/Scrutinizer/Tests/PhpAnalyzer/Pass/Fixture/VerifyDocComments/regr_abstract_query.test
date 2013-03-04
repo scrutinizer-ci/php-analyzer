@@ -1,0 +1,66 @@
+<?php
+/*
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * This software consists of voluntary contributions made by many individuals
+ * and is licensed under the LGPL. For more information, see
+ * <http://www.doctrine-project.org>.
+ */
+
+namespace Doctrine\ORM;
+
+use Doctrine\DBAL\Types\Type,
+    Doctrine\ORM\Query\QueryException,
+    Doctrine\DBAL\Cache\QueryCacheProfile;
+
+/**
+ * Base contract for ORM queries. Base class for Query and NativeQuery.
+ *
+ * @license http://www.opensource.org/licenses/lgpl-license.php LGPL
+ * @link    www.doctrine-project.org
+ * @since   2.0
+ * @version $Revision$
+ * @author  Benjamin Eberlei <kontakt@beberlei.de>
+ * @author  Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author  Jonathan Wage <jonwage@gmail.com>
+ * @author  Roman Borschel <roman@code-factory.org>
+ * @author  Konsta Vesterinen <kvesteri@cc.hut.fi>
+ */
+abstract class AbstractQuery
+{
+    /**
+     * Sets the ResultSetMapping that should be used for hydration.
+     *
+     * @param ResultSetMapping $rsm
+     * @return \Doctrine\ORM\AbstractQuery
+     */
+    public function setResultSetMapping(Query\ResultSetMapping $rsm)
+    {
+        $this->_resultSetMapping = $rsm;
+
+        return $this;
+    }
+}
+
+-- CONFIG --
+return array(
+    'verify_php_doc_comments' => array(
+        'enabled' => true,
+        'suggest_more_specific_types' => true,
+        'ask_for_return_if_not_inferrable' => true,
+        'ask_for_param_type_annotation' => true,
+    ),
+);
+
+-- COMMENTS --
+Line 44: Should the type for parameter ``$rsm`` not be ``Query\ResultSetMapping``?

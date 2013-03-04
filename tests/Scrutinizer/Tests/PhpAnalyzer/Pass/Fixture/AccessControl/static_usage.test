@@ -1,0 +1,21 @@
+<?php
+
+class Foo
+{
+    private static $foo;
+    
+    public static function bar() {
+        static::populateFoo();
+    
+        return static::$foo;
+    }
+    
+    private static function populateFoo()
+    {
+        self::$foo = 'bar';
+    }
+}
+
+-- COMMENTS --
+Line 8: Since ``populateFoo()`` is declared private, calling it with ``static`` will lead to errors in possible sub-classes. You can either use ``self``, or increase the visibility of ``populateFoo()`` to at least protected.
+Line 10: Since ``$foo`` is declared private, accessing it with ``static`` will lead to errors in possible sub-classes; you can either use ``self``, or increase the visibility of ``$foo`` to at least protected.

@@ -1,0 +1,11 @@
+<?php
+
+goto foo;
+
+echo 'foo';
+echo 'bar';
+
+foo:
+
+-- COMMENTS --
+Line 5: ``echo 'foo';`` is not reachable

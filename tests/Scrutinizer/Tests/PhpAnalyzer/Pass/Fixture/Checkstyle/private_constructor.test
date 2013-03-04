@@ -1,0 +1,30 @@
+<?php
+
+class Foo {
+    private function __construct() { }
+}
+
+class Bar {
+    private final function __construct() { }
+}
+
+class BazUtil {
+    private final function __construct() { }
+
+    public static function foo() {
+    }
+}
+
+abstract class Boo {
+    private function __construct() { }
+}
+
+-- CONFIG --
+return array('checkstyle' => array('enabled' => true));
+
+-- COMMENTS --
+Line 3: Since you have declared the constructor as private, maybe you should also declare the class as final.
+Line 8: Instead of declaring the constructor as final, maybe you should declare the entire class as final.
+Line 11: Since you have declared the constructor as final, and this seems like a utility class, maybe you should also declare the class as abstract.
+Line 18: ``Boo`` does not seem to conform to the naming convention (``^Abstract|Factory$``).
+Line 19: Something seems to be off here. Are you sure you want to declare the constructor as private, and the class as abstract?

@@ -1,0 +1,9 @@
+<?php
+
+function test(&$foo) { }
+function returnsNoRef() { }
+
+test(returnsNoRef());
+
+-- COMMENTS --
+Line 6: ``returnsNoRef()`` cannot be passed to ``test()`` as the parameter ``$foo`` expects a reference.

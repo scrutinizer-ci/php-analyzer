@@ -1,0 +1,10 @@
+digraph G {
+    B1 [shape=box,label="implicit return",style=filled]
+    B2 [shape=box,label="Block of PHPParser_Node_Stmt_Do",style=filled]
+    B2 -> B3
+    B3 [shape=box,label="echo 'foo';"]
+    B3 -> B4
+    B4 [shape=box,label="PHPParser_Node_Stmt_Do"]
+    B4 -> B2 [label="true"]
+    B4 -> B1 [label="false"]
+}

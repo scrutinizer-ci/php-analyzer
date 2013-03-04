@@ -1,0 +1,28 @@
+<?php
+
+// TODO: This is currently not implemented.
+
+if (((($a)))) {
+}
+
+if ($a)  
+{ }
+
+if ($a
+    || $b)
+{
+}
+
+if ($a
+        || $b) {
+}
+
+-- CONFIG --
+return array(
+    'checkstyle' => array(
+        'enabled' => true,
+        /*'lcurly' => array(),*/
+    ),
+);
+
+-- COMMENTS --

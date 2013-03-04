@@ -1,0 +1,19 @@
+filter:
+    paths:
+        - src/*
+        - tests/*
+    
+    excluded_paths:
+        - tests/*/Fixture/*
+        - tests/Scrutinizer/Tests/PhpAnalyzer/libraries/*
+
+default_config:
+    use_statement_fixes:
+        order_alphabetically: true
+
+path_configs:
+    tests:
+        path: tests/*
+        verify_php_doc_comments: false
+        checkstyle: false
+        doc_comment_fixes: false

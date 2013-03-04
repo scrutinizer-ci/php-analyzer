@@ -1,0 +1,16 @@
+<?php
+
+interface I { }
+class C implements I { }
+class B { }
+function is_subclass_of($a, $b) { }
+
+is_subclass_of('C', 'I');
+is_subclass_of('B', 'I');
+is_subclass_of('C', 'B');
+is_subclass_of('C', $foo);
+
+-- COMMENTS --
+Line 8: Due to PHP Bug #53727, ``is_subclass_of`` returns inconsistent results on some PHP versions for interfaces; you could instead use ``ReflectionClass::implementsInterface``.
+Line 9: Due to PHP Bug #53727, ``is_subclass_of`` returns inconsistent results on some PHP versions for interfaces; you could instead use ``ReflectionClass::implementsInterface``.
+Line 11: Due to PHP Bug #53727, ``is_subclass_of`` might return inconsistent results on some PHP versions if ``$foo`` can be an interface. If so, you could instead use ``ReflectionClass::implementsInterface``.

@@ -1,0 +1,52 @@
+-- BEFORE --
+<?php
+
+class Foo 
+{
+    private $whitelist = array();
+    
+    /**
+     * @param array<string> $whitelist
+     */
+    public function setWhitelist(array $whitelist)
+    {
+        $this->whitelist = $whitelist;
+    }
+    
+    /**
+     * @return array<string>
+     */
+    public function getWhitelist()
+    {
+        return $this->whitelist;
+    }
+}
+
+-- AFTER --
+<?php
+
+class Foo 
+{
+    private $whitelist = array();
+    
+    /**
+     * @param array<string> $whitelist
+     */
+    public function setWhitelist(array $whitelist)
+    {
+        $this->whitelist = $whitelist;
+    }
+    
+    /**
+     * @return array<string>
+     */
+    public function getWhitelist()
+    {
+        return $this->whitelist;
+    }
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

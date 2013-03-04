@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @param integer $arg
+ */
+function expectsInteger($arg) { }
+
+/**
+ * @param double $arg
+ */
+function expectsDouble($arg) { }
+
+/**
+ * @jms-builtin
+ *
+ * @return integer|double
+ */
+function returnsIntegerOrDouble() { }
+
+// integer, and double are easily convertible, and we should be lenient
+// when passing them to functions which require either one of these.
+expectsInteger(returnsIntegerOrDouble());
+expectsDouble(returnsIntegerOrDouble());
+
+// No comments expected.

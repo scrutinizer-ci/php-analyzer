@@ -1,0 +1,7 @@
+<?php
+
+// The following line contains a tab character intentionally!
+	echo 'foo';
+
+-- COMMENTS --
+Line 4: Please do not use tabs for indentation, but 4 spaces for each tab.

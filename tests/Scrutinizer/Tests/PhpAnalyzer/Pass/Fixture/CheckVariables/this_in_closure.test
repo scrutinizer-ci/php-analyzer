@@ -1,0 +1,25 @@
+<?php
+
+function() {
+    echo $this;
+};
+
+class Foo {
+    public static function bar()
+    {
+        function() {
+            echo $this;
+        };
+    }
+
+    public function baz()
+    {
+        function() {
+            echo $this;
+        };
+    }
+}
+
+-- COMMENTS --
+Line 4: The variable ``$this`` does not exist. Did you forget to declare it?
+Line 11: The variable ``$this`` does not exist. Did you forget to declare it?

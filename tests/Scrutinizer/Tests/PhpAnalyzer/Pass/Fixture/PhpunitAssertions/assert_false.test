@@ -1,0 +1,25 @@
+<?php
+
+class PHPUnit_Framework_TestCase { }
+
+class Test extends PHPUnit_Framework_TestCase {
+    public function testAssertFalse() {
+        $a = array();
+    
+        $this->assertFalse(count($a) > 0);
+        $this->assertFalse(0 < count($a));
+        $this->assertFalse(count($a) >= 4);
+        $this->assertFalse(5 <= count($a));
+        $this->assertFalse(count($a) > 0, 'Foobar moo');
+    }
+}
+
+-- CONFIG --
+return array('phpunit_checks' => true);
+
+-- COMMENTS --
+Line 9: Instead of ``assertFalse()`` use ``$this->assertLessThanOrEqual(0, count($a))``. This will lead to a better error message when the test fails.
+Line 10: Instead of ``assertFalse()`` use ``$this->assertGreaterThanOrEqual(0, count($a))``. This will lead to a better error message when the test fails.
+Line 11: Instead of ``assertFalse()`` use ``$this->assertLessThan(4, count($a))``. This will lead to a better error message when the test fails.
+Line 12: Instead of ``assertFalse()`` use ``$this->assertGreaterThan(5, count($a))``. This will lead to a better error message when the test fails.
+Line 13: Instead of ``assertFalse()`` consider using ``$this->assertLessThanOrEqual(0, count($a))``.

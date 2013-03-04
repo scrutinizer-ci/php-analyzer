@@ -1,0 +1,28 @@
+<?php
+
+class Foo
+{
+    private function foo() { }
+    private function shouldSkipRoute();
+    private function someOtherMethod();
+    
+    public function testTypoInMethodName()
+    {
+        $this->shoudSkipRoute();
+    }
+    
+    public function testMethodDoesNotExist()
+    {
+        $this->foobar();
+    }
+    
+    public function testCallMethodOnUnknownObject()
+    {
+        $a = new Bar();
+        $a->foo();
+    }
+}
+
+-- COMMENTS --
+Line 11: The method "shoudSkipRoute()" does not exist. Did you maybe mean "shouldSkipRoute()"?
+Line 16: The method "foobar()" does not exist on ``object<Foo>``?

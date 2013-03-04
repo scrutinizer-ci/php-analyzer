@@ -1,0 +1,152 @@
+"JMS\\PhpManipulator\\PhpParser\\BlockNode":
+    type: undefined
+    children:
+        0:
+            "PHPParser_Node_Stmt_Function":
+                type: "?"
+                children:
+                    "params":
+                        0:
+                            "PHPParser_Node_Param":
+                                type: "?"
+                    "stmts":
+                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                            type: undefined
+                            children:
+                                0:
+                                    "PHPParser_Node_Expr_Assign":
+                                        type: "?"
+                                        children:
+                                            "var":
+                                                "PHPParser_Node_Expr_Variable":
+                                                    type: "?"
+                                            "expr":
+                                                "PHPParser_Node_Expr_FuncCall":
+                                                    type: "?"
+                                                    children:
+                                                        "name":
+                                                            "PHPParser_Node_Name":
+                                                                type: undefined
+                                                        "args":
+                                                            0:
+                                                                "PHPParser_Node_Arg":
+                                                                    type: "string"
+                                                                    children:
+                                                                        "value":
+                                                                            "PHPParser_Node_Scalar_String":
+                                                                                type: "string"
+                                                            1:
+                                                                "PHPParser_Node_Arg":
+                                                                    type: "string"
+                                                                    children:
+                                                                        "value":
+                                                                            "PHPParser_Node_Scalar_String":
+                                                                                type: "string"
+                                                            2:
+                                                                "PHPParser_Node_Arg":
+                                                                    type: "?"
+                                                                    children:
+                                                                        "value":
+                                                                            "PHPParser_Node_Expr_Variable":
+                                                                                type: "?"
+                                1:
+                                    "PHPParser_Node_Stmt_Return":
+                                        type: "?"
+                                        children:
+                                            "expr":
+                                                "PHPParser_Node_Expr_Variable":
+                                                    type: "?"
+                    "namespacedName":
+                        "PHPParser_Node_Name":
+                            type: undefined
+        1:
+            "PHPParser_Node_Expr_Assign":
+                type: "array<integer,string,{\"0\":\"string\"}>"
+                children:
+                    "var":
+                        "PHPParser_Node_Expr_Variable":
+                            type: "array<integer,string,{\"0\":\"string\"}>"
+                    "expr":
+                        "PHPParser_Node_Expr_Array":
+                            type: "array<integer,string,{\"0\":\"string\"}>"
+                            children:
+                                "items":
+                                    0:
+                                        "PHPParser_Node_Expr_ArrayItem":
+                                            type: undefined
+                                            children:
+                                                "value":
+                                                    "PHPParser_Node_Scalar_String":
+                                                        type: "string"
+        2:
+            "PHPParser_Node_Expr_Assign":
+                type: "array<integer,string>"
+                children:
+                    "var":
+                        "PHPParser_Node_Expr_Variable":
+                            type: "array<integer,string>"
+                    "expr":
+                        "PHPParser_Node_Expr_FuncCall":
+                            type: "array<integer,string>"
+                            children:
+                                "name":
+                                    "PHPParser_Node_Name":
+                                        type: undefined
+                                "args":
+                                    0:
+                                        "PHPParser_Node_Arg":
+                                            type: "string"
+                                            children:
+                                                "value":
+                                                    "PHPParser_Node_Scalar_String":
+                                                        type: "string"
+                                    1:
+                                        "PHPParser_Node_Arg":
+                                            type: "string"
+                                            children:
+                                                "value":
+                                                    "PHPParser_Node_Scalar_String":
+                                                        type: "string"
+                                    2:
+                                        "PHPParser_Node_Arg":
+                                            type: "array<integer,string,{\"0\":\"string\"}>"
+                                            children:
+                                                "value":
+                                                    "PHPParser_Node_Expr_Variable":
+                                                        type: "array<integer,string,{\"0\":\"string\"}>"
+        3:
+            "PHPParser_Node_Expr_Assign":
+                type: "string"
+                children:
+                    "var":
+                        "PHPParser_Node_Expr_Variable":
+                            type: "string"
+                    "expr":
+                        "PHPParser_Node_Expr_FuncCall":
+                            type: "string"
+                            children:
+                                "name":
+                                    "PHPParser_Node_Name":
+                                        type: undefined
+                                "args":
+                                    0:
+                                        "PHPParser_Node_Arg":
+                                            type: "string"
+                                            children:
+                                                "value":
+                                                    "PHPParser_Node_Scalar_String":
+                                                        type: "string"
+                                    1:
+                                        "PHPParser_Node_Arg":
+                                            type: "string"
+                                            children:
+                                                "value":
+                                                    "PHPParser_Node_Scalar_String":
+                                                        type: "string"
+                                    2:
+                                        "PHPParser_Node_Arg":
+                                            type: "string"
+                                            children:
+                                                "value":
+                                                    "PHPParser_Node_Scalar_String":
+                                                        type: "string"

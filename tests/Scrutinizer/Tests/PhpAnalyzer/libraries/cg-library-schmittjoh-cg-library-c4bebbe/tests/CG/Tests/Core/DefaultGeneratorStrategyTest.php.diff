@@ -1,0 +1,8 @@
+@@ -3,7 +3,6 @@
+ namespace CG\Tests\Core;
+ 
+ use CG\Core\DefaultGeneratorStrategy;
+-
+ use CG\Generator\PhpProperty;
+ use CG\Generator\PhpMethod;
+ use CG\Generator\PhpClass;

@@ -1,0 +1,19 @@
+<?php
+
+/** @return string */
+function foo() {
+    return $foo ? 'a': null;
+}
+
+-- CONFIG --
+return array(
+    'verify_php_doc_comments' => array(
+        'enabled' => true,
+        'suggest_more_specific_types' => true,
+        'ask_for_return_if_not_inferrable' => true,
+        'ask_for_param_type_annotation' => true,
+    ),
+);
+
+-- COMMENTS --
+Line 3: Should the return type not be ``string|null``?

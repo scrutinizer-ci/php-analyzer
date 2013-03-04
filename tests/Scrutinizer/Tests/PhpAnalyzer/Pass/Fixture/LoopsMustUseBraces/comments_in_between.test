@@ -1,0 +1,10 @@
+<?php
+
+if ($foo) /* This is a test */ echo 'foo';
+if ($foo) /* Another test, but this time permissible */ { echo 'foo'; }
+
+-- CONFIG --
+return array('loops_must_use_braces' => true);
+
+-- COMMENTS --
+Line 3: Please always use braces to surround the code block of IF statements.

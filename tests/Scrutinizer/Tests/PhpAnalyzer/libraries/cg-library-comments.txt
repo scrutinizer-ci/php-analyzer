@@ -1,0 +1,123 @@
+schmittjoh-cg-library-c4bebbe/src/CG/Core/AbstractClassGenerator.php
+---------------------------------------------------
+Line 55: php_doc.return_type_not_inferrable
+
+schmittjoh-cg-library-c4bebbe/src/CG/Core/DefaultGeneratorStrategy.php
+---------------------------------------------------
+Line 65: typos.non_existent_method
+Line 60: php_doc.return_type_not_inferrable
+
+schmittjoh-cg-library-c4bebbe/src/CG/Core/GeneratorStrategyInterface.php
+---------------------------------------------------
+Line 33: php_doc.return_type_not_inferrable
+
+schmittjoh-cg-library-c4bebbe/src/CG/Generator/AbstractPhpMember.php
+---------------------------------------------------
+Line 37: php_doc.param_type_all_type_non_commented
+
+schmittjoh-cg-library-c4bebbe/src/CG/Generator/DefaultVisitor.php
+---------------------------------------------------
+Line 103: php_doc.param_type_all_type_non_commented
+Line 210: php_doc.param_type_array_type_not_inferrable
+
+schmittjoh-cg-library-c4bebbe/src/CG/Generator/DefaultVisitorInterface.php
+---------------------------------------------------
+Line 49: php_doc.param_type_all_type_non_commented
+
+schmittjoh-cg-library-c4bebbe/src/CG/Generator/GeneratorUtils.php
+---------------------------------------------------
+Line 33: suspicious_code.assignment_to_parameter
+Line 30: php_doc.param_type_array_type_not_inferrable
+
+schmittjoh-cg-library-c4bebbe/src/CG/Generator/PhpClass.php
+---------------------------------------------------
+Line 177: suspicious_code.assignment_to_parameter
+Line 242: suspicious_code.assignment_to_parameter
+Line 254: suspicious_code.assignment_to_parameter
+Line 285: suspicious_code.assignment_to_parameter
+Line 297: suspicious_code.assignment_to_parameter
+Line 46: php_doc.param_type_all_type_non_commented
+Line 104: php_doc.param_type_all_type_non_commented
+Line 129: php_doc.param_type_array_type_not_inferrable
+Line 146: php_doc.param_type_array_type_not_inferrable
+Line 163: php_doc.param_type_array_type_not_inferrable
+Line 185: php_doc.param_type_array_type_not_inferrable
+Line 203: php_doc.param_type_all_type_non_commented
+Line 222: php_doc.param_type_array_type_not_inferrable
+Line 265: php_doc.param_type_array_type_not_inferrable
+
+schmittjoh-cg-library-c4bebbe/src/CG/Generator/PhpFunction.php
+---------------------------------------------------
+Line 35: php_doc.param_type_all_type_non_commented
+Line 40: php_doc.param_type_all_type_non_commented
+Line 65: php_doc.param_type_array_type_not_inferrable
+
+schmittjoh-cg-library-c4bebbe/src/CG/Generator/PhpMethod.php
+---------------------------------------------------
+Line 116: php_doc.param_type_array_type_not_inferrable
+Line 130: php_doc.param_type_all_type_non_commented
+Line 133: usage.argument_type_mismatch
+Line 132: usage.argument_type_mismatch
+
+schmittjoh-cg-library-c4bebbe/src/CG/Generator/PhpParameter.php
+---------------------------------------------------
+Line 63: php_doc.param_type_all_type_non_commented
+Line 78: php_doc.param_type_all_type_non_commented
+
+schmittjoh-cg-library-c4bebbe/src/CG/Proxy/Enhancer.php
+---------------------------------------------------
+Line 46: php_doc.param_type_array_type_not_inferrable
+Line 60: php_doc.param_type_array_element_type
+Line 76: php_doc.param_type_all_type_non_commented
+
+schmittjoh-cg-library-c4bebbe/src/CG/Proxy/InterceptionGenerator.php
+---------------------------------------------------
+Line 44: php_doc.param_type_all_type_non_commented
+
+schmittjoh-cg-library-c4bebbe/src/CG/Proxy/LazyInitializerGenerator.php
+---------------------------------------------------
+Line 85: typos.non_existent_method
+Line 84: typos.non_existent_method
+Line 139: typos.misspelled_method_name
+Line 131: php_doc.param_type_array_type_not_inferrable
+
+schmittjoh-cg-library-c4bebbe/src/CG/Proxy/MethodInterceptorInterface.php
+---------------------------------------------------
+Line 38: php_doc.return_type_all_type_more_specific
+
+schmittjoh-cg-library-c4bebbe/src/CG/Proxy/MethodInvocation.php
+---------------------------------------------------
+Line 41: php_doc.param_type_all_type_non_commented
+Line 41: php_doc.param_type_array_type_not_inferrable
+Line 53: php_doc.return_type_all_type_more_specific
+
+schmittjoh-cg-library-c4bebbe/src/CG/Proxy/RegexInterceptionLoader.php
+---------------------------------------------------
+Line 25: php_doc.param_type_array_type_not_inferrable
+Line 44: php_doc.return_type_not_inferrable
+Line 44: php_doc.param_type_all_type_non_commented
+
+schmittjoh-cg-library-c4bebbe/tests/CG/Tests/Core/ReflectionUtilsTest.php
+---------------------------------------------------
+Line 37: coding_style.naming
+Line 42: php_doc.return_type_not_inferrable
+Line 46: php_doc.return_type_not_inferrable
+
+schmittjoh-cg-library-c4bebbe/tests/CG/Tests/Generator/AbstractPhpMemberTest.php
+---------------------------------------------------
+Line 54: php_doc.return_type_not_inferrable
+
+schmittjoh-cg-library-c4bebbe/tests/CG/Tests/Proxy/EnhancerTest.php
+---------------------------------------------------
+Line 16: php_doc.param_type_all_type_non_commented
+Line 16: php_doc.param_type_array_type_not_inferrable
+Line 68: php_doc.return_type_not_inferrable
+Line 68: php_doc.param_type_array_type_not_inferrable
+Line 91: php_doc.return_type_not_inferrable
+Line 113: php_doc.return_type_not_inferrable
+
+schmittjoh-cg-library-c4bebbe/tests/bootstrap.php
+---------------------------------------------------
+Line 19: suspicious_code.assignment_to_parameter
+Line 26: suspicious_code.assignment_to_parameter
+

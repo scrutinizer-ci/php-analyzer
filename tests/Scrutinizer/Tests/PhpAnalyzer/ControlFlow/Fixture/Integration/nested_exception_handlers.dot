@@ -1,0 +1,22 @@
+digraph G {
+    B1 [shape=box,label="implicit return",style=filled]
+    B2 [shape=box,label="PHPParser_Node_Stmt_TryCatch",style=filled]
+    B2 -> B3
+    B4 [shape=box,label="PHPParser_Node_Stmt_Throw"]
+    B4 -> B5 [label="exception"]
+    B5 [shape=box,label="catch RuntimeException"]
+    B5 -> B6 [label="true"]
+    B5 -> B7 [label="false"]
+    B8 [shape=box,label="Block of PHPParser_Node_Stmt_TryCatch"]
+    B8 -> B4
+    B6 [shape=box,label="Block of catch RuntimeException"]
+    B6 -> B1
+    B9 [shape=box,label="PHPParser_Node_Stmt_TryCatch"]
+    B9 -> B8
+    B7 [shape=box,label="catch LogicException"]
+    B7 -> B10 [label="true"]
+    B3 [shape=box,label="Block of PHPParser_Node_Stmt_TryCatch"]
+    B3 -> B9
+    B10 [shape=box,label="Block of catch LogicException"]
+    B10 -> B1
+}

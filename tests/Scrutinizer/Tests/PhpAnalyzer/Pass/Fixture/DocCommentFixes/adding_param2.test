@@ -1,0 +1,41 @@
+-- BEFORE --
+<?php
+
+class A {
+    /**
+     * This is a nice method.
+     */
+    public function f($foo)
+    {
+        return $foo;
+    }
+
+    public function c()
+    {
+        $this->f('s');
+    }
+}
+
+-- AFTER --
+<?php
+
+class A {
+    /**
+     * This is a nice method.
+     * @param string $foo
+     */
+    public function f($foo)
+    {
+        return $foo;
+    }
+
+    public function c()
+    {
+        $this->f('s');
+    }
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

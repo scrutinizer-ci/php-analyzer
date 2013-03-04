@@ -1,0 +1,44 @@
+digraph G {
+    B1 [shape=box,label="implicit return",style=filled]
+    B2 [shape=box,label="Block (global)",style=filled]
+    B2 -> B3
+    B4 [shape=box,label="Assign (L5)"]
+    B4 -> B5
+    B5 [shape=box,label="PHPParser_Node_Expr_AssignRef"]
+    B5 -> B6
+    B7 [shape=box,label="Block of if (is_object($objectOrArray))"]
+    B7 -> B4
+    B8 [shape=box,label="Assign (L9)"]
+    B8 -> B9
+    B9 [shape=box,label="if (!array_key_exists($property, $objectOrArray))"]
+    B9 -> B10 [label="true"]
+    B9 -> B11 [label="false"]
+    B12 [shape=box,label="Assign (L11)"]
+    B12 -> B11
+    B11 [shape=box,label="PHPParser_Node_Expr_AssignRef"]
+    B11 -> B5
+    B10 [shape=box,label="Block of if (!array_key_exists($property, $objectOrArray))"]
+    B10 -> B12
+    B13 [shape=box,label="Block of if (is_array($objectOrArray))"]
+    B13 -> B8
+    B14 [shape=box,label="Block of PHPParser_Node_Stmt_Else"]
+    B14 -> B15
+    B15 [shape=box,label="PHPParser_Node_Stmt_Throw"]
+    B16 [shape=box,label="if (is_object($objectOrArray))"]
+    B16 -> B7 [label="true"]
+    B16 -> B17 [label="false"]
+    B17 [shape=box,label="if (is_array($objectOrArray))"]
+    B17 -> B13 [label="true"]
+    B17 -> B14 [label="false"]
+    B6 [shape=box,label="PHPParser_Node_Expr_PreInc"]
+    B6 -> B18
+    B19 [shape=box,label="Block of PHPParser_Node_Stmt_For"]
+    B19 -> B16
+    B3 [shape=box,label="Assign (L3)"]
+    B3 -> B18
+    B18 [shape=box,label="PHPParser_Node_Stmt_For"]
+    B18 -> B19 [label="true"]
+    B18 -> B20 [label="false"]
+    B20 [shape=box,label="PHPParser_Node_Stmt_Return"]
+    B20 -> B1
+}

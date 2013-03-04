@@ -1,0 +1,37 @@
+<?php
+
+switch (true) {
+    case 'foo':
+        switch (true) {
+            case 'a':
+                return 'foo';
+                
+            case 'b':
+                return 'bar';
+                
+            default:
+                throw new \RuntimeException('Foo');
+        }
+        
+    case 'bar':
+        echo 'moo';
+        
+    case 'baz':
+        return 'foo';
+        
+    case 'moo':
+        switch (true) {
+            case 'basdf':
+                return 'asdfadf';
+                
+            case 'afgadsf':
+                return 'fgijifgjidg';
+        }
+        
+    case 'ifjgidfi':
+        return 'gSFDAF';
+}
+
+-- COMMENTS --
+Line 17: Consider adding a comment if this fall-through is intended.
+Line 23: Consider adding a comment if this fall-through is intended.

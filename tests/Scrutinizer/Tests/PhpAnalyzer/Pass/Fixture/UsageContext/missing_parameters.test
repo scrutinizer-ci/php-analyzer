@@ -1,0 +1,8 @@
+<?php
+
+function foo($a, $b) { }
+
+foo();
+
+-- COMMENTS --
+Line 5: The call to ``foo()`` misses some required arguments starting with ``$a``.

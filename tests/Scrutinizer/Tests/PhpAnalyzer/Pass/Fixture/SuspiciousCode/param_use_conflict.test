@@ -1,0 +1,7 @@
+<?php
+
+function($a, $b) 
+    use ($a) { };
+
+-- COMMENTS --
+Line 3: The parameter name ``$a`` conflicts with one of the imported variables.

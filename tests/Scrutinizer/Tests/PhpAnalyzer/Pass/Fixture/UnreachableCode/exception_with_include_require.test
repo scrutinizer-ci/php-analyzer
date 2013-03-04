@@ -1,0 +1,24 @@
+<?php
+
+try {
+    include 'foo.php';
+} catch (\Exception $ex) { }
+
+try {
+    require 'foo.php';
+} catch (\Exception $ex) { }
+
+try {
+    include_once 'foo.php';
+} catch (\Exception $ex) { }
+
+try {
+    require_once 'foo.php';
+} catch (\Exception $ex) { }
+
+try {
+    echo 'foo';
+} catch (\Exception $ex) { }
+
+-- COMMENTS --
+Line 21: is not reachable.

@@ -1,0 +1,18 @@
+-- BEFORE --
+<?php
+
+namespace Foo;
+
+use A;
+use B;
+
+class C { }
+
+-- AFTER --
+<?php
+
+namespace Foo;
+
+class C { }
+
+-- END --

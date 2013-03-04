@@ -1,0 +1,9 @@
+<?php
+
+$interestingName = 'foo';
+
+echo $intrestingName;
+echo $interestingName; // avoid dead-assignment warning
+
+-- COMMENTS --
+Line 5: The variable ``$intrestingName`` does not exist. Did you mean ``$interestingName``?

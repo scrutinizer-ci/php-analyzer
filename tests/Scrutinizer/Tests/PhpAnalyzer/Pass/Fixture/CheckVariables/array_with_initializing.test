@@ -1,0 +1,12 @@
+<?php
+
+function foo() {
+    $a[] = 'a';
+    echo $a[0];
+    
+    $b = $c[0];
+}
+
+-- COMMENTS --
+Line 4: ``$a`` was never initialized. Although not strictly required by PHP, it is generally a good practice to add ``$a = array();`` before regardless.
+Line 7: The variable ``$c`` does not exist. Did you forget to declare it?

@@ -1,0 +1,8 @@
+@@ -3,7 +3,6 @@
+ namespace CG\Tests\Generator;
+ 
+ use CG\Generator\PhpParameter;
+-
+ use CG\Generator\PhpMethod;
+ 
+ class PhpMethodTest extends \PHPUnit_Framework_TestCase

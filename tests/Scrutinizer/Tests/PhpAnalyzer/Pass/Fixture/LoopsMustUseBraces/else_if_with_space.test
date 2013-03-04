@@ -1,0 +1,10 @@
+<?php
+
+if ($foo) { }
+
+// The following is a T_ELSE followed by a T_IF which is permissible
+else if ($bar) { }
+
+-- CONFIG --
+return array('loops_must_use_braces' => true);
+

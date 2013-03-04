@@ -1,0 +1,9 @@
+digraph G {
+    B1 [shape=box,label="implicit return",style=filled]
+    B2 [shape=box,label="PHPParser_Node_Expr_Closure",style=filled]
+    B2 -> B3
+    B4 [shape=box,label="$this"]
+    B4 -> B1
+    B3 [shape=box,label="Block of PHPParser_Node_Expr_Closure"]
+    B3 -> B4
+}

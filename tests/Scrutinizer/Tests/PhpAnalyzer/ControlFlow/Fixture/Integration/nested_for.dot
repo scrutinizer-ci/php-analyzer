@@ -1,0 +1,39 @@
+digraph G {
+    B1 [shape=box,label="implicit return",style=filled]
+    B2 [shape=box,label="Assign (L3)",style=filled]
+    B2 -> B3
+    B4 [shape=box,label="PHPParser_Node_Stmt_Continue"]
+    B4 -> B5
+    B5 [shape=box,label="PHPParser_Node_Expr_PostInc"]
+    B5 -> B3
+    B6 [shape=box,label="Block of if ($i < 0)"]
+    B6 -> B4
+    B7 [shape=box,label="if ($i < 0)"]
+    B7 -> B6 [label="true"]
+    B7 -> B8 [label="false"]
+    B8 [shape=box,label="if ($j > 5)"]
+    B8 -> B9 [label="true"]
+    B8 -> B10 [label="false"]
+    B11 [shape=box,label="PHPParser_Node_Stmt_Break"]
+    B11 -> B1
+    B9 [shape=box,label="Block of if ($j > 5)"]
+    B9 -> B11
+    B10 [shape=box,label="PHPParser_Node_Stmt_Goto"]
+    B10 -> B12
+    B12 [shape=box,label="Label foo"]
+    B12 -> B5
+    B13 [shape=box,label="Block of PHPParser_Node_Stmt_For"]
+    B13 -> B7
+    B14 [shape=box,label="Assign (L4)"]
+    B14 -> B15
+    B15 [shape=box,label="PHPParser_Node_Stmt_For"]
+    B15 -> B13 [label="true"]
+    B15 -> B12 [label="false"]
+    B16 [shape=box,label="PHPParser_Node_Expr_PostInc"]
+    B16 -> B15
+    B17 [shape=box,label="Block of PHPParser_Node_Stmt_For"]
+    B17 -> B14
+    B3 [shape=box,label="PHPParser_Node_Stmt_For"]
+    B3 -> B17 [label="true"]
+    B3 -> B1 [label="false"]
+}

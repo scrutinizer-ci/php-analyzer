@@ -1,0 +1,6 @@
+<?php
+
+/** @jms-variable-parameters */
+function foo($foo) { }
+
+foo();

@@ -1,0 +1,24 @@
+-- BEFORE --
+<?php
+
+namespace Foo {
+    use Bar\A;
+    use Bar\B;
+    use Bar\C;
+
+    $a = new A();
+    $c = new C();
+}
+
+-- AFTER --
+<?php
+
+namespace Foo {
+    use Bar\A;
+    use Bar\C;
+
+    $a = new A();
+    $c = new C();
+}
+
+-- END --

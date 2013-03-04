@@ -1,0 +1,19 @@
+<?php
+
+$foo = bar() && baz(); // Ok
+
+if ($foo = bar()) { } // Ok
+
+if ($foo = bar() && baz()) { } // Not ok
+
+if ($foo = (bar() && baz())) { } // Ok
+
+if (($foo = bar()) && baz()) { } // Ok
+
+if (bar() && $foo = baz()) { } // Ok
+
+if (bar() && $foo = baz() && boo()) { } // Not Ok
+
+-- COMMENTS --
+Line 7: Consider adding parentheses for clarity. Current Interpretation: ``$foo = (bar() && baz())``, Probably Intended Meaning: ``($foo = bar()) && baz()``
+Line 15: Consider adding parentheses for clarity. Current Interpretation: ``$foo = (baz() && boo())``, Probably Intended Meaning: ``($foo = baz()) && boo()``

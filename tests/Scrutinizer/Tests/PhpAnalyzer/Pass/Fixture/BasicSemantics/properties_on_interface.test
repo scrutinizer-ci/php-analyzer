@@ -1,0 +1,20 @@
+<?php
+
+class Foo {
+    protected $foo;
+}
+
+trait Bar {
+    protected $foo;
+}
+
+interface Baz {
+    public $foo;
+    protected $bar;
+    private $baz;
+}
+
+-- COMMENTS --
+Line 12: In PHP, declaring a method on an interface is not yet allowed.
+Line 13: In PHP, declaring a method on an interface is not yet allowed.
+Line 14: In PHP, declaring a method on an interface is not yet allowed.

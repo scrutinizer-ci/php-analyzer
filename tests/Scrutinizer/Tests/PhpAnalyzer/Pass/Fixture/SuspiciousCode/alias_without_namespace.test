@@ -1,0 +1,9 @@
+<?php
+
+class A { }
+
+use Foo\A;
+use Foo\B;
+
+-- COMMENTS --
+Line 5: This use statement conflicts with another class in this namespace, ``A``.

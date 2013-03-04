@@ -1,0 +1,36 @@
+<?php
+
+/** @method bar() */
+class A {
+    public function __call() { }
+    public function __callStatic() { }
+}
+
+/** @method string bar() */
+class B {
+    public function __callStatic() { }
+}
+
+/** @method string bar() */
+class C {
+    public function __call() { }
+}
+
+$a = new A();
+$a->foo();
+$a->bar();
+
+$b = new B();
+$b->foo();
+$b->bar();
+B::bar();
+B::baz();
+
+C::foo();
+C::bar();
+
+-- COMMENTS --
+Line 20: The method ``foo`` does not exist on ``object<A>``? Since you implemented ``__call``, maybe consider adding a [@method annotation](http://www.phpdoc.org/docs/latest/for-users/tags/method.html).
+Line 24: The method "foo()" does not exist on ``object<B>``?
+Line 27: The method ``baz`` does not exist on ``object<B>``? Since you implemented ``__callStatic``, maybe consider adding a [@method annotation](http://www.phpdoc.org/docs/latest/for-users/tags/method.html).
+Line 29: The method "foo()" does not exist on ``object<C>``?

@@ -1,0 +1,67 @@
+"PHPParser_Node_Stmt_Function":
+    type: undefined
+    children:
+        "params":
+            0:
+                "PHPParser_Node_Param":
+                    type: "?"
+        "stmts":
+            "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                type: undefined
+                children:
+                    0:
+                        "PHPParser_Node_Expr_Variable":
+                            type: "?"
+                    1:
+                        "PHPParser_Node_Expr_Assign":
+                            type: "boolean"
+                            children:
+                                "var":
+                                    "PHPParser_Node_Expr_Variable":
+                                        type: "boolean"
+                                "expr":
+                                    "PHPParser_Node_Expr_FuncCall":
+                                        type: "boolean"
+                                        children:
+                                            "name":
+                                                "PHPParser_Node_Name":
+                                                    type: undefined
+                                            "args":
+                                                0:
+                                                    "PHPParser_Node_Arg":
+                                                        type: "?"
+                                                        children:
+                                                            "value":
+                                                                "PHPParser_Node_Expr_Variable":
+                                                                    type: "?"
+                    2:
+                        "PHPParser_Node_Stmt_If":
+                            type: undefined
+                            children:
+                                "stmts":
+                                    "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                        type: undefined
+                                        children:
+                                            0:
+                                                "PHPParser_Node_Expr_Variable":
+                                                    type: "object<A>|array"
+                                "cond":
+                                    "PHPParser_Node_Expr_BooleanOr":
+                                        type: "boolean"
+                                        children:
+                                            "left":
+                                                "PHPParser_Node_Expr_Instanceof":
+                                                    type: "boolean"
+                                                    children:
+                                                        "expr":
+                                                            "PHPParser_Node_Expr_Variable":
+                                                                type: "?"
+                                                        "class":
+                                                            "PHPParser_Node_Name_FullyQualified":
+                                                                type: "object<A>"
+                                            "right":
+                                                "PHPParser_Node_Expr_Variable":
+                                                    type: "boolean"
+        "namespacedName":
+            "PHPParser_Node_Name":
+                type: undefined

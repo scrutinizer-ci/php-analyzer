@@ -1,0 +1,7 @@
+<?php
+
+$_SERVER = 'foo'; // should be ignored
+
+-- CONFIG --
+return array('checkstyle' => array('enabled' => true));
+

@@ -1,0 +1,55 @@
+"JMS\\PhpManipulator\\PhpParser\\BlockNode":
+    type: undefined
+    children:
+        0:
+            "PHPParser_Node_Expr_Assign":
+                type: "array<integer,string,{\"0\":\"string\"}>"
+                children:
+                    "var":
+                        "PHPParser_Node_Expr_Variable":
+                            type: "array<integer,string,{\"0\":\"string\"}>"
+                    "expr":
+                        "PHPParser_Node_Expr_Array":
+                            type: "array<integer,string,{\"0\":\"string\"}>"
+                            children:
+                                "items":
+                                    0:
+                                        "PHPParser_Node_Expr_ArrayItem":
+                                            type: undefined
+                                            children:
+                                                "value":
+                                                    "PHPParser_Node_Scalar_String":
+                                                        type: "string"
+        1:
+            "PHPParser_Node_Stmt_While":
+                type: undefined
+                children:
+                    "cond":
+                        "PHPParser_Node_Expr_Assign":
+                            type: "string|null"
+                            children:
+                                "var":
+                                    "PHPParser_Node_Expr_Variable":
+                                        type: "string|null"
+                                "expr":
+                                    "PHPParser_Node_Expr_FuncCall":
+                                        type: "string|null"
+                                        children:
+                                            "name":
+                                                "PHPParser_Node_Name":
+                                                    type: undefined
+                                            "args":
+                                                0:
+                                                    "PHPParser_Node_Arg":
+                                                        type: "array<integer,string,{\"0\":\"string\"}>"
+                                                        children:
+                                                            "value":
+                                                                "PHPParser_Node_Expr_Variable":
+                                                                    type: "array<integer,string,{\"0\":\"string\"}>"
+                    "stmts":
+                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                            type: undefined
+                            children:
+                                0:
+                                    "PHPParser_Node_Expr_Variable":
+                                        type: "string"

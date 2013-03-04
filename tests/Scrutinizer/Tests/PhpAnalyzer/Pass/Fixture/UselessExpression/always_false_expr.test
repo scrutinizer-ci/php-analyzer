@@ -1,0 +1,7 @@
+<?php
+
+$foo = true;
+if ('foo' === $foo) { }
+
+-- COMMENTS --
+Line 4: ``'foo' === $foo`` seems to always evaluate to false. Are you sure this is correct?

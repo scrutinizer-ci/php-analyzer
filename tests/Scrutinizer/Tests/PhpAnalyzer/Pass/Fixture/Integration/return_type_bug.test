@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @param string $name
+ * @return boolean
+ */
+function isElementNameValid($name)
+{
+    return $name && false === strpos($name, ' ') && preg_match('#^[\pL_][\pL0-9._-]*$#ui', $name);
+}
+
+-- AFTER --
+<?php
+
+/**
+ * @param string $name
+ * @return boolean
+ */
+function isElementNameValid($name)
+{
+    return $name && false === strpos($name, ' ') && preg_match('#^[\pL_][\pL0-9._-]*$#ui', $name);
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+

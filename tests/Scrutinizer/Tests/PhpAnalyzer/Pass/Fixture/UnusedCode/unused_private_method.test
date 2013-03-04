@@ -1,0 +1,15 @@
+<?php
+
+class Foo {
+    public function main()
+    {
+        $this->used();
+    }
+    
+    private function used() { }
+    
+    private function unused() { }
+}
+
+-- COMMENTS --
+Line 11: This method is unused, and could be removed.

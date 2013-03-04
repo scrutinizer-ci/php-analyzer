@@ -1,0 +1,12 @@
+<?php
+
+namespace Foo;
+
+class A { }
+class B { }
+
+use Foo\A; // No error as it is the same as the local class, but also not really useful.
+use Bar\B;
+
+-- COMMENTS --
+Line 9: This use statement conflicts with another class in this namespace, ``Foo\B``.

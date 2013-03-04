@@ -1,0 +1,10 @@
+@@ -75,6 +75,9 @@ class PhpParameter
+         return $this;
+     }
+ 
++    /**
++     * @param string $value
++     */
+     public function setDefaultValue($value)
+     {
+         $this->defaultValue = $value;

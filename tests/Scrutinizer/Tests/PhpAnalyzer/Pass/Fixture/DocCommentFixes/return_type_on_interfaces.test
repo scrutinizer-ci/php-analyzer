@@ -1,0 +1,48 @@
+-- BEFORE --
+<?php
+
+interface I {
+    /**
+     * This is a nice method
+     */
+    function foo($foo);
+
+    function bar();
+}
+
+class C implements I {
+    public function foo($foo) {
+        return 'foo';
+    }
+
+    public function bar() { }
+}
+
+-- AFTER --
+<?php
+
+interface I {
+    /**
+     * This is a nice method
+     * @return string
+     */
+    function foo($foo);
+
+    /**
+     * @return void
+     */
+    function bar();
+}
+
+class C implements I {
+    public function foo($foo) {
+        return 'foo';
+    }
+
+    public function bar() { }
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

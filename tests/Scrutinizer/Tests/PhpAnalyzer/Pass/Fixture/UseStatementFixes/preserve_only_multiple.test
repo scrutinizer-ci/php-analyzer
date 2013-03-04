@@ -1,0 +1,26 @@
+-- BEFORE --
+<?php
+
+namespace Foo;
+
+use A as Foo, C as AAA, B;
+
+class Foo { }
+
+-- AFTER --
+<?php
+
+namespace Foo;
+
+use A as Foo,
+    B,
+    C as AAA;
+
+class Foo { }
+
+-- CONFIG --
+return array('use_statement_fixes' => array(
+    'remove_unused' => false,
+    'preserve_multiple' => true,
+    'order_alphabetically' => true,
+));

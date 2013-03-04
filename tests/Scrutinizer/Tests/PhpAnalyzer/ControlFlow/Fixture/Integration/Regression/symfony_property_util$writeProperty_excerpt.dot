@@ -1,0 +1,24 @@
+digraph G {
+    B1 [shape=box,label="implicit return",style=filled]
+    B2 [shape=box,label="PHPParser_Node_Stmt_Foreach",style=filled]
+    B2 -> B3 [label="true"]
+    B2 -> B1 [label="false"]
+    B4 [shape=box,label="PHPParser_Node_Stmt_Unset"]
+    B4 -> B5
+    B5 [shape=box,label="PHPParser_Node_Stmt_Continue"]
+    B5 -> B2
+    B6 [shape=box,label="Block of if ($item === $previousItem)"]
+    B6 -> B4
+    B7 [shape=box,label="if ($item === $previousItem)"]
+    B7 -> B6 [label="true"]
+    B7 -> B8 [label="false"]
+    B8 [shape=box,label="PHPParser_Node_Stmt_Foreach"]
+    B8 -> B9 [label="true"]
+    B8 -> B10 [label="false"]
+    B9 [shape=box,label="Block of PHPParser_Node_Stmt_Foreach"]
+    B9 -> B7
+    B10 [shape=box,label="PHPParser_Node_Expr_MethodCall"]
+    B10 -> B2
+    B3 [shape=box,label="Block of PHPParser_Node_Stmt_Foreach"]
+    B3 -> B8
+}

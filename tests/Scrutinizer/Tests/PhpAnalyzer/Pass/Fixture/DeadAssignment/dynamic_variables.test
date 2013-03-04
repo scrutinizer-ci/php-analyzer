@@ -1,0 +1,23 @@
+<?php
+
+function() {
+    $a = 'a';
+    $b = 'a';
+    echo ${$b};
+
+    $c = 'foo';
+};
+
+function() {
+    $a = 'a';
+    ${$foo} = 'bar';
+};
+
+function() {
+    $a = 'a';
+    ${$a} = 'bar';
+};
+
+-- COMMENTS --
+Line 8: The assignment to ``$c`` is dead and can be removed.
+Line 12: The assignment to ``$a`` is dead and can be removed.

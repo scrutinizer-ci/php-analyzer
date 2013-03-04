@@ -1,0 +1,15 @@
+digraph G {
+    B1 [shape=box,label="implicit return",style=filled]
+    B2 [shape=box,label="PHPParser_Node_Stmt_Namespace",style=filled]
+    B2 -> B3
+    B4 [shape=box,label="PHPParser_Node_Stmt_Use"]
+    B4 -> B5
+    B5 [shape=box,label="PHPParser_Node_Stmt_Use"]
+    B5 -> B6
+    B6 [shape=box,label="PHPParser_Node_Stmt_Use"]
+    B6 -> B7
+    B7 [shape=box,label="PHPParser_Node_Stmt_Class"]
+    B7 -> B1
+    B3 [shape=box,label="Block of PHPParser_Node_Stmt_Namespace"]
+    B3 -> B4
+}

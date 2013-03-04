@@ -1,0 +1,17 @@
+<?php
+
+interface A { }
+class C { }
+
+function foo(A $a) { }
+
+foo(new B()); // B is unknown -> no comments expected.
+foo(new C());
+
+-- CONFIG --
+return array('check_usage_context' => array(
+    'argument_type_checks' => 'strict',
+));
+
+-- COMMENTS --
+Line 9: ``new \C()`` of type ``object<C>`` is not a sub-type of ``object<A>``.

@@ -1,0 +1,19 @@
+<?php
+
+class A
+{
+    public function __toString() { return ''; }
+}
+
+class B { }
+
+/**
+ * @param string $x
+ */
+function foo($x) { }
+
+foo(new A());
+foo(new B());
+
+-- COMMENTS --
+Line 16: ``new \B()`` of type ``object<B>`` is not a sub-type of ``string``.

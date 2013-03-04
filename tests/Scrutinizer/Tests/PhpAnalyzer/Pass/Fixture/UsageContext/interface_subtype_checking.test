@@ -1,0 +1,22 @@
+<?php
+
+interface I { }
+class C implements I { }
+class D { }
+
+class Config
+{
+    private $iCollection = array();
+    
+    public function addI(I $i)
+    {
+        $this->iCollection[] = $i;
+    }
+}
+
+$config = new Config();
+$config->addI(new C()); // this is fine.
+$config->addI(new D());
+
+-- COMMENTS --
+Line 19: ``new \D()`` of type ``object<D>`` is not a sub-type of ``object<I>``.

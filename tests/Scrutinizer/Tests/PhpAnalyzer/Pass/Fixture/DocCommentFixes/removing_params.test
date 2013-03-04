@@ -1,0 +1,46 @@
+-- BEFORE --
+<?php
+
+
+class Foo
+{
+    /**
+     * This is the description of this nice method.
+     *
+     * @param boolean $d
+     * @param string $a
+     * @param string $b
+     * @param string $c This is a nice parameter, which we want to remove, and which has a
+     *                  description that spawns multiple lines. So,
+     *                  we have to make sure to get all of them.
+     *
+     * @return void
+     */
+    public function foo($a, $b)
+    {
+    }
+}
+
+-- AFTER --
+<?php
+
+
+class Foo
+{
+    /**
+     * This is the description of this nice method.
+     *
+     * @param string $a
+     * @param string $b
+     *
+     * @return void
+     */
+    public function foo($a, $b)
+    {
+    }
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

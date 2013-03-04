@@ -1,0 +1,82 @@
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Validator\Constraints;
+
+use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Validator\ConstraintValidator;
+use Symfony\Component\Validator\Exception\UnexpectedTypeException;
+
+/**
+ * @api
+ */
+class DateValidator extends ConstraintValidator
+{
+    const PATTERN = '/^(\d{4})-(\d{2})-(\d{2})$/';
+
+    /**
+     * Checks if the passed value is valid.
+     *
+     * @param mixed $value The value that should be validated
+     * @param Constraint $constraint The constraint for the validation
+     *
+     * @return Boolean Whether or not the value is valid
+     *
+     * @api
+     */
+    public function isValid($value, Constraint $constraint)
+    {
+        if (null === $value || '' === $value) {
+            return true;
+        }
+
+        if ($value instanceof \DateTime) {
+            return true;
+        }
+
+        if (!is_scalar($value) && !(is_object($value) && method_exists($value, '__toString'))) {
+            throw new UnexpectedTypeException($value, 'string');
+        }
+
+        $value = (string) $value;
+
+        if (!preg_match(static::PATTERN, $value, $matches || !checkdate($matches[2], $matches[3], $matches[1]))) {
+            $this->setMessage($constraint->message, array('{{ value }}' => $value));
+
+            return false;
+        }
+
+        return true;
+    }
+}
+
+-- CONFIG --
+return array(
+    'verify_php_doc_comments' => array(
+        'enabled' => true,
+        'suggest_more_specific_types' => true,
+        'ask_for_return_if_not_inferrable' => true,
+        'ask_for_param_type_annotation' => true,
+    ),
+    'suspicious_code' => array(
+        'overriding_parameter' => true,
+    ),
+);
+
+-- FILENAME --
+src/Symfony/Component/Validator/Constraints/DateValidator.php
+
+-- COMMENTS --
+Line 28: Please define a more specific type for parameter ``$value``; consider using a union like ``null|Object``, or ``string|array``.
+Line 41: The class "DateTime" does not exist. Did you forget a USE statement, or did you not list all dependencies?
+Line 49: Consider using a different name than the parameter ``$value``. This often makes code more readable.
+Line 51: ``$matches || !checkdate($matches[2], $matches[3], $matches[1])`` cannot be passed to ``preg_match()`` as the parameter ``$matches`` expects a reference.
+Line 51: The variable ``$matches`` does not exist. Did you forget to declare it?

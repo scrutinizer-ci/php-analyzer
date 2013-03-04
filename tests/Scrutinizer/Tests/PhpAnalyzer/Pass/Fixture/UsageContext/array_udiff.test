@@ -1,0 +1,12 @@
+<?php
+
+function array_udiff() { }
+
+array_udiff();
+$e = true;
+array_udiff($a, $b, $c, $d, $e);
+array_udiff($a, $b, $c, $d);
+
+-- COMMENTS --
+Line 5: The call to ``array_udiff()`` misses some required arguments starting with ``$array1``.
+Line 7: ``$e`` of type ``boolean`` is not a sub-type of ``callable``.

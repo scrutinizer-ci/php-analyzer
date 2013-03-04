@@ -1,0 +1,24 @@
+<?php
+
+function() {
+    $a = 'foo';
+    require 'foo.php';
+    $b = 'bar';
+};
+
+function() {
+    $a = 'foo';
+    include 'foo.php';
+    $b = 'bar';
+};
+
+function() {
+    $a = 'foo';
+    require_once 'foo.php';
+    include_once 'foo.php';
+};
+
+-- COMMENTS --
+Line 6: The assignment to ``$b`` is dead and can be removed.
+Line 12: The assignment to ``$b`` is dead and can be removed.
+Line 16: The assignment to ``$a`` is dead and can be removed.

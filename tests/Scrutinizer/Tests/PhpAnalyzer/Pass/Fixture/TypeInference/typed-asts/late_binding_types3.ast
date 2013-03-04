@@ -1,0 +1,189 @@
+"JMS\\PhpManipulator\\PhpParser\\BlockNode":
+    line: -1
+    type: undefined
+    children:
+        0:
+            "PHPParser_Node_Stmt_Class":
+                line: 3
+                type: undefined
+                children:
+                    "stmts":
+                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                            line: 3
+                            type: undefined
+                            children:
+                                0:
+                                    "PHPParser_Node_Stmt_ClassMethod":
+                                        line: 5
+                                        type: undefined
+                                        children:
+                                            "stmts":
+                                                "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                    line: 5
+                                                    type: undefined
+                                                    children:
+                                                        0:
+                                                            "PHPParser_Node_Stmt_If":
+                                                                line: 7
+                                                                type: undefined
+                                                                children:
+                                                                    "stmts":
+                                                                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                                            line: 7
+                                                                            type: undefined
+                                                                            children:
+                                                                                0:
+                                                                                    "PHPParser_Node_Stmt_Return":
+                                                                                        line: 8
+                                                                                        type: "null"
+                                                                                        children:
+                                                                                            "expr":
+                                                                                                "PHPParser_Node_Expr_ConstFetch":
+                                                                                                    line: 8
+                                                                                                    type: "null"
+                                                                                                    children:
+                                                                                                        "name":
+                                                                                                            "PHPParser_Node_Name":
+                                                                                                                line: 8
+                                                                                                                type: undefined
+                                                                    "cond":
+                                                                        "PHPParser_Node_Expr_Variable":
+                                                                            line: 7
+                                                                            type: undefined
+                                                        1:
+                                                            "PHPParser_Node_Stmt_Return":
+                                                                line: 11
+                                                                type: "this<A>"
+                                                                children:
+                                                                    "expr":
+                                                                        "PHPParser_Node_Expr_Variable":
+                                                                            line: 11
+                                                                            type: "this<A>"
+                    "namespacedName":
+                        "PHPParser_Node_Name":
+                            line: 3
+                            type: undefined
+        1:
+            "PHPParser_Node_Stmt_Class":
+                line: 15
+                type: undefined
+                children:
+                    "extends":
+                        "PHPParser_Node_Name_FullyQualified":
+                            line: 15
+                            type: "object<A>"
+                    "stmts":
+                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                            line: 15
+                            type: undefined
+                            children:
+                                0:
+                                    "PHPParser_Node_Stmt_ClassMethod":
+                                        line: 17
+                                        type: undefined
+                                        children:
+                                            "stmts":
+                                                "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                    line: 17
+                                                    type: undefined
+                                                    children:
+                                                        0:
+                                                            "PHPParser_Node_Stmt_If":
+                                                                line: 19
+                                                                type: undefined
+                                                                children:
+                                                                    "stmts":
+                                                                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                                            line: 19
+                                                                            type: undefined
+                                                                            children:
+                                                                                0:
+                                                                                    "PHPParser_Node_Expr_Assign":
+                                                                                        line: 20
+                                                                                        type: "object<B>"
+                                                                                        children:
+                                                                                            "var":
+                                                                                                "PHPParser_Node_Expr_Variable":
+                                                                                                    line: 20
+                                                                                                    type: "object<B>"
+                                                                                            "expr":
+                                                                                                "PHPParser_Node_Expr_New":
+                                                                                                    line: 20
+                                                                                                    type: "object<B>"
+                                                                                                    children:
+                                                                                                        "class":
+                                                                                                            "PHPParser_Node_Name_FullyQualified":
+                                                                                                                line: 20
+                                                                                                                type: "object<B>"
+                                                                    "cond":
+                                                                        "PHPParser_Node_Expr_Identical":
+                                                                            line: 19
+                                                                            type: "boolean"
+                                                                            children:
+                                                                                "left":
+                                                                                    "PHPParser_Node_Expr_ConstFetch":
+                                                                                        line: 19
+                                                                                        type: "null"
+                                                                                        children:
+                                                                                            "name":
+                                                                                                "PHPParser_Node_Name":
+                                                                                                    line: 19
+                                                                                                    type: undefined
+                                                                                "right":
+                                                                                    "PHPParser_Node_Expr_Assign":
+                                                                                        line: 19
+                                                                                        type: "null|this<B>"
+                                                                                        children:
+                                                                                            "var":
+                                                                                                "PHPParser_Node_Expr_Variable":
+                                                                                                    line: 19
+                                                                                                    type: "null|this<B>"
+                                                                                            "expr":
+                                                                                                "PHPParser_Node_Expr_StaticCall":
+                                                                                                    line: 19
+                                                                                                    type: "null|this<B>"
+                                                                                                    children:
+                                                                                                        "class":
+                                                                                                            "PHPParser_Node_Name":
+                                                                                                                line: 19
+                                                                                                                type: "object<A>"
+                                                        1:
+                                                            "PHPParser_Node_Stmt_Return":
+                                                                line: 23
+                                                                type: "object<B>"
+                                                                children:
+                                                                    "expr":
+                                                                        "PHPParser_Node_Expr_Variable":
+                                                                            line: 23
+                                                                            type: "object<B>"
+                    "namespacedName":
+                        "PHPParser_Node_Name":
+                            line: 15
+                            type: undefined
+        2:
+            "PHPParser_Node_Expr_Assign":
+                line: 27
+                type: "object<B>"
+                children:
+                    "var":
+                        "PHPParser_Node_Expr_Variable":
+                            line: 27
+                            type: "object<B>"
+                    "expr":
+                        "PHPParser_Node_Expr_New":
+                            line: 27
+                            type: "object<B>"
+                            children:
+                                "class":
+                                    "PHPParser_Node_Name_FullyQualified":
+                                        line: 27
+                                        type: "object<B>"
+        3:
+            "PHPParser_Node_Expr_MethodCall":
+                line: 28
+                type: "object<B>"
+                children:
+                    "var":
+                        "PHPParser_Node_Expr_Variable":
+                            line: 28
+                            type: "object<B>"

@@ -1,0 +1,22 @@
+<?php
+
+class Foo
+{
+    private $exclusionStrategy;
+    private $someOtherProperty;
+    private $bar;
+    
+    public function testTypoInPropertyName()
+    {
+        $this->exclsionStrategy;
+    }
+    
+    public function testNonExistentProperty()
+    {
+        $this->foo; 
+    }
+}
+
+-- COMMENTS --
+Line 11: The property "exclsionStrategy" does not exist. Did you mean "exclusionStrategy"?
+Line 16: The property "foo" does not exist. Did you maybe forget to declare it?

@@ -1,0 +1,14 @@
+<?php
+
+interface Traversable { }
+
+/**
+ * @param integer $b
+ */
+function foo(Traversable $a, $b) {
+    foreach ($a as $x) { } // no comment here
+    foreach ($b as $x) { }
+}
+
+-- COMMENTS --
+Line 10: The expression ``$b`` of type ``integer`` is not traversable.

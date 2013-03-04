@@ -1,0 +1,36 @@
+-- BEFORE --
+<?php
+
+namespace Scrutinizer\PhpAnalyzer\Config;
+
+use Symfony\Component\Config\Definition\Builder\NodeBuilder as DefaultNodeBuilder;
+use Foobar\Muuuhuuuuu;
+
+class NodeBuilder extends DefaultNodeBuilder
+{
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->nodeMapping['array'] = 'Scrutinizer\PhpAnalyzer\Config\ArrayNodeDefinition';
+    }
+}
+
+-- AFTER --
+<?php
+
+namespace Scrutinizer\PhpAnalyzer\Config;
+
+use Symfony\Component\Config\Definition\Builder\NodeBuilder as DefaultNodeBuilder;
+
+class NodeBuilder extends DefaultNodeBuilder
+{
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->nodeMapping['array'] = 'Scrutinizer\PhpAnalyzer\Config\ArrayNodeDefinition';
+    }
+}
+
+-- END --

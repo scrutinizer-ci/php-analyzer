@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * The type is inferred from this doc comment.
+ *
+ * That is, we do not expect any comments here.
+ *
+ * @return string
+ */
+function foo() {
+    return $bar;
+}
+
+-- CONFIG --
+return array(
+    'verify_php_doc_comments' => array(
+        'enabled' => true,
+        'suggest_more_specific_types' => true,
+        'ask_for_return_if_not_inferrable' => true,
+        'ask_for_param_type_annotation' => true,
+    ),
+);
+
+-- COMMENTS --

@@ -1,0 +1,8 @@
+<?php
+
+function returnsArray() { return array(); }
+
+foreach (returnsArray() as &$value) { }
+
+-- COMMENTS --
+Line 5: The expression ``returnsArray()`` cannot be used as a reference.

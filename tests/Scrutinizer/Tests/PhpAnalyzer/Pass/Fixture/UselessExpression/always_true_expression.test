@@ -1,0 +1,7 @@
+<?php
+
+$foo = true;
+if ('foo' !== $foo) { }
+
+-- COMMENTS --
+Line 4: ``'foo' !== $foo`` seems to always evaluate to true. Are you sure this is correct?

@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @param array $foo
+ */
+function foo(array $foo) { }
+
+/**
+ * @param mixed $bar
+ */
+function bar($bar) { }
+
+/**
+ * @return mixed
+ */
+function baz() {
+    return $foo;
+}
+
+/**
+ * @return array
+ */
+function moo() {
+    return array();
+}
+
+class Foo {
+    /**
+     * @param array $foo
+     */
+    function foo(array $foo) { }
+
+    /**
+     * @param mixed $bar
+     */
+    function bar($bar) { }
+
+    /**
+     * @return mixed
+     */
+    function baz() {
+        return $foo;
+    }
+
+    /**
+     * @return array
+     */
+    function moo() {
+        return array();
+    }
+}
+
+-- CONFIG --
+return array(
+    'verify_php_doc_comments' => array(
+        'enabled' => true,
+        'suggest_more_specific_types' => true,
+        'ask_for_return_if_not_inferrable' => true,
+        'ask_for_param_type_annotation' => true,
+    ),
+);
+
+-- COMMENTS --
+Line 4: Please define the element type for the array of parameter ``$foo`` (using ``array<SomeType>``, or ``SomeType[]``).
+Line 9: Please define a more specific type for parameter ``$bar``; consider using a union like ``null|Object``, or ``string|array``.
+Line 14: Please define a more specific return type; maybe using a union like ``null|Object``, or ``string|array``.
+Line 21: Please define the element type for the returned array (using ``array<SomeType>``, or ``SomeType[]``).
+Line 29: Please define the element type for the array of parameter ``$foo`` (using ``array<SomeType>``, or ``SomeType[]``).
+Line 34: Please define a more specific type for parameter ``$bar``; consider using a union like ``null|Object``, or ``string|array``.
+Line 39: Please define a more specific return type; maybe using a union like ``null|Object``, or ``string|array``.
+Line 46: Please define the element type for the returned array (using ``array<SomeType>``, or ``SomeType[]``).

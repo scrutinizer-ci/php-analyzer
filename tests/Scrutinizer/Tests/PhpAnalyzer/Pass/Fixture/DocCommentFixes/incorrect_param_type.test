@@ -1,0 +1,46 @@
+-- BEFORE --
+<?php
+
+/**
+ * @param string $foo
+ * @param string $hasCorrectAnnotation
+ */
+function foo($hasNoAnnotation, $hasCorrectAnnotation, $foo = true) { }
+
+class Foo {
+    /** @param string $foo */
+    public function foo($foo = false) { }
+
+    private function noDocComment($foo = 'foo') { }
+
+    /**
+     * @param string $foo
+     */
+    private function nullableParam($foo = null) { }
+}
+
+-- AFTER --
+<?php
+
+/**
+ * @param boolean|string $foo
+ * @param string $hasCorrectAnnotation
+ */
+function foo($hasNoAnnotation, $hasCorrectAnnotation, $foo = true) { }
+
+class Foo {
+    /** @param false|string $foo */
+    public function foo($foo = false) { }
+
+    private function noDocComment($foo = 'foo') { }
+
+    /**
+     * @param string|null $foo
+     */
+    private function nullableParam($foo = null) { }
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

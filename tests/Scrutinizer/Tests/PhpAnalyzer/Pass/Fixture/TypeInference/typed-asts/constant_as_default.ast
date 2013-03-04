@@ -1,0 +1,54 @@
+"PHPParser_Node_Stmt_Class":
+    type: undefined
+    children:
+        "stmts":
+            "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                type: undefined
+                children:
+                    0:
+                        "PHPParser_Node_Stmt_ClassConst":
+                            type: undefined
+                            children:
+                                "consts":
+                                    0:
+                                        "PHPParser_Node_Const":
+                                            type: undefined
+                                            children:
+                                                "value":
+                                                    "PHPParser_Node_Expr_ConstFetch":
+                                                        type: "false"
+                                                        children:
+                                                            "name":
+                                                                "PHPParser_Node_Name":
+                                                                    type: undefined
+                    1:
+                        "PHPParser_Node_Stmt_ClassMethod":
+                            type: undefined
+                            children:
+                                "params":
+                                    0:
+                                        "PHPParser_Node_Param":
+                                            type: "false"
+                                            children:
+                                                "default":
+                                                    "PHPParser_Node_Expr_ClassConstFetch":
+                                                        type: "false"
+                                                        children:
+                                                            "class":
+                                                                "PHPParser_Node_Name":
+                                                                    type: undefined
+                                "stmts":
+                                    "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                        type: undefined
+                                        children:
+                                            0:
+                                                "PHPParser_Node_Stmt_Echo":
+                                                    type: undefined
+                                                    children:
+                                                        "exprs":
+                                                            0:
+                                                                "PHPParser_Node_Expr_Variable":
+                                                                    type: "false"
+        "namespacedName":
+            "PHPParser_Node_Name":
+                type: undefined

@@ -1,0 +1,24 @@
+digraph G {
+    B1 [shape=box,label="implicit return",style=filled]
+    B2 [shape=box,label="Block (global)",style=filled]
+    B2 -> B3
+    B3 [shape=box,label="Label D"]
+    B3 -> B4
+    B4 [shape=box,label="Assign (L3)"]
+    B4 -> B5
+    B5 [shape=box,label="PHPParser_Node_Stmt_TryCatch"]
+    B5 -> B6
+    B7 [shape=box,label="PHPParser_Node_Expr_FuncCall"]
+    B7 -> B8
+    B7 -> B9 [label="exception"]
+    B8 [shape=box,label="Label U"]
+    B8 -> B10
+    B9 [shape=box,label="catch Exception"]
+    B9 -> B11 [label="true"]
+    B6 [shape=box,label="Block of PHPParser_Node_Stmt_TryCatch"]
+    B6 -> B7
+    B11 [shape=box,label="Block of catch Exception"]
+    B11 -> B8
+    B10 [shape=box,label="$x"]
+    B10 -> B1
+}

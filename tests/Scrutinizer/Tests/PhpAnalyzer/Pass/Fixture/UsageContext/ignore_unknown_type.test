@@ -1,0 +1,8 @@
+/**
+ * @jms-builtin
+ * @return mixed
+ */
+function returnsUnknown() { }
+function test(array $foo) { }
+
+test(returnsUnknown());

@@ -1,0 +1,60 @@
+-- BEFORE --
+<?php
+
+function foo($foo) { }
+
+class Foo
+{
+    public final static function baz($foo)
+    {
+    }
+
+    public function bar($bar, $baz = null)
+    {
+    }
+}
+
+function bar() {
+    foo('foo');
+    $foo = new Foo();
+    $foo->baz(true);
+    $foo->bar(false, 'foo');
+}
+
+-- AFTER --
+<?php
+
+/**
+ * @param string $foo
+ */
+function foo($foo) { }
+
+class Foo
+{
+    /**
+     * @param boolean $foo
+     */
+    public final static function baz($foo)
+    {
+    }
+
+    /**
+     * @param boolean $bar
+     * @param string|null $baz
+     */
+    public function bar($bar, $baz = null)
+    {
+    }
+}
+
+function bar() {
+    foo('foo');
+    $foo = new Foo();
+    $foo->baz(true);
+    $foo->bar(false, 'foo');
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

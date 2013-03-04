@@ -1,0 +1,6 @@
+<?php
+
+foreach (1 as $b) { }
+
+-- COMMENTS --
+Line 3: The expression ``1`` of type ``integer`` is not traversable.

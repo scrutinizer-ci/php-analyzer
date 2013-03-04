@@ -1,0 +1,6 @@
+<?php
+
+function assignToRef(&$ref) {
+    $ref = 'a';
+}
+

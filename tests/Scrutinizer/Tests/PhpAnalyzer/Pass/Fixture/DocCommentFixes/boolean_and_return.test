@@ -1,0 +1,32 @@
+-- BEFORE --
+<?php
+
+/**
+ * @param string $name
+ *
+ * @return Boolean
+ */
+function($name) {
+    return $name && 
+        0 === strpos($name, 'foo') && 
+        preg_match('asdf', $foo);
+}
+
+-- AFTER --
+<?php
+
+/**
+ * @param string $name
+ *
+ * @return Boolean
+ */
+function($name) {
+    return $name && 
+        0 === strpos($name, 'foo') && 
+        preg_match('asdf', $foo);
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

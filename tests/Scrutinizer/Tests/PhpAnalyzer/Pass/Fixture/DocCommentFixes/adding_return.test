@@ -1,0 +1,47 @@
+-- BEFORE --
+<?php
+
+function f($foo) {
+    return $foo;
+}
+
+/**
+ * @param string $a
+ */
+function s($a) { }
+
+function bar($foo) {
+    if (0 === s(f($foo))) {
+        return false;
+    }
+
+    return true;
+}
+
+-- AFTER --
+<?php
+
+/**
+ * @return string
+ */
+function f($foo) {
+    return $foo;
+}
+
+/**
+ * @param string $a
+ */
+function s($a) { }
+
+function bar($foo) {
+    if (0 === s(f($foo))) {
+        return false;
+    }
+
+    return true;
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

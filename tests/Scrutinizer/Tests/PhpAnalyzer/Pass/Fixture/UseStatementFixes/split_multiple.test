@@ -1,0 +1,23 @@
+-- BEFORE --
+<?php
+
+use A;
+use B as Muhaaa,
+    C as Buhuu,
+    A1;
+use BB;
+
+-- AFTER --
+<?php
+
+use A;
+use A1;
+use B as Muhaaa;
+use BB;
+use C as Buhuu;
+
+-- CONFIG --
+return array('use_statement_fixes' => array(
+    'remove_unused' => false,
+    'order_alphabetically' => true,
+));

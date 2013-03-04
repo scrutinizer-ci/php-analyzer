@@ -1,0 +1,9 @@
+<?php
+
+function foo() {
+    $a = array();
+    $a[$b] = 'foo';
+}
+
+-- COMMENTS --
+Line 5: The variable ``$b`` does not exist. Did you forget to declare it?

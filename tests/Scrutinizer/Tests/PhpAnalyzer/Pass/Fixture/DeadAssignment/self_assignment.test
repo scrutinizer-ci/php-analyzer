@@ -1,0 +1,7 @@
+<?php
+
+$a = 'foo';
+$a = $a;
+
+-- COMMENTS --
+Line 4: Why assign ``$a`` to itself?

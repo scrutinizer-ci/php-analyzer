@@ -1,0 +1,9 @@
+digraph G {
+    B1 [shape=box,label="implicit return",style=filled]
+    B2 [shape=box,label="Block (global)",style=filled]
+    B2 -> B3
+    B3 [shape=box,label="Assign (L3)"]
+    B3 -> B4
+    B4 [shape=box,label="echo 'foo';"]
+    B4 -> B1
+}

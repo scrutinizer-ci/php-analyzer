@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @property string $b
+ */
+class A {
+    public function __get() { }
+    public function __set() { }
+}
+
+$x = new A();
+echo $x->a;
+echo $x->b;
+
+-- COMMENTS --
+Line 12: The property ``a`` does not exist. Since you implemented ``__get``, maybe consider adding a [@property annotation](http://www.phpdoc.org/docs/latest/for-users/tags/property.html).

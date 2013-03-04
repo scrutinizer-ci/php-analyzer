@@ -1,0 +1,14 @@
+digraph G {
+    B1 [shape=box,label="implicit return",style=filled]
+    B2 [shape=box,label="Block (global)",style=filled]
+    B2 -> B3
+    B3 [shape=box,label="Assign (L3)"]
+    B3 -> B4
+    B4 [shape=box,label="if ($x)"]
+    B4 -> B5 [label="true"]
+    B4 -> B1 [label="false"]
+    B6 [shape=box,label="Assign (L3)"]
+    B6 -> B1
+    B5 [shape=box,label="Block of if ($x)"]
+    B5 -> B6
+}

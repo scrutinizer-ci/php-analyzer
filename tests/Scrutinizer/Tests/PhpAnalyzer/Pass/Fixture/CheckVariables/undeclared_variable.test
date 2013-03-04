@@ -1,0 +1,6 @@
+<?php
+
+echo $foo;
+
+-- COMMENTS --
+Line 3: The variable ``$foo`` does not exist. Did you forget to declare it?

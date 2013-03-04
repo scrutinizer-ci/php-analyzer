@@ -1,0 +1,12 @@
+<?php
+
+function() {
+    $a = 'foo';
+    $arr = get_defined_vars();
+    $b = 'bar';
+
+    return $arr;
+};
+
+-- COMMENTS --
+Line 6: The assignment to ``$b`` is dead and can be removed.

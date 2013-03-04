@@ -1,0 +1,31 @@
+<?php
+
+namespace Foo;
+
+class Foo { }
+
+
+namespace Bar;
+
+use Foo\Foo as FooBar;
+
+class Bar
+{
+    /**
+     * @param Foo $foo
+     */
+    public function foo(FooBar $foo) { }
+}
+
+-- CONFIG --
+return array(
+    'verify_php_doc_comments' => array(
+        'enabled' => true,
+        'suggest_more_specific_types' => true,
+        'ask_for_return_if_not_inferrable' => true,
+        'ask_for_param_type_annotation' => true,
+    ),
+);
+
+-- COMMENTS --
+Line 15: Should the type for parameter ``$foo`` not be ``FooBar``?

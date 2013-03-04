@@ -1,0 +1,21 @@
+<?php
+
+$foo = 0 === $a & 4; // Not Ok
+$foo = (0 === $a) & 4; // Ok
+$foo = 0 === ($a & 4); // Ok
+
+0 === $a | 4; // Not Ok
+0 === ($a | 4); // Ok
+(0 === $a) | 4; // Ok
+
+0 === $a ^ 4; // Not Ok
+0 === ($a ^ 4); // Ok
+(0 === $a) ^ 4; // Ok
+
+0 === foo() & 4; // Not Ok
+
+-- COMMENTS --
+Line 3: Consider adding parentheses for clarity. Current Interpretation: ``(0 === $a) & 4``, Probably Intended Meaning: ``0 === ($a & 4)``
+Line 7: Consider adding parentheses for clarity. Current Interpretation: ``(0 === $a) | 4``, Probably Intended Meaning: ``0 === ($a | 4)``
+Line 11: Consider adding parentheses for clarity. Current Interpretation: ``(0 === $a) ^ 4``, Probably Intended Meaning: ``0 === ($a ^ 4)``
+Line 15: Consider adding parentheses for clarity. Current Interpretation: ``(0 === foo()) & 4``, Probably Intended Meaning: ``0 === (foo() & 4)``

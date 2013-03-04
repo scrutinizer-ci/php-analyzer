@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @jms-builtin
+ * @param callable $callable
+ */
+function expectsCallable($callable) { }
+
+class Foo {
+    public function __invoke() { }
+}
+
+class Bar { }
+
+expectsCallable(function() { });
+expectsCallable(array());
+expectsCallable('foo');
+expectsCallable(new Foo());
+expectsCallable(new Bar());
+
+-- COMMENTS --
+Line 19: ``new \Bar()`` of type ``object<Bar>`` is not a sub-type of ``callable``.

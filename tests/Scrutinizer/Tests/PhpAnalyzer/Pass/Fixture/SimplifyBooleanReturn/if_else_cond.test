@@ -1,0 +1,15 @@
+<?php
+
+function foo() {
+    if (!$foo) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+-- CONFIG --
+return array('simplify_boolean_return' => true);
+
+-- COMMENTS --
+Line 4: The ``if``-``else`` statement can be simplified to ``return !$foo;``.

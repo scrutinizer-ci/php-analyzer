@@ -1,0 +1,50 @@
+<?php
+
+interface SomeInterface
+{
+    function this_does_not_follow_the_convention();
+}
+
+abstract class AbstractClass implements SomeInterface
+{
+    abstract function this_does_not_follow_the_convention_either();
+}
+
+class ConcreteClass extends AbstractClass
+{
+    // This should receive no warning as the root cause is the name
+    // of the interfaced method which is just being implemented here.
+    public function this_does_not_follow_the_convention()
+    {
+    }
+    
+    // same here
+    public function this_does_not_follow_the_convention_either()
+    {
+    }
+}
+
+class ConcreteSubClass extends ConcreteClass 
+{
+    // This should receive no warning as the root cause is the name
+    // of the interfaced method which is just being implemented here.
+    public function this_does_not_follow_the_convention()
+    {
+    }
+
+    // same here
+    public function this_does_not_follow_the_convention_either()
+    {
+    }
+    
+    public function some_other_method() { }
+}
+
+-- CONFIG --
+return array('checkstyle' => array('enabled' => true));
+
+-- COMMENTS --
+Line 5: ``function this_does_not_follow_the_convention()`` does not seem to conform to the naming convention (``^(?:[a-z]|__)[a-zA-Z0-9]*$``).
+Line 10: ``function this_does_not_follow_the_convention_either()`` does not seem to conform to the naming convention (``^(?:[a-z]|__)[a-zA-Z0-9]*$``).
+Line 40: ``function some_other_method()`` does not seem to conform to the naming convention (``^(?:[a-z]|__)[a-zA-Z0-9]*$``).
+

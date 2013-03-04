@@ -1,0 +1,26 @@
+<?php
+
+class Foo
+{
+    public function getFoo()
+    {
+        return true;
+    }
+
+    /** @return boolean */
+    abstract protected function getBar();
+}
+
+interface BarInterface
+{
+    /** @return boolean */
+    function getFoo();
+}
+
+-- CONFIG --
+return array('checkstyle' => array('enabled' => true));
+
+-- COMMENTS --
+Line 5: ``function getFoo()`` does not seem to conform to the naming convention (``^(?:is|has|should|may|supports)``).
+Line 11: ``function getBar()`` does not seem to conform to the naming convention (``^(?:is|has|should|may|supports)``).
+Line 17: ``function getFoo()`` does not seem to conform to the naming convention (``^(?:is|has|should|may|supports)``).

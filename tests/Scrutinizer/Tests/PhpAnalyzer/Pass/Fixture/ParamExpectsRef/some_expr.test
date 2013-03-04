@@ -1,0 +1,7 @@
+<?php
+
+function test(&$foo) { }
+test($a || $b);
+
+-- COMMENTS --
+Line 4: ``$a || $b`` cannot be passed to ``test()`` as the parameter ``$foo`` expects a reference.

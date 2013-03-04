@@ -1,0 +1,15 @@
+<?php
+
+if ($foo) {
+    return 'foo';
+} else {
+    $foo = 'bar';
+
+    // This comment is permissible.
+    return 'bar';
+}
+// This should have a blank line before.
+return 'bar';
+
+-- COMMENTS --
+Line 12: Please add a blank line before this return statement.

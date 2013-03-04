@@ -1,0 +1,7 @@
+<?php
+
+// The following line contains trailing whitespace.
+echo 'foo';    
+
+-- COMMENTS -- 
+Line 4: Please do not add trailing whitespace.

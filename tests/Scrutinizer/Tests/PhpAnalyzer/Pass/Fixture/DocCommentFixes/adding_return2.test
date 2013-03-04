@@ -1,0 +1,41 @@
+-- BEFORE --
+<?php
+
+function f($a) {
+    return $a;
+}
+
+/**
+ * @param string $s
+ */
+function s($s) { }
+
+function c($a) {
+    $b = f($a);
+    s($b); // s() is expected a string, so we infer that f() should return a string
+}
+
+-- AFTER --
+<?php
+
+/**
+ * @return string
+ */
+function f($a) {
+    return $a;
+}
+
+/**
+ * @param string $s
+ */
+function s($s) { }
+
+function c($a) {
+    $b = f($a);
+    s($b); // s() is expected a string, so we infer that f() should return a string
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

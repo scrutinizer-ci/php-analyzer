@@ -1,0 +1,19 @@
+<?php
+
+class B extends A {
+    private $a;
+
+    private function a() { }
+    private function b() { }
+}
+
+class A {
+    private $a;
+    private $b;
+
+    private function a() { }
+}
+
+-- COMMENTS --
+Line 4: Consider using a different property name as you override a private property of the parent class.
+Line 6: Consider using a different method name as you override a private method of the parent class.

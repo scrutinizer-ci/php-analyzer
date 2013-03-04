@@ -1,0 +1,27 @@
+<?php
+
+class Foo
+{
+    private $bar;
+
+    public function __construct(Bar $bar = null)
+    {
+        $this->bar = $bar ?: new Bar();
+    }
+
+    public function foo()
+    {
+        return $this->bar->getBar()->getResult();
+    }
+}
+
+class Bar
+{
+    public function getBar()
+    {
+        return 'foo';
+    }
+}
+
+-- COMMENTS --
+Line 14: The method ``getResult`` cannot be called on ``$this->bar->getBar()`` (of type ``string``).

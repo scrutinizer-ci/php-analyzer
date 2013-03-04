@@ -1,0 +1,29 @@
+<?php
+
+class A {
+    protected function setUp()
+    {
+    }
+    
+    private function foo() { }
+}
+
+class B extends A {
+    protected function setUp()
+    {
+        // No comments
+        $this->setUp();
+        parent::setUp();
+        A::setUp(); 
+        
+        // Comments
+        $this->foo();
+        parent::foo();
+        A::foo();
+    }
+}
+
+-- COMMENTS --
+Line 20: The method "foo()" cannot be called from this context as it is declared private in class "A"?
+Line 21: The method "foo()" cannot be called from this context as it is declared private in class "A"?
+Line 22: The method "foo()" cannot be called from this context as it is declared private in class "A"?

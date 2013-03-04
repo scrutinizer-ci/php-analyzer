@@ -1,0 +1,6 @@
+<?php
+
+if (count($foo)) { }
+
+-- COMMENTS --
+Line 3: If $foo is just an array, you can safely remove the function call, e.g. if ($foo) { }.

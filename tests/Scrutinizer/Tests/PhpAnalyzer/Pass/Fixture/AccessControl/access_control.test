@@ -1,0 +1,48 @@
+<?php
+
+class Foo
+{
+    private $foo;
+    protected $bar;
+    public $baz;
+    
+    public function baz() { }
+    protected function bar() { }
+    private function foo() { }
+}
+
+class Bar extends Foo
+{
+    function testAccess() 
+    {
+        $this->foo();
+        $this->bar();
+        $this->baz();
+        $this->foo;
+        $this->bar;
+        $this->baz;
+    }
+}
+
+class Baz
+{
+    function testAccess()
+    {
+        $foo = new Foo();
+        
+        $foo->foo;
+        $foo->bar;
+        $foo->baz;
+        $foo->foo();
+        $foo->bar();
+        $foo->baz();    
+    }
+}
+
+-- COMMENTS --
+Line 18: The method "foo()" cannot be called from this context as it is declared private in class "Foo"?
+Line 21: The property "foo" cannot be accessed from this context as it is declared private in class "Foo"?
+Line 33: The property "foo" cannot be accessed from this context as it is declared private in class "Foo"?
+Line 34: The property "bar" cannot be accessed from this context as it is declared protected in class "Foo"?
+Line 36: The method "foo()" cannot be called from this context as it is declared private in class "Foo"?
+Line 37: The method "bar()" cannot be called from this context as it is declared protected in class "Foo"?

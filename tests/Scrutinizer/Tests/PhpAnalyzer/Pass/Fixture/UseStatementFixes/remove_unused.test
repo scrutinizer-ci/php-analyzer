@@ -1,0 +1,40 @@
+-- BEFORE --
+<?php
+
+namespace Foo;
+
+use Bar\Baz;
+use Bar\Moo;
+use Bar\Bam;
+
+/**
+ * @Moo\Foo()
+ */
+class A extends Bar\Bam
+{
+}
+
+namespace Foo\Bar;
+
+class Bam { }
+
+-- AFTER --
+<?php
+
+namespace Foo;
+
+use Bar\Moo;
+use Bar\Bam;
+
+/**
+ * @Moo\Foo()
+ */
+class A extends Bar\Bam
+{
+}
+
+namespace Foo\Bar;
+
+class Bam { }
+
+-- END --

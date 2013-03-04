@@ -1,0 +1,6 @@
+<?php
+
+function test($foo, $foo) { }
+
+-- COMMENTS --
+Line 3: You cannot use the parameter ``$foo`` multiple times.

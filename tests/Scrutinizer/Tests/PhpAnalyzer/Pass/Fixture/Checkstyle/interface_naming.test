@@ -1,0 +1,9 @@
+<?php
+
+interface Foo { }
+
+-- CONFIG --
+return array('checkstyle' => array('enabled' => true));
+
+-- COMMENTS --
+Line 3: ``Foo`` does not seem to conform to the naming convention (``^[A-Z][a-zA-Z0-9]*Interface$``).

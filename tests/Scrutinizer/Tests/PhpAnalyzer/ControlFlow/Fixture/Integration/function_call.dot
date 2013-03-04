@@ -1,0 +1,14 @@
+digraph G {
+    B1 [shape=box,label="implicit return",style=filled]
+    B2 [shape=box,label="PHPParser_Node_Stmt_TryCatch",style=filled]
+    B2 -> B3
+    B4 [shape=box,label="Assign (L4)"]
+    B4 -> B1
+    B4 -> B5 [label="exception"]
+    B5 [shape=box,label="catch Exception"]
+    B5 -> B6 [label="true"]
+    B3 [shape=box,label="Block of PHPParser_Node_Stmt_TryCatch"]
+    B3 -> B4
+    B6 [shape=box,label="Block of catch Exception"]
+    B6 -> B1
+}

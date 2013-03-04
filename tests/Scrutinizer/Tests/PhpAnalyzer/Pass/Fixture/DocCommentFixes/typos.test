@@ -1,0 +1,23 @@
+-- BEFORE --
+<?php
+
+/**
+ * @param string $foo
+ * @param integer $a
+ * @param boolean $b
+ */
+function foo($foo, $a) {}
+
+-- AFTER --
+<?php
+
+/**
+ * @param string $foo
+ * @param integer $a
+ */
+function foo($foo, $a) {}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

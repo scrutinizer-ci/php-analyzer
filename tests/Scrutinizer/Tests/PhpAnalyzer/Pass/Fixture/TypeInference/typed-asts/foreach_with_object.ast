@@ -1,0 +1,32 @@
+"PHPParser_Node_Stmt_Foreach":
+    line: 3
+    type: undefined
+    children:
+        "stmts":
+            "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                line: 3
+                type: undefined
+                children:
+                    0:
+                        "PHPParser_Node_Stmt_Echo":
+                            line: 4
+                            type: undefined
+                            children:
+                                "exprs":
+                                    0:
+                                        "PHPParser_Node_Expr_Variable":
+                                            line: 4
+                                            type: "?"
+        "expr":
+            "PHPParser_Node_Expr_New":
+                line: 3
+                type: "object<GenericObject>"
+                children:
+                    "class":
+                        "PHPParser_Node_Name_FullyQualified":
+                            line: 3
+                            type: "object<GenericObject>"
+        "valueVar":
+            "PHPParser_Node_Expr_Variable":
+                line: 3
+                type: "?"

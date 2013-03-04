@@ -1,0 +1,8 @@
+<?php
+
+function preg_match($regex, $str, array &$matches = null) { }
+
+function test() {
+    preg_match('/foo/', 'bar', $matches);
+    var_dump($matches);
+}

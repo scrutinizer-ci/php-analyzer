@@ -1,0 +1,14 @@
+<?php
+
+$str = 'foo';
+
+if ('g' === $str[0]) { }
+
+if (strlen($str) === 0) {
+    return 'moo';
+}
+
+if ('f' === $str[0]) { }
+
+-- COMMENTS --
+Line 5: Are you sure that $str can never be an empty string? If not, better write it as ``'' !== $str && 'g' === $str[0]``.

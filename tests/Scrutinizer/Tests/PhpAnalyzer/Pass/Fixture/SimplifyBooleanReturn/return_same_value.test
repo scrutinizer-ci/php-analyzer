@@ -1,0 +1,24 @@
+<?php
+
+function foo() {
+    if ($foo) {
+        return true;
+    }
+    
+    return true;
+}
+
+function bar() {
+    if ($foo) {
+        return false;
+    } else {
+        return false;
+    }
+}
+
+-- CONFIG --
+return array('simplify_boolean_return' => true);
+
+-- COMMENTS --
+Line 4: This ``if`` statement and the following ``return`` statement are superfluous as you return always ``true``.
+Line 12: This ``if``-``else`` statement are superfluous as you return always ``false``.

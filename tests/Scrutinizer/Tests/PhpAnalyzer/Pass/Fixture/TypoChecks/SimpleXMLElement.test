@@ -1,0 +1,17 @@
+<?php
+
+class SimpleXMLElement { }
+class A { }
+
+$x = new SimpleXMLElement();
+echo $x->foo;
+$x->bar = 'bar';
+
+$x = new A();
+echo $x->foo;
+$x->bar = 'bar';
+
+-- COMMENTS --
+Line 8: The property "bar" does not exist.
+Line 11: The property "foo" does not exist.
+Line 12: The property "bar" does not exist.

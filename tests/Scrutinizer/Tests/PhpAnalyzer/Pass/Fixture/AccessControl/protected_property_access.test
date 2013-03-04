@@ -1,0 +1,36 @@
+<?php
+
+class A
+{
+    protected $a;
+    protected static $b;
+    private $c;
+    private static $d;
+}
+
+class B extends A 
+{
+    private function foo()
+    {
+        // no comments
+        $this->a; 
+        parent::$b;
+        static::$b;
+        self::$b;
+        A::$b;
+        
+        // comments
+        $this->c;
+        parent::$d;
+        static::$d;
+        self::$d;
+        A::$d;
+    }
+}
+
+-- COMMENTS --
+Line 23: The property "c" cannot be accessed from this context as it is declared private in class "A"?
+Line 24: The property "d" cannot be accessed from this context as it is declared private in class "A"?
+Line 25: The property "d" cannot be accessed from this context as it is declared private in class "A"?
+Line 26: The property "d" cannot be accessed from this context as it is declared private in class "A"?
+Line 27: The property "d" cannot be accessed from this context as it is declared private in class "A"?

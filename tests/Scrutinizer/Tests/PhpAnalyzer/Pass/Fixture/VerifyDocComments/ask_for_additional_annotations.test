@@ -1,0 +1,45 @@
+<?php
+
+function foo(array $foo) { }
+
+function bar($bar) { }
+
+function baz(Foo $foo) {
+    return $moo;
+}
+
+function moo() {
+    return array();
+}
+
+class Foo {
+    public function foo(array $foo) { }
+
+    public function bar($bar) { }
+
+    public function baz(Foo $foo) {
+        return $moo;
+    }
+
+    public function moo() {
+        return array();
+    }
+}
+
+-- CONFIG --
+return array(
+    'verify_php_doc_comments' => array(
+        'enabled' => true,
+        'suggest_more_specific_types' => true,
+        'ask_for_return_if_not_inferrable' => true,
+        'ask_for_param_type_annotation' => true,
+    ),
+);
+
+-- COMMENTS --
+Line 3: Please add a ``@param`` annotation for parameter ``$foo`` which defines the array type; using ``array<SomeType>``, or ``SomeType[]``.
+Line 5: Please add a ``@param`` annotation for parameter ``$bar`` which defines a more specific range of types; something like ``string|array``, or ``null|MyObject``.
+Line 7: Please add a ``@return`` annotation.
+Line 16: Please add a ``@param`` annotation for parameter ``$foo`` which defines the array type; using ``array<SomeType>``, or ``SomeType[]``.
+Line 18: Please add a ``@param`` annotation for parameter ``$bar`` which defines a more specific range of types; something like ``string|array``, or ``null|MyObject``.
+Line 20: Please add a ``@return`` annotation.

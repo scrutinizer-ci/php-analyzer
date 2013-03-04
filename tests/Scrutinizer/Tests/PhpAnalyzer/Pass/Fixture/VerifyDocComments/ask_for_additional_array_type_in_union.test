@@ -1,0 +1,21 @@
+<?php
+
+function foo(array $foo = null) { }
+
+class Foo {
+    function foo(array $foo = null) { }
+}
+
+-- CONFIG --
+return array(
+    'verify_php_doc_comments' => array(
+        'enabled' => true,
+        'suggest_more_specific_types' => true,
+        'ask_for_return_if_not_inferrable' => true,
+        'ask_for_param_type_annotation' => true,
+    ),
+);
+
+-- COMMENTS --
+Line 3: Please add a ``@param`` annotation for parameter ``$foo`` which defines the array type; using ``array<SomeType>``, or ``SomeType[]``.
+Line 6: Please add a ``@param`` annotation for parameter ``$foo`` which defines the array type; using ``array<SomeType>``, or ``SomeType[]``.

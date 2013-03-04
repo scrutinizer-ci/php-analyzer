@@ -1,0 +1,50 @@
+-- BEFORE --
+<?php
+
+/**
+ * @return boolean
+ */
+function foo() {
+    return 'foo';
+}
+
+class Foo {
+    /**
+     * @return boolean
+     */
+    public function foo() {
+        if ($foo) {
+            return true;
+        }
+
+        return 'bar';
+    }
+}
+
+-- AFTER --
+<?php
+
+/**
+ * @return string
+ */
+function foo() {
+    return 'foo';
+}
+
+class Foo {
+    /**
+     * @return boolean|string
+     */
+    public function foo() {
+        if ($foo) {
+            return true;
+        }
+
+        return 'bar';
+    }
+}
+
+-- CONFIG --
+return array('doc_comment_fixes' => true);
+
+-- END --

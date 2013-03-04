@@ -1,0 +1,148 @@
+"JMS\\PhpManipulator\\PhpParser\\BlockNode":
+    line: -1
+    type: undefined
+    children:
+        0:
+            "PHPParser_Node_Stmt_Class":
+                line: 3
+                type: undefined
+                children:
+                    "stmts":
+                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                            line: 3
+                            type: undefined
+                            children:
+                                0:
+                                    "PHPParser_Node_Stmt_ClassMethod":
+                                        line: 5
+                                        type: undefined
+                                        children:
+                                            "stmts":
+                                                "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                    line: 5
+                                                    type: undefined
+                                                    children:
+                                                        0:
+                                                            "PHPParser_Node_Stmt_Return":
+                                                                line: 7
+                                                                type: "this<A>"
+                                                                children:
+                                                                    "expr":
+                                                                        "PHPParser_Node_Expr_Variable":
+                                                                            line: 7
+                                                                            type: "this<A>"
+                    "namespacedName":
+                        "PHPParser_Node_Name":
+                            line: 3
+                            type: undefined
+        1:
+            "PHPParser_Node_Stmt_Class":
+                line: 11
+                type: undefined
+                children:
+                    "extends":
+                        "PHPParser_Node_Name_FullyQualified":
+                            line: 11
+                            type: "object<A>"
+                    "stmts":
+                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                            line: 11
+                            type: undefined
+                            children:
+                                0:
+                                    "PHPParser_Node_Stmt_ClassMethod":
+                                        line: 13
+                                        type: undefined
+                                        children:
+                                            "stmts":
+                                                "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                    line: 13
+                                                    type: undefined
+                                                    children:
+                                                        0:
+                                                            "PHPParser_Node_Stmt_Return":
+                                                                line: 15
+                                                                type: "this<B>"
+                                                                children:
+                                                                    "expr":
+                                                                        "PHPParser_Node_Expr_StaticCall":
+                                                                            line: 15
+                                                                            type: "this<B>"
+                                                                            children:
+                                                                                "class":
+                                                                                    "PHPParser_Node_Name":
+                                                                                        line: 15
+                                                                                        type: "object<A>"
+                    "namespacedName":
+                        "PHPParser_Node_Name":
+                            line: 11
+                            type: undefined
+        2:
+            "PHPParser_Node_Stmt_Class":
+                line: 19
+                type: undefined
+                children:
+                    "extends":
+                        "PHPParser_Node_Name_FullyQualified":
+                            line: 19
+                            type: "object<B>"
+                    "stmts":
+                        "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                            line: 19
+                            type: undefined
+                            children:
+                                0:
+                                    "PHPParser_Node_Stmt_ClassMethod":
+                                        line: 21
+                                        type: undefined
+                                        children:
+                                            "stmts":
+                                                "JMS\\PhpManipulator\\PhpParser\\BlockNode":
+                                                    line: 21
+                                                    type: undefined
+                                                    children:
+                                                        0:
+                                                            "PHPParser_Node_Stmt_Return":
+                                                                line: 23
+                                                                type: "this<C>"
+                                                                children:
+                                                                    "expr":
+                                                                        "PHPParser_Node_Expr_StaticCall":
+                                                                            line: 23
+                                                                            type: "this<C>"
+                                                                            children:
+                                                                                "class":
+                                                                                    "PHPParser_Node_Name_FullyQualified":
+                                                                                        line: 23
+                                                                                        type: "object<A>"
+                    "namespacedName":
+                        "PHPParser_Node_Name":
+                            line: 19
+                            type: undefined
+        3:
+            "PHPParser_Node_Expr_Assign":
+                line: 27
+                type: "object<C>"
+                children:
+                    "var":
+                        "PHPParser_Node_Expr_Variable":
+                            line: 27
+                            type: "object<C>"
+                    "expr":
+                        "PHPParser_Node_Expr_New":
+                            line: 27
+                            type: "object<C>"
+                            children:
+                                "class":
+                                    "PHPParser_Node_Name_FullyQualified":
+                                        line: 27
+                                        type: "object<C>"
+        4:
+            "PHPParser_Node_Expr_MethodCall":
+                line: 28
+                type: "object<C>"
+                children:
+                    "var":
+                        "PHPParser_Node_Expr_Variable":
+                            line: 28
+                            type: "object<C>"

@@ -1,0 +1,46 @@
+<?php
+
+namespace Doctrine\ORM\Persisters;
+
+use Doctrine\ORM\EntityManager,
+    Doctrine\ORM\PersistentCollection;
+
+/**
+ * Base class for all collection persisters.
+ *
+ * @since 2.0
+ * @author Roman Borschel <roman@code-factory.org>
+ */
+abstract class AbstractCollectionPersister
+{
+    /**
+     * Initializes a new instance of a class derived from AbstractCollectionPersister.
+     *
+     * @param \Doctrine\ORM\EntityManager $em
+     */
+    public function __construct(EntityManager $em)
+    {
+    }
+
+    /**
+     * Deletes the persistent state represented by the given collection.
+     *
+     * @param PersistentCollection $coll
+     */
+    public function delete(PersistentCollection $coll)
+    {
+    }
+}
+
+-- CONFIG --
+return array(
+    'verify_php_doc_comments' => array(
+        'enabled' => true,
+        'suggest_more_specific_types' => true,
+        'ask_for_return_if_not_inferrable' => true,
+        'ask_for_param_type_annotation' => true,
+    ),
+);
+
+-- COMMENTS --
+

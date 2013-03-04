@@ -1,0 +1,4 @@
+PHP Analyzer was created by Johannes M. Schmitt <schmittjoh@gmail.com>.
+
+It is part of the tool chain used on [scrutinizer-ci.com](https://scrutinizer-ci.com),
+a continuous inspection service for open source and private development projects.

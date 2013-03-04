@@ -1,0 +1,11 @@
+<?php
+
+class A { }
+
+$x = new A();
+isset($x->foo);
+echo $x->foo;
+echo $x->foo; // ignored
+
+-- COMMENTS --
+Line 7: The property "foo" does not exist.

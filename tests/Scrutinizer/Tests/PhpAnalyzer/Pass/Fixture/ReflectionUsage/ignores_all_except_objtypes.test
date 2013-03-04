@@ -1,0 +1,9 @@
+<?php
+
+function foo (Foo $foo) {
+    if ( ! $foo instanceof Foo) {
+        $foo->getName(); // $foo has NoType here
+    }
+}
+
+// No comments expected.

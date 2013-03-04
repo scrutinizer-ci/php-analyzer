@@ -1,0 +1,30 @@
+<?php
+
+class PHPUnit_Framework_TestCase {
+    /**
+     * @param string $a
+     * @param string $b
+     *
+     * @return boolean
+     */
+    public static function assertEquals($a, $b) { return rand(0, 1) ? true : false; }
+
+    /**
+     * @param string $x
+     */
+    public function getMock($x) { }
+}
+
+class MyTest extends PHPUnit_Framework_TestCase
+{
+    public function testFoo()
+    {
+        $this->assertEquals(array('foo'), array('bar'));
+        $this->assertEquals();
+        $this->getMock(true);
+    }
+}
+
+-- COMMENTS --
+Line 23: The call to ``assertEquals()`` misses some required arguments starting with ``$a``.
+Line 24: ``true`` of type ``boolean`` is not a sub-type of ``string``.

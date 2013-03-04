@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @param string $str
+ */
+function foo($str) { }
+
+/**
+ * @param mixed $x
+ * @param boolean $b
+ */
+function bar($x, $b) {
+    foo($x);
+    foo($b);
+}
+
+-- COMMENTS --
+Line 14: ``$b`` of type ``boolean`` is not a sub-type of ``string``.

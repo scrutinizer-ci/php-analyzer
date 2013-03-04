@@ -1,0 +1,42 @@
+<?php
+class Exception { }
+try {
+    foo();
+} catch (\Exception $ex) { }
+
+try {
+    foo(); // fooo
+} catch (\Exception $ex) { }
+
+try {
+    foo();
+} catch (\Exception $ex) { /* foo */ }
+
+try {
+    foo();
+} catch (\Exception $ex) {
+    // foo
+}
+
+try {
+    foo();
+// foo
+} catch (\Exception $ex) { }
+
+try {
+    foo();
+} catch (\Exception $ex) { } // not used
+
+try { } catch (\Exception $ex) { } // foo
+
+try {
+}
+catch (\Exception $ex) {
+} 
+// foo
+
+-- COMMENTS --
+Line 5: Consider adding a comment why this CATCH block is empty.
+Line 9: Consider adding a comment why this CATCH block is empty.
+Line 30: Consider moving this CATCH statement to a new line.
+Line 34: Consider adding a comment why this CATCH block is empty.

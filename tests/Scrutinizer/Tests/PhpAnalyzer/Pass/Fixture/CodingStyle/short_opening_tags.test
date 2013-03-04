@@ -1,0 +1,6 @@
+<?
+
+echo 'foo';
+
+-- COMMENTS --
+Line 1: Please do not use the short-opening tag, but "<?php" instead.

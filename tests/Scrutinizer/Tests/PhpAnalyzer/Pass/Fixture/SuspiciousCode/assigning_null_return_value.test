@@ -1,0 +1,20 @@
+<?php
+
+function foo() { }
+
+class Foo {
+    function foo() {}
+}
+
+function test() {
+    foo();
+    $foo = foo();
+
+    $foo = new Foo();
+    $foo->foo();
+    $foo = $foo->foo();
+}
+
+-- COMMENTS --
+Line 11: The assignment to ``$foo`` looks wrong as ``foo()`` always returns null.
+Line 15: The assignment to ``$foo`` looks wrong as ``$foo->foo()`` always returns null.

@@ -1,0 +1,17 @@
+<?php
+
+namespace JMS\PhpManipulator\PhpParser;
+
+abstract class ParseUtils
+{
+    public static function parse($code)
+    {
+    }
+
+    private final function __construct() { }
+}
+
+-- CONFIG --
+return array('checkstyle' => true);
+
+// No Comments

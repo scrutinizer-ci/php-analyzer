@@ -1,0 +1,5 @@
+{
+    "filter": {
+        "excluded_paths": ["schmittjoh-cg-library-c4bebbe/tests/*/Fixture/*", "schmittjoh-cg-library-c4bebbe/tests/*/generated/*"]        
+    }
+}
