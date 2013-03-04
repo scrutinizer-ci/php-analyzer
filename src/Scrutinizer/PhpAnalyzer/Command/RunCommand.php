@@ -61,7 +61,6 @@ class RunCommand extends Command
         $output->writeln('Starting analysis...');
         $analyzer = Analyzer::create($em = TestUtils::createTestEntityManager());
         $analyzer->setLogger(new OutputLogger($output, $input->getOption('verbose')));
-        $analyzer->setRootPackageVersion($em->getRepository('PhpAnalyzer:PackageVersion')->getPackageVersion('PHP', '5.4'));
         $analyzer->analyze($files);
         $output->writeln('---------------------------------------------');
         $output->writeln('');
