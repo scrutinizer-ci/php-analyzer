@@ -32,7 +32,7 @@ class PathChecker
     // No yet visited.
     const STATUS_WHITE = 'white';
 
-    // Being visted.
+    // Being visited.
     const STATUS_GRAY = 'gray';
 
     // Finished visiting.

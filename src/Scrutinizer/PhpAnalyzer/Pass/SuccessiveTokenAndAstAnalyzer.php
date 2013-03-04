@@ -22,7 +22,7 @@ use JMS\PhpManipulator\TokenStream;
 use Scrutinizer\PhpAnalyzer\Model\File;
 use Scrutinizer\PhpAnalyzer\Model\PhpFile;
 
-abstract class SuccessiveTokenAndAstAnalzyer extends AstAnalyzerPass
+abstract class SuccessiveTokenAndAstAnalyzer extends AstAnalyzerPass
 {
     /** @var TokenStream */
     protected $stream;

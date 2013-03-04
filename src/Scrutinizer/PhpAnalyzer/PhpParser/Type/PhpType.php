@@ -551,7 +551,7 @@ abstract class PhpType implements \JsonSerializable
     }
 
     /**
-     * Computes the testricted types given a successful equality comparison.
+     * Computes the restricted types given a successful equality comparison.
      *
      * @return PhpType[] The first element is the restricted this type, the second element is the restricted type of the
      *                   passed type.

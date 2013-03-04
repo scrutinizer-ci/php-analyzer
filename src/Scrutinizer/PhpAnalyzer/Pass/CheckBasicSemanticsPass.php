@@ -31,7 +31,7 @@ use Scrutinizer\PhpAnalyzer\Model\ClassMethod;
  * Basic Semantic Checks
  *
  * This pass checks basic PHP semantics such as whether you have defined properties on an interface, or that
- * classes with abstract methods must be declared abstract. Most of the errors catched by this pass would lead to
+ * classes with abstract methods must be declared abstract. Most of the errors caught by this pass would lead to
  * fatal PHP runtime errors.
  *
  * @category checks
