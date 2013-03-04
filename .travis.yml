@@ -7,7 +7,7 @@ before_script:
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --dev
   - mysql -uroot -e "CREATE DATABASE php_analyzer CHARACTER SET utf8 COLLATE utf8_general_ci"
-  - "sed -i 's/<\!--//g' phpunit.xml.dist"
+  - "sed -i 's/<\\!--//g' phpunit.xml.dist"
   - "sed -i 's/-->//g' phpunit.xml.dist"
 
 script: phpunit 
