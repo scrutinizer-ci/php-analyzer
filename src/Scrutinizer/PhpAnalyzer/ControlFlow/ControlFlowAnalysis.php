@@ -475,7 +475,7 @@ class ControlFlowAnalysis implements CallbackInterface
             return null;
         }
 
-        // Continously look up the ancestor tree for the BREAK target, and connect to it.
+        // Continuously look up the ancestor tree for the BREAK target, and connect to it.
         $curNb = 0;
         $num = null === $node->num ? 1 : $node->num->value;
         if (0 === $num) {
@@ -813,7 +813,7 @@ class ControlFlowAnalysis implements CallbackInterface
             return self::computeFallThrough($nextSibling);
         }
 
-        // If there are no more siblings, control is transfered up the AST.
+        // If there are no more siblings, control is transferred up the AST.
         return $this->computeFollowNode($fromNode, $parent);
     }
 }

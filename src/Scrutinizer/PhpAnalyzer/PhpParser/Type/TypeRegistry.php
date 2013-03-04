@@ -419,7 +419,7 @@ class TypeRegistry
     /**
      * Creates a new union with the given types.
      *
-     * If strings are passed, they are assummed to be native types.
+     * If strings are passed, they are assumed to be native types.
      *
      * @param array $types
      *

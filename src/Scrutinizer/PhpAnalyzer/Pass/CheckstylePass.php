@@ -40,7 +40,7 @@ use Scrutinizer\PhpAnalyzer\Model\Comment;
  * @category checks
  * @author Johannes M. Schmitt <johannes@scrutinizer-ci.com>
  */
-class CheckstylePass extends SuccessiveTokenAndAstAnalzyer implements ConfigurablePassInterface
+class CheckstylePass extends SuccessiveTokenAndAstAnalyzer implements ConfigurablePassInterface
 {
     use ConfigurableTrait;
 
