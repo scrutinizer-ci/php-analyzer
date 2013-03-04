@@ -36,7 +36,8 @@ class RunCommand extends Command
             ->setName('run')
             ->setDescription('Runs the PHP Analyzer on source code.')
             ->addArgument('dir', InputArgument::REQUIRED, 'The directory to scan.')
-            ->addOption('format', 'f', InputOption::VALUE_REQUIRED, 'The output format ("text", "xml")', 'text')
+            ->addOption('format', 'f', InputOption::VALUE_REQUIRED, 'The output format ("plain", "xml", "json")', 'plain')
+            ->addOption('output-file', 'o', InputOption::VALUE_REQUIRED, 'File to output xml or json output to.', null)
         ;
     }
 
@@ -48,31 +49,29 @@ class RunCommand extends Command
         }
         $dir = realpath($dir);
 
-        if (extension_loaded('xdebug')) {
-            $output->writeln('<error>It is highly recommended to disable the XDebug extension before invoking this command.</error>');
-        }
+        $output->writeln('<comment>Caution: This command is currently only designed for small libraries; it might be slow and/or memory expensive to analyze bigger libraries.</comment>');
 
         $output->write('Scanning directory... ');
         $files = FileCollection::createFromDirectory($dir);
         $output->writeln(sprintf('found <info>%d files</info>', count($files)));
 
-        if (count($files) > 100) {
-            $output->writeln('<comment>Caution: You are trying to scan a lot of files; this might be slow. For bigger libraries, consider setting up a dedicated platform or using scrutinizer-ci.com.</comment>');
-        }
-
         $output->writeln('Starting analysis...');
-        $analyzer = Analyzer::create($em = TestUtils::createTestEntityManager());
+        $analyzer = Analyzer::create(TestUtils::createTestEntityManager());
         $analyzer->setLogger(new OutputLogger($output, $input->getOption('verbose')));
         $analyzer->analyze($files);
 
         switch ($input->getOption('format')) {
-            case 'xml':
-                $formatter = new OutputFormatter\XmlFormatter();
-                break;
-            case 'text':
-            default:
+            case 'plain':
                 $formatter = new OutputFormatter\TextFormatter();
+                break;
+            default:
+                $formatter = new OutputFormatter\SerializerFormatter(
+                    $input->getOption('output-file'),
+                    $input->getOption('format')
+                );
+                break;
         }
+
         $formatter->write($output, $files);
     }
 }

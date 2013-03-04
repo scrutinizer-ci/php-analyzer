@@ -24,8 +24,18 @@ use Symfony\Component\Finder\Iterator\ExcludeDirectoryFilterIterator;
 use Symfony\Component\Finder\Iterator\FilenameFilterIterator;
 use Symfony\Component\Finder\SplFileInfo;
 
+use JMS\Serializer\Annotation as Serializer;
+
+/**
+ * @Serializer\ExclusionPolicy("ALL")
+ * @Serializer\XmlRoot("analyzer")
+ */
 class FileCollection implements \IteratorAggregate, \Countable
 {
+    /**
+     * @Serializer\Expose
+     * @Serializer\XmlList(inline=true, entry="file")
+     */
     private $files = array();
     private $size = 0;
 
@@ -219,6 +229,24 @@ class FileCollection implements \IteratorAggregate, \Countable
     public function getIterator()
     {
         return new \ArrayIterator($this->files);
+    }
+
+    /**
+     * Get a FileCollection with just the commented files.
+     *
+     * @return FileCollection
+     */
+    public function getCommentedFiles()
+    {
+        $commentedFiles = array();
+
+        foreach ($this->files as $file) {
+            if ($file->hasComments()) {
+                $commentedFiles[] = $file;
+            }
+        }
+
+        return new FileCollection($commentedFiles);
     }
 }
 
