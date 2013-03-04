@@ -63,7 +63,7 @@ class PackageVersion
      * were available this hash is set to null.
      *
      * This hash is necessary to determine whether a package can be used as
-     * a depencency in another package. For example, considering that a
+     * a dependency in another package. For example, considering that a
      * package A exists which has a dependency on package B. Package B has
      * also dependencies on package C for certain features. However, A does
      * not use these features, and therefore itself has no dependency on

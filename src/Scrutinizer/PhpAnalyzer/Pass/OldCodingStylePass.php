@@ -70,7 +70,7 @@ class CodingStylePass extends AstAnalyzerPass
             if (!$foundTabs && preg_match('/^(?: )*\t/', $line)) {
                 $this->addComment($i + 1, 'Please do not use tabs for indentation, but 4 spaces for each tab.');
 
-                // Assume that the users fixes all further occurences of tabs.
+                // Assume that the users fixes all further occurrences of tabs.
                 $foundTabs = true;
 
                 continue;
