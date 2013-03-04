@@ -1,0 +1,8 @@
+<?php
+
+$x = 0;
+if ($x instanceof Exception) { }
+if ($x instanceof NonExistentException) { }
+
+-- COMMENTS --
+Line 5: The class "NonExistentException" does not exist. Did you forget a USE statement, or did you not list all dependencies?

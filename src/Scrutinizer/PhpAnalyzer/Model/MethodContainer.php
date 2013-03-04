@@ -44,7 +44,7 @@ abstract class MethodContainer extends ObjectType
     /** @ORM\ManyToOne(targetEntity = "PackageVersion", inversedBy="containers") */
     private $packageVersion;
 
-    /** @ORM\Column(type = "string") */
+    /** @ORM\Column(type = "string_nocase") */
     private $name;
 
     /** @ORM\Column(type = "boolean") */

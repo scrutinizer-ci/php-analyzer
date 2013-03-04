@@ -41,7 +41,7 @@ class ClassProperty implements ContainerPropertyInterface
     /** @ORM\ManyToOne(targetEntity = "Property", cascade = {"persist"}) */
     private $property;
 
-    /** @ORM\Column(type = "string") */
+    /** @ORM\Column(type = "string_case") */
     private $name;
 
     /** @ORM\Column(type = "string", nullable = true) */

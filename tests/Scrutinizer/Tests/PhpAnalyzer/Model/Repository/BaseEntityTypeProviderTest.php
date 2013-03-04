@@ -18,6 +18,7 @@
 
 namespace JMS\Tests\CodeReview\Entity\Repository;
 
+use Doctrine\ORM\EntityManager;
 use Scrutinizer\PhpAnalyzer\PhpParser\Type\TypeRegistry;
 use Scrutinizer\PhpAnalyzer\Model\Clazz;
 use Scrutinizer\PhpAnalyzer\Model\GlobalConstant;
@@ -26,7 +27,7 @@ use Scrutinizer\PhpAnalyzer\Model\Package;
 use Scrutinizer\PhpAnalyzer\Model\Repository\EntityTypeProvider;
 use Scrutinizer\PhpAnalyzer\Util\TestUtils;
 
-class EntityTypeProviderTest extends \PHPUnit_Framework_TestCase
+abstract class BaseEntityTypeProviderTest extends \PHPUnit_Framework_TestCase
 {
     /** @var \Doctrine\ORM\EntityManager */
     private $em;
@@ -166,7 +167,7 @@ class EntityTypeProviderTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($fooA, $loadedConst, 'loadConstant() takes the first constant if no package versions are set.');
 
         $loadedConst = $this->provider->loadConstant('foo');
-        $this->assertSame($fooA, $loadedConst, 'loadConstant() treats the name **not** as case-insensitive.');
+        $this->assertNull($loadedConst, 'loadConstant() treats the name **not** as case-insensitive.');
 
         $this->provider->setPackageVersions(array($this->versionB));
         $loadedConst = $this->provider->loadConstant('FOO');
@@ -180,14 +181,7 @@ class EntityTypeProviderTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        if ( ! isset($_SERVER['MYSQL_USER'])
-            || ! isset($_SERVER['MYSQL_HOST'])
-            || ! isset($_SERVER['MYSQL_PASSWORD'])
-            || ! isset($_SERVER['MYSQL_DATABASE'])) {
-            $this->markTestSkipped('You need to configure a MySQL database, see phpunit.dist.xml');
-        }
-
-        $this->em = TestUtils::createMysqlTestEntityManager($_SERVER['MYSQL_USER'], $_SERVER['MYSQL_PASSWORD'], $_SERVER['MYSQL_DATABASE'], $_SERVER['MYSQL_HOST']);
+        $this->em = $this->getEntityManager();
         $this->provider = new EntityTypeProvider($this->em);
         $this->typeRegistry = new TypeRegistry($this->provider);
 
@@ -199,4 +193,9 @@ class EntityTypeProviderTest extends \PHPUnit_Framework_TestCase
         $this->em->persist($this->package);
         $this->em->flush();
     }
+
+    /**
+     * @return EntityManager
+     */
+    abstract protected function getEntityManager();
 }

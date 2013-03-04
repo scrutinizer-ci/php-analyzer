@@ -35,7 +35,7 @@ abstract class AbstractFunction
     /** @ORM\Column(type = "PhpType", nullable = true) */
     private $returnType;
 
-    /** @ORM\Column(type = "string") */
+    /** @ORM\Column(type = "string_nocase") */
     private $name;
 
     /** @ORM\Column(type = "boolean") */

@@ -64,6 +64,10 @@ schmittjoh-cg-library-c4bebbe/src/CG/Generator/PhpParameter.php
 Line 63: php_doc.param_type_all_type_non_commented
 Line 78: php_doc.param_type_all_type_non_commented
 
+schmittjoh-cg-library-c4bebbe/src/CG/Generator/PhpProperty.php
+---------------------------------------------------
+Line 56: usage.argument_type_mismatch
+
 schmittjoh-cg-library-c4bebbe/src/CG/Proxy/Enhancer.php
 ---------------------------------------------------
 Line 46: php_doc.param_type_array_type_not_inferrable

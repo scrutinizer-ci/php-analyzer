@@ -41,7 +41,7 @@ class ClassMethod implements ContainerMethodInterface
     /** @ORM\ManyToOne(targetEntity = "Method", cascade = {"persist"}) */
     private $method;
 
-    /** @ORM\Column(type = "string") */
+    /** @ORM\Column(type = "string_nocase") */
     private $name;
 
     /** @ORM\Column(type = "string", nullable = true) */

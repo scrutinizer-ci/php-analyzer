@@ -33,7 +33,7 @@ class Clazz extends MethodContainer implements ConstantContainerInterface
     const MODIFIER_FINAL = 1;
     const MODIFIER_ABSTRACT = 2;
 
-    /** @ORM\Column(type = "string") */
+    /** @ORM\Column(type = "string_nocase") */
     private $superClass;
 
     /** @ORM\Column(type = "simple_array") */

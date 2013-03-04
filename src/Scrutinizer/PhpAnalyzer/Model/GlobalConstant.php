@@ -35,7 +35,7 @@ class GlobalConstant
     /** @ORM\Id @ORM\GeneratedValue(strategy = "AUTO") @ORM\Column(type = "integer") */
     private $id;
 
-    /** @ORM\Column(type = "string") */
+    /** @ORM\Column(type = "string_case") */
     private $name;
 
     /** @ORM\Column(type = "PhpType") */

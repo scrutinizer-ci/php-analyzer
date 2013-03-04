@@ -41,7 +41,7 @@ class InterfaceConstant implements ContainerConstantInterface
     /** @ORM\ManyToOne(targetEntity = "Constant", cascade = {"persist"}) */
     private $constant;
 
-    /** @ORM\Column(type = "string") */
+    /** @ORM\Column(type = "string_case") */
     private $name;
 
     /** @ORM\Column(type = "string", nullable = true) */

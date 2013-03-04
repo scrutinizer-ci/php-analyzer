@@ -90,6 +90,12 @@ abstract class TestUtils
         if (false === Type::hasType(PhpTypeType::NAME)) {
             Type::addType(PhpTypeType::NAME, 'Scrutinizer\PhpAnalyzer\Model\Type\PhpTypeType');
         }
+        if (false === Type::hasType('string_case')) {
+            Type::addType('string_case', 'Scrutinizer\PhpAnalyzer\Model\Type\CaseSensitiveStringType');
+        }
+        if (false === Type::hasType('string_nocase')) {
+            Type::addType('string_nocase', 'Scrutinizer\PhpAnalyzer\Model\Type\CaseInsensitiveStringType');
+        }
 
         $driver = new AnnotationDriver(new AnnotationReader(), array(
                 __DIR__.'/../Model',

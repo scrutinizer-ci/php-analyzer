@@ -33,7 +33,7 @@ class Constant
     /** @ORM\Id @ORM\Column(type = "integer") @ORM\GeneratedValue(strategy = "AUTO") */
     private $id;
 
-    /** @ORM\Column(type = "string") */
+    /** @ORM\Column(type = "string_case") */
     private $name;
 
     /** @ORM\Column(type = "PhpType") */
