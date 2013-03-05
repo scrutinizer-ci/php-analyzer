@@ -49,7 +49,10 @@ class Comment
     /** @Serializer\SerializedName("message") @Serializer\Expose */
     private $messageFormat;
 
-    /** @Serializer\SerializedName("params") @Serializer\Expose */
+    /**
+     * @Serializer\SerializedName("params") @Serializer\Expose
+     * @Serializer\XmlMap(keyAttribute="name", entry="param")
+     */ 
     private $context;
 
     /** @Serializer\Expose */
