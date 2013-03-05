@@ -9,4 +9,5 @@ require_once $autoloadFile;
 
 \Doctrine\Common\Annotations\AnnotationRegistry::registerLoader('class_exists');
 
-(new \Scrutinizer\PhpAnalyzer\CliApp())->run();
+$app = new \Scrutinizer\PhpAnalyzer\CliApp();
+$app->run();
