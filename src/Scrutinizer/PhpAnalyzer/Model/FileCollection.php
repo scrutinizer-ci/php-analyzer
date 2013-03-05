@@ -248,6 +248,38 @@ class FileCollection implements \IteratorAggregate, \Countable
 
         return new FileCollection($commentedFiles);
     }
+
+    /**
+     * Merge FileCollection with another file collection and return a new one.
+     *
+     * @param FileCollection $other
+     *
+     * @return FileCollection
+     */
+    public function merge(FileCollection $other)
+    {
+        return new FileCollection(array_merge($this->files, $other->files));
+    }
+
+    /**
+     * Filter files in the collection by expression and return new file collection.
+     *
+     * @param string $expression
+     *
+     * @return FileCollection
+     */
+    public function filter($expression)
+    {
+        $filteredFiles = array();
+
+        foreach ($this->files as $file) {
+            if (strpos($file->getName(), $expression) !== false) {
+                $filteredFiles[] = $file;
+            }
+        }
+
+        return new FileCollection($filteredFiles);
+    }
 }
 
 class ZipFileIterator implements \Iterator

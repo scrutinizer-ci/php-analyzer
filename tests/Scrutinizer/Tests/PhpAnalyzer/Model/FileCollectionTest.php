@@ -69,4 +69,31 @@ class FileCollectionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($col2, $col);
     }
+
+    public function testFilterCollection()
+    {
+        $col = FileCollection::createFromDirectory(__DIR__.'/Fixture/DirWithSomeFiles', '*.php');
+        $filteredCol = $col->filter('A.php');
+
+        $this->assertNotSame($col, $filteredCol);
+        $this->assertCount(1, $filteredCol);
+
+        $files = $filteredCol->all();
+        $this->assertArrayHasKey('A.php', $files);
+    }
+
+    public function testMergeCollections()
+    {
+        $col = FileCollection::createFromZipFile(__DIR__.'/Fixture/zip-file.zip');
+        $col2 = FileCollection::createFromDirectory(__DIR__.'/Fixture/DirWithSomeFiles');
+
+        $merged = $col->merge($col2);
+
+        $this->assertCount(3, $col);
+        $files = $col->all();
+
+        $this->assertArrayHasKey('A.php', $files);
+        $this->assertArrayHasKey('Sub-Dir/B.php', $files);
+        $this->assertArrayHasKey('text.txt', $files);
+    }
 }
