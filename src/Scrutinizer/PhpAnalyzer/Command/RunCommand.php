@@ -35,26 +35,34 @@ class RunCommand extends Command
         $this
             ->setName('run')
             ->setDescription('Runs the PHP Analyzer on source code.')
-            ->addArgument('dir', InputArgument::REQUIRED, 'The directory to scan.')
+            ->addArgument('dir', InputArgument::IS_ARRAY, 'The directory/directories to scan.')
             ->addOption('format', 'f', InputOption::VALUE_REQUIRED, 'The output format ("plain", "xml", "json")', 'plain')
             ->addOption('output-file', 'o', InputOption::VALUE_REQUIRED, 'File to output xml or json output to.', null)
+            ->addOption('filter', 'r', InputOption::VALUE_REQUIRED, 'Filter (strpos) to apply on reported files.', null)
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $dir = $input->getArgument('dir');
-        if ( ! is_dir($dir)) {
-            throw new \InvalidArgumentException(sprintf('The directory "%s" does not exist.', $dir));
-        }
-        $dir = realpath($dir);
+        $dirs = $input->getArgument('dir');
 
         if (extension_loaded('xdebug')) {
             $output->writeln('<error>It is highly recommended to disable the XDebug extension before invoking this command.</error>');
         }
 
-        $output->write('Scanning directory... ');
-        $files = FileCollection::createFromDirectory($dir);
+        $files = new FileCollection(array());
+
+        foreach ($dirs as $dir) {
+            if ( ! is_dir($dir)) {
+                throw new \InvalidArgumentException(sprintf('The directory "%s" does not exist.', $dir));
+            }
+            $dir = realpath($dir);
+
+            $output->writeln('Scanning directory <info>' . $dir . '</info>');
+
+            $files = $files->merge(FileCollection::createFromDirectory($dir));
+        }
+
         $output->writeln(sprintf('found <info>%d files</info>', count($files)));
 
         if (count($files) > 100) {
@@ -65,6 +73,10 @@ class RunCommand extends Command
         $analyzer = Analyzer::create(TestUtils::createTestEntityManager());
         $analyzer->setLogger(new OutputLogger($output, $input->getOption('verbose')));
         $analyzer->analyze($files);
+
+        if ($filter = $input->getOption('filter')) {
+            $files = $files->filter($filter);
+        }
 
         switch ($input->getOption('format')) {
             case 'plain':
