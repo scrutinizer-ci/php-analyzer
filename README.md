@@ -13,6 +13,9 @@ PHPAnalyzer can be installed via composer very easily:
 composer create-project scrutinizer/php-analyzer:dev-master
 ```
 
+Please note that PHP Analyzer cannot be installed as a dependency of your root project currently, but
+must be installed as a standalone project.
+
 ## Usage
 
 ### Via The Command Line
