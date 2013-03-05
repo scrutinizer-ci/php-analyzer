@@ -164,6 +164,24 @@ class TypeScanningPass extends AstAnalyzerPass implements CallbackAnalysisPassIn
         }
 
         $this->typeRegistry->resolveNamedTypes();
+
+        $unresolvedTypes = $this->typeRegistry->getUnresolvedNamedTypes();
+        if ( ! empty($unresolvedTypes)) {
+            $resolvedTypes = $this->typeRegistry->getClasses();
+            $unresolvedPercentage = count($unresolvedTypes) / (count($unresolvedTypes) + count($resolvedTypes));
+            if ($unresolvedPercentage > 0.05) { // 5% was chosen quite arbitrarily, we will need to experiment with this.
+                $this->analyzer->logger->critical(
+                    'Caution: {percentage}% of used types were not defined, e.g. {example}. '
+                   .'This suggests that you are trying to analyze only a partial project, or excluded dependencies; doing '
+                   .'so can cause the various data flow analyses (like type inference) to either be inaccurate or not '
+                   .'converge to a fixed-point solution (i.e. be very slow).',
+                    array(
+                        'percentage' => round($unresolvedPercentage * 100, 2),
+                        'example' => $unresolvedTypes[array_rand($unresolvedTypes)]->getReferenceName()
+                    )
+                );
+            }
+        }
     }
 
     public function beforeAnalysis()

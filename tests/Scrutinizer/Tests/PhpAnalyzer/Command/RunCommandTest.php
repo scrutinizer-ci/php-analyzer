@@ -12,12 +12,22 @@ class RunCommandTest extends \PHPUnit_Framework_TestCase
     {
         $this->runCommand(__DIR__.'/Fixture/TestProject');
         $this->assertOutputContains('The variable ``$x`` does not exist. Did you forget to declare it?');
+        $this->assertOutputNotContains('used types were not defined');
     }
 
     public function testFilter()
     {
         $this->runCommand(__DIR__.'/Fixture/TestProject --filter-pattern="foobar"');
         $this->assertOutputNotContains('The variable ``$x`` does not exist. Did you forget to declare it?');
+    }
+
+    /**
+     * @group partial-project
+     */
+    public function testDisplaysWarningWhenAnalyzingPartialProject()
+    {
+        $this->runCommand(__DIR__.'/Fixture/PartialProject');
+        $this->assertOutputContains('83.33% of used types were not defined');
     }
 
     private function assertOutputNotContains($str)

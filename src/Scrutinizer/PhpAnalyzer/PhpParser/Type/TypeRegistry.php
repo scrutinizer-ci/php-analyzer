@@ -80,6 +80,7 @@ class TypeRegistry
     private $cachedConstants = array();
     private $cachedImplementingClasses = array();
 
+    /** @var NamedType[] */
     private $namedTypes = array();
 
     private $classes = array();
@@ -741,6 +742,11 @@ class TypeRegistry
             $lookedUp = array_merge($lookedUp, $toLookup);
             $toLookup = array_diff_key($this->namedTypes, $lookedUp);
         }
+    }
+
+    public function getUnresolvedNamedTypes()
+    {
+        return $this->namedTypes;
     }
 
     private function findImplementingClasses($name)

@@ -38,6 +38,23 @@ class OutputLogger extends AbstractLogger
             return;
         }
 
-        $this->output->writeln($message);
+        $map = array();
+        foreach ($context as $k => $v) {
+            if ( ! is_scalar($v)) {
+                continue;
+            }
+
+            $map['{'.$k.'}'] = $v;
+        }
+
+        $outputMessage = strtr($message, $map);
+
+        if ('critical' === $level) {
+            $outputMessage = '<comment>'.$outputMessage.'</comment>';
+        } elseif ('emergency' === $level) {
+            $outputMessage = '<error>'.$outputMessage.'</error>';
+        }
+
+        $this->output->writeln($outputMessage);
     }
 }
