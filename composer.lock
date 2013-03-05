@@ -142,16 +142,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "fd45c6f6baa618d871f3201fabe76df5043abb1e"
+                "reference": "569f1aed578585df904c7dbfc43aa39cb09877cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/fd45c6f6baa618d871f3201fabe76df5043abb1e",
-                "reference": "fd45c6f6baa618d871f3201fabe76df5043abb1e",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/569f1aed578585df904c7dbfc43aa39cb09877cc",
+                "reference": "569f1aed578585df904c7dbfc43aa39cb09877cc",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "2.3.*",
+                "doctrine/common": ">=2.3.0,<2.5-dev",
                 "php": ">=5.3.2"
             },
             "type": "library",
@@ -165,7 +165,7 @@
                     "Doctrine\\DBAL": "lib/"
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -197,7 +197,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-01-20 11:50:36"
+            "time": "2013-03-04 22:37:48"
         },
         {
             "name": "doctrine/lexer",
@@ -743,12 +743,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/scrutinizer-ci/utils.git",
-                "reference": "84f098e3ba952f254a7df0ae4e616c5e8607a262"
+                "reference": "a2f336f59c37bbaa379e86bc1e452d05dd6b94df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scrutinizer-ci/utils/zipball/84f098e3ba952f254a7df0ae4e616c5e8607a262",
-                "reference": "84f098e3ba952f254a7df0ae4e616c5e8607a262",
+                "url": "https://api.github.com/repos/scrutinizer-ci/utils/zipball/a2f336f59c37bbaa379e86bc1e452d05dd6b94df",
+                "reference": "a2f336f59c37bbaa379e86bc1e452d05dd6b94df",
                 "shasum": ""
             },
             "require": {
@@ -761,11 +761,8 @@
                     "Scrutinizer": "src/"
                 }
             },
-            "support": {
-                "source": "https://github.com/scrutinizer-ci/utils/tree/master",
-                "issues": "https://github.com/scrutinizer-ci/utils/issues"
-            },
-            "time": "2013-01-26 10:35:27"
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2013-03-05 08:41:33"
         },
         {
             "name": "symfony/config",

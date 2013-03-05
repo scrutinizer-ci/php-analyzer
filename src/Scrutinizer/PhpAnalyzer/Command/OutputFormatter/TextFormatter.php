@@ -17,13 +17,13 @@
 
 namespace Scrutinizer\PhpAnalyzer\Command\OutputFormatter;
 
-use Scrutinizer\PhpAnalyzer\Command\OutputFormatter;
+use Scrutinizer\PhpAnalyzer\Command\OutputFormatterInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Format the output of PhpAnalyzer as human readable text.
  */
-class TextFormatter implements OutputFormatter
+class TextFormatter implements OutputFormatterInterface
 {
     public function write(OutputInterface $output, $fileCollection)
     {

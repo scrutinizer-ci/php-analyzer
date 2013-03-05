@@ -38,7 +38,9 @@ class RunCommand extends Command
             ->addArgument('dir', InputArgument::IS_ARRAY, 'The directory/directories to scan.')
             ->addOption('format', 'f', InputOption::VALUE_REQUIRED, 'The output format ("plain", "xml", "json")', 'plain')
             ->addOption('output-file', 'o', InputOption::VALUE_REQUIRED, 'File to output xml or json output to.', null)
-            ->addOption('filter', 'r', InputOption::VALUE_REQUIRED, 'Filter (strpos) to apply on reported files.', null)
+            ->addOption('include-pattern', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Filter (shell pattern) which paths must match to be scanned.')
+            ->addOption('exclude-pattern', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Filter (shell pattern) which paths must NOT match to be scanned.')
+            ->addOption('filter-pattern', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Filter (shell pattern) which is applied before outputting results and which files must match.')
         ;
     }
 
@@ -60,7 +62,10 @@ class RunCommand extends Command
 
             $output->writeln('Scanning directory <info>' . $dir . '</info>');
 
-            $files = $files->merge(FileCollection::createFromDirectory($dir));
+            $files = $files->merge(FileCollection::createFromDirectory($dir, '*.php', array(
+                'paths' => $input->getOption('filter-include'),
+                'excluded_paths' => $input->getOption('filter-exclude'),
+            )));
         }
 
         $output->writeln(sprintf('found <info>%d files</info>', count($files)));
@@ -74,8 +79,8 @@ class RunCommand extends Command
         $analyzer->setLogger(new OutputLogger($output, $input->getOption('verbose')));
         $analyzer->analyze($files);
 
-        if ($filter = $input->getOption('filter')) {
-            $files = $files->filter($filter);
+        if ($input->getOption('filter-pattern')) {
+            $files = $files->filter($input->getOption('filter-pattern'));
         }
 
         switch ($input->getOption('format')) {

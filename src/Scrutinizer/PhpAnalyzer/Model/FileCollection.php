@@ -19,6 +19,7 @@
 namespace Scrutinizer\PhpAnalyzer\Model;
 
 use Scrutinizer\PhpAnalyzer\Exception\MaxMemoryExceededException;
+use Scrutinizer\Util\PathUtils;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\Iterator\ExcludeDirectoryFilterIterator;
 use Symfony\Component\Finder\Iterator\FilenameFilterIterator;
@@ -35,6 +36,8 @@ class FileCollection implements \IteratorAggregate, \Countable
     /**
      * @Serializer\Expose
      * @Serializer\XmlList(inline=true, entry="file")
+     *
+     * @var File[]
      */
     private $files = array();
     private $size = 0;
@@ -264,16 +267,15 @@ class FileCollection implements \IteratorAggregate, \Countable
     /**
      * Filter files in the collection by expression and return new file collection.
      *
-     * @param string $expression
+     * @param string[] $paths
      *
      * @return FileCollection
      */
-    public function filter($expression)
+    public function filter(array $paths)
     {
         $filteredFiles = array();
-
         foreach ($this->files as $file) {
-            if (strpos($file->getName(), $expression) !== false) {
+            if (PathUtils::matches($file->getName(), $paths)) {
                 $filteredFiles[] = $file;
             }
         }

@@ -23,7 +23,13 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Controls the output format of the analyzer.
  */
-interface OutputFormatter
+interface OutputFormatterInterface
 {
+    /**
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @param $fileCollection
+     *
+     * @return void
+     */
     public function write(OutputInterface $output, $fileCollection);
 }

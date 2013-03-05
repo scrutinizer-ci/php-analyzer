@@ -73,7 +73,7 @@ class FileCollectionTest extends \PHPUnit_Framework_TestCase
     public function testFilterCollection()
     {
         $col = FileCollection::createFromDirectory(__DIR__.'/Fixture/DirWithSomeFiles', '*.php');
-        $filteredCol = $col->filter('A.php');
+        $filteredCol = $col->filter(array('A.php'));
 
         $this->assertNotSame($col, $filteredCol);
         $this->assertCount(1, $filteredCol);

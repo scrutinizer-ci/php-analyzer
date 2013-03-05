@@ -2,7 +2,7 @@
 
 namespace Scrutinizer\PhpAnalyzer\Command\OutputFormatter;
 
-use Scrutinizer\PhpAnalyzer\Command\OutputFormatter;
+use Scrutinizer\PhpAnalyzer\Command\OutputFormatterInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 use JMS\Serializer\JsonSerializationVisitor;
@@ -11,7 +11,7 @@ use JMS\Serializer\Naming\CamelCaseNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\SerializerBuilder;
 
-class SerializerFormatter implements OutputFormatter
+class SerializerFormatter implements OutputFormatterInterface
 {
     /**
      * @var string
