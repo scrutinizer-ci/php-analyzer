@@ -19,6 +19,7 @@
 namespace Scrutinizer\PhpAnalyzer;
 
 use Scrutinizer\PhpAnalyzer\Command\BuildTestDatabaseCommand;
+use Scrutinizer\PhpAnalyzer\Command\CreateCfgCommand;
 use Scrutinizer\PhpAnalyzer\Command\RunCommand;
 use Symfony\Component\Console\Application;
 
@@ -29,6 +30,7 @@ class CliApp extends Application
         $commands = parent::getDefaultCommands();
         $commands[] = new BuildTestDatabaseCommand();
         $commands[] = new RunCommand();
+        $commands[] = new CreateCfgCommand();
 
         return $commands;
     }

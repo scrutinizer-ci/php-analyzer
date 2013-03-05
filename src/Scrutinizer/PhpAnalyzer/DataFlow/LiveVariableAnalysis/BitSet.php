@@ -28,9 +28,21 @@ namespace Scrutinizer\PhpAnalyzer\DataFlow\LiveVariableAnalysis;
 class BitSet implements \Countable
 {
     private $values = array();
+    private $size = 0;
+    private $value = 0;
+    private $efficient = false;
 
     public function __construct($initialSize = 0)
     {
+        $this->size = $initialSize;
+
+        if ($initialSize <= 31) {
+            $this->value = 0;
+            $this->efficient = true;
+
+            return;
+        }
+
         for ($i=0; $i<$initialSize; $i++) {
             $this->values[] = 0;
         }
@@ -38,32 +50,50 @@ class BitSet implements \Countable
 
     public function performOr(BitSet $that)
     {
-        assert('count($this) === count($that)');
+        if ($this->efficient) {
+            $this->value |= $that->value;
+
+            return;
+        }
 
         for ($i=0,$c=count($this->values); $i<$c; $i++) {
             $this->values[$i] = $this->values[$i] | $that->values[$i];
         }
     }
 
-    public function all()
-    {
-        return $this->values;
-    }
-
     public function set($index)
     {
+        if ($this->efficient) {
+            $this->value |= 1 << $index;
+
+            return;
+        }
+
         $this->values[$index] = 1;
     }
 
     public function get($index)
     {
-        assert('isset($this->values[$index])');
+        if ($this->efficient) {
+            return ($this->value >> $index) & 1;
+        }
 
         return $this->values[$index];
     }
 
     public function __toString()
     {
+        if ($this->efficient) {
+            $str = '';
+            $value = $this->value;
+            for ($i=0;$i<$this->size;$i++) {
+                $str .= ($value & 1) ? '1' : '0';
+                $value >>= 1;
+            }
+
+            return $str;
+        }
+
         $maxIndex = max(array_keys($this->values));
         $str = '';
         for ($i = 0; $i<=$maxIndex; $i++) {
@@ -81,6 +111,12 @@ class BitSet implements \Countable
     {
         assert('count($this) === count($that)');
 
+        if ($this->efficient) {
+            $this->value &= ~$that->value;
+
+            return;
+        }
+
         for ($i=0,$c=count($this->values); $i<$c; $i++) {
             $this->values[$i] = $this->values[$i] & ~$that->values[$i];
         }
@@ -88,11 +124,15 @@ class BitSet implements \Countable
 
     public function equals(BitSet $that)
     {
-        if (count($this->values) !== $c = count($that)) {
+        if ($this->size !== $that->size) {
             return false;
         }
 
-        for ($i=0; $i<$c; $i++) {
+        if ($this->efficient) {
+            return $this->value === $that->value;
+        }
+
+        for ($i=0; $i<$this->size; $i++) {
             if ($this->values[$i] !== $that->values[$i]) {
                 return false;
             }
@@ -103,6 +143,6 @@ class BitSet implements \Countable
 
     public function count()
     {
-        return count($this->values);
+        return $this->size;
     }
 }
