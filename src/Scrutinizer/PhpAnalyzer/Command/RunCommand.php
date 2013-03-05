@@ -35,7 +35,7 @@ class RunCommand extends Command
         $this
             ->setName('run')
             ->setDescription('Runs the PHP Analyzer on source code.')
-            ->addArgument('dir', InputArgument::IS_ARRAY, 'The directory/directories to scan.')
+            ->addArgument('dir', InputArgument::REQUIRED, 'The directory to scan.')
             ->addOption('format', 'f', InputOption::VALUE_REQUIRED, 'The output format ("plain", "xml", "json")', 'plain')
             ->addOption('output-file', 'o', InputOption::VALUE_REQUIRED, 'File to output xml or json output to.', null)
             ->addOption('include-pattern', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Filter (shell pattern) which paths must match to be scanned.')
@@ -46,28 +46,17 @@ class RunCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $dirs = $input->getArgument('dir');
+        $dir = $input->getArgument('dir');
 
         if (extension_loaded('xdebug')) {
             $output->writeln('<error>It is highly recommended to disable the XDebug extension before invoking this command.</error>');
         }
 
-        $files = new FileCollection(array());
-
-        foreach ($dirs as $dir) {
-            if ( ! is_dir($dir)) {
-                throw new \InvalidArgumentException(sprintf('The directory "%s" does not exist.', $dir));
-            }
-            $dir = realpath($dir);
-
-            $output->writeln('Scanning directory <info>' . $dir . '</info>');
-
-            $files = $files->merge(FileCollection::createFromDirectory($dir, '*.php', array(
-                'paths' => $input->getOption('include-pattern'),
-                'excluded_paths' => $input->getOption('exclude-pattern'),
-            )));
-        }
-
+        $output->writeln('Scanning directory <info>' . $dir . '</info>');
+        $files = FileCollection::createFromDirectory($dir, '*.php', array(
+            'paths' => $input->getOption('include-pattern'),
+            'excluded_paths' => $input->getOption('exclude-pattern'),
+        ));
         $output->writeln(sprintf('found <info>%d files</info>', count($files)));
 
         if (count($files) > 100) {

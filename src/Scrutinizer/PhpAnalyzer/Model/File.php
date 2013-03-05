@@ -33,9 +33,7 @@ class File
     /** @Serializer\Expose @Serializer\SerializedName("path") */
     private $name;
 
-    /** @Serializer\Expose */
     private $content;
-
     private $comments;
     private $changedLines = array();
     private $diff;
