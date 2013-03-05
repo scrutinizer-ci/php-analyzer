@@ -171,7 +171,8 @@ class FileCollection implements \IteratorAggregate, \Countable
             return 1024 * 1024 * 1024 * 1.8; // 1.8 GB
         }
 
-        exec('free -m', $output, $returnVar);
+        // Just suppress errors if "free" is not available, we will just use defaults then.
+        @exec('free -m', $output, $returnVar);
         if (0 === $returnVar) {
             if (preg_match('#buffers/cache:\s+[^\s]+\s+([^\s]+)#', implode("\n", $output), $match)) {
                 // Values are in mega bytes.
