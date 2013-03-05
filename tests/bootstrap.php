@@ -7,3 +7,5 @@ $loader->add('Scrutinizer', __DIR__);
 AnnotationRegistry::registerLoader('class_exists');
 
 assert_options(ASSERT_BAIL);
+
+define('ROOT_DIR', realpath(__DIR__.'/../'));

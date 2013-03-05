@@ -63,8 +63,8 @@ class RunCommand extends Command
             $output->writeln('Scanning directory <info>' . $dir . '</info>');
 
             $files = $files->merge(FileCollection::createFromDirectory($dir, '*.php', array(
-                'paths' => $input->getOption('filter-include'),
-                'excluded_paths' => $input->getOption('filter-exclude'),
+                'paths' => $input->getOption('include-pattern'),
+                'excluded_paths' => $input->getOption('exclude-pattern'),
             )));
         }
 
