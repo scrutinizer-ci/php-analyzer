@@ -14,7 +14,8 @@ composer create-project scrutinizer/php-analyzer:dev-master
 ```
 
 Please note that PHP Analyzer cannot be installed as a dependency of your root project currently, but
-must be installed as a standalone project.
+must be installed as a standalone project. Also, PHP Analyzer itself needs a PHP 5.4 runtime; this 
+requirement only applies to the system that is running PHP Analyzer, not the code that is analyzed.
 
 ## Usage
 
