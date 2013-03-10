@@ -19,6 +19,7 @@
 namespace Scrutinizer\PhpAnalyzer\Model;
 
 use Scrutinizer\PhpAnalyzer\Exception\MaxMemoryExceededException;
+use Scrutinizer\Process\Process;
 use Scrutinizer\Util\PathUtils;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\Iterator\ExcludeDirectoryFilterIterator;
@@ -172,9 +173,9 @@ class FileCollection implements \IteratorAggregate, \Countable
         }
 
         // Just suppress errors if "free" is not available, we will just use defaults then.
-        @exec('free -m', $output, $returnVar);
-        if (0 === $returnVar) {
-            if (preg_match('#buffers/cache:\s+[^\s]+\s+([^\s]+)#', implode("\n", $output), $match)) {
+        $proc = new Process('free -m');
+        if (0 === $proc->run()) {
+            if (preg_match('#buffers/cache:\s+[^\s]+\s+([^\s]+)#', $proc->getOutput(), $match)) {
                 // Values are in mega bytes.
                 list(, $freeMemory) = $match;
 
