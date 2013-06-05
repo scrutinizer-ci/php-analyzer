@@ -100,7 +100,7 @@ class RecursiveIteratorIterator implements Iterator, Traversable, OuterIterator 
 	/**
 	 * Get inner iterator
 	 * @link http://www.php.net/manual/en/recursiveiteratoriterator.getinneriterator.php
-	 * @return iterator The current active sub iterator.
+	 * @return Iterator The current active sub iterator.
 	 */
 	public function getInnerIterator () {}
 
@@ -228,7 +228,7 @@ class IteratorIterator implements Iterator, Traversable, OuterIterator {
 	/**
 	 * Get the current value
 	 * @link http://www.php.net/manual/en/iteratoriterator.current.php
-	 * @return void The value of the current element.
+	 * @return mixed The value of the current element.
 	 */
 	public function current () {}
 
@@ -242,7 +242,7 @@ class IteratorIterator implements Iterator, Traversable, OuterIterator {
 	/**
 	 * Get the inner iterator
 	 * @link http://www.php.net/manual/en/iteratoriterator.getinneriterator.php
-	 * @return void The inner iterator as passed to IteratorIterator::__construct.
+	 * @return Iterator The inner iterator as passed to IteratorIterator::__construct.
 	 */
 	public function getInnerIterator () {}
 
@@ -640,7 +640,7 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
 	/**
 	 * Return the innter iterator
 	 * @link http://www.php.net/manual/en/cachingiterator.getinneriterator.php
-	 * @return void an object implementing the Iterator interface.
+	 * @return Iterator an object implementing the Iterator interface.
 	 */
 	public function getInnerIterator () {}
 
@@ -804,7 +804,7 @@ class RecursiveCachingIterator extends CachingIterator implements Countable, Arr
 	/**
 	 * Return the innter iterator
 	 * @link http://www.php.net/manual/en/cachingiterator.getinneriterator.php
-	 * @return void an object implementing the Iterator interface.
+	 * @return Iterator an object implementing the Iterator interface.
 	 */
 	public function getInnerIterator () {}
 
@@ -932,7 +932,7 @@ class NoRewindIterator extends IteratorIterator implements OuterIterator, Traver
 	/**
 	 * Get the inner iterator
 	 * @link http://www.php.net/manual/en/norewinditerator.getinneriterator.php
-	 * @return iterator The inner iterator, as passed to NoRewindIterator::__construct.
+	 * @return Iterator The inner iterator, as passed to NoRewindIterator::__construct.
 	 */
 	public function getInnerIterator () {}
 
@@ -995,7 +995,7 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
 	/**
 	 * Gets an inner iterator
 	 * @link http://www.php.net/manual/en/appenditerator.getinneriterator.php
-	 * @return void The current inner Iterator.
+	 * @return Iterator The current inner Iterator.
 	 */
 	public function getInnerIterator () {}
 
@@ -1056,14 +1056,14 @@ class InfiniteIterator extends IteratorIterator implements OuterIterator, Traver
 	/**
 	 * Get the current value
 	 * @link http://www.php.net/manual/en/iteratoriterator.current.php
-	 * @return void The value of the current element.
+	 * @return mixed The value of the current element.
 	 */
 	public function current () {}
 
 	/**
 	 * Get the inner iterator
 	 * @link http://www.php.net/manual/en/iteratoriterator.getinneriterator.php
-	 * @return void The inner iterator as passed to IteratorIterator::__construct.
+	 * @return Iterator The inner iterator as passed to IteratorIterator::__construct.
 	 */
 	public function getInnerIterator () {}
 
@@ -1468,21 +1468,21 @@ class EmptyIterator implements Iterator, Traversable {
 	/**
 	 * The valid() method
 	 * @link http://www.php.net/manual/en/emptyiterator.valid.php
-	 * @return void false
+	 * @return false
 	 */
 	public function valid () {}
 
 	/**
 	 * The key() method
 	 * @link http://www.php.net/manual/en/emptyiterator.key.php
-	 * @return void 
+	 * @return void
 	 */
 	public function key () {}
 
 	/**
 	 * The current() method
 	 * @link http://www.php.net/manual/en/emptyiterator.current.php
-	 * @return void 
+	 * @return void
 	 */
 	public function current () {}
 

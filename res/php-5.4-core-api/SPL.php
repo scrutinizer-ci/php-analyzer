@@ -1477,7 +1477,7 @@ class RecursiveIteratorIterator implements Iterator, Traversable, OuterIterator 
 	 * (PHP 5 &gt;= 5.1.0)<br/>
 	 * Get inner iterator
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.getinneriterator.php
-	 * @return iterator The current active sub iterator.
+	 * @return Iterator The current active sub iterator.
 	 */
 	public function getInnerIterator () {}
 
@@ -1683,7 +1683,7 @@ class IteratorIterator implements Iterator, Traversable, OuterIterator {
 	 * (PHP 5 &gt;= 5.1.0)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/iteratoriterator.getinneriterator.php
-	 * @return Traversable The inner iterator as passed to <b>IteratorIterator::__construct</b>.
+	 * @return Iterator The inner iterator as passed to <b>IteratorIterator::__construct</b>.
 	 */
 	public function getInnerIterator () {}
 
@@ -2717,7 +2717,7 @@ class NoRewindIterator extends IteratorIterator implements OuterIterator, Traver
 	 * (PHP 5 &gt;= 5.1.0)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/norewinditerator.getinneriterator.php
-	 * @return iterator The inner iterator, as passed to <b>NoRewindIterator::__construct</b>.
+	 * @return Iterator The inner iterator, as passed to <b>NoRewindIterator::__construct</b>.
 	 */
 	public function getInnerIterator () {}
 
@@ -2879,7 +2879,7 @@ class InfiniteIterator extends IteratorIterator implements OuterIterator, Traver
 	 * (PHP 5 &gt;= 5.1.0)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/iteratoriterator.getinneriterator.php
-	 * @return Traversable The inner iterator as passed to <b>IteratorIterator::__construct</b>.
+	 * @return Iterator The inner iterator as passed to <b>IteratorIterator::__construct</b>.
 	 */
 	public function getInnerIterator () {}
 
@@ -3567,7 +3567,7 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
 	 * (PHP 5 &gt;= 5.1.0)<br/>
 	 * Get inner iterator
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.getinneriterator.php
-	 * @return iterator The current active sub iterator.
+	 * @return Iterator The current active sub iterator.
 	 */
 	public function getInnerIterator () {}
 

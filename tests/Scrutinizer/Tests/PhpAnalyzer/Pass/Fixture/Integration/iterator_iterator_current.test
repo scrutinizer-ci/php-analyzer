@@ -1,0 +1,55 @@
+<?php
+
+class CsvEntryIterator extends \IteratorIterator
+{
+    public function __construct(\SplFileObject $file, array $expectedColumns)
+    {
+        $file->setFlags(\SplFileObject::DROP_NEW_LINE | \SplFileObject::SKIP_EMPTY | \SplFileObject::READ_AHEAD | \SplFileObject::READ_CSV);
+
+        parent::__construct($file);
+
+        $this->rewind();
+    }
+
+    public function current()
+    {
+        $data = parent::current();
+
+        // Do some processing on $data
+
+        return $data;
+    }
+
+    public function rewind()
+    {
+        parent::rewind();
+
+        $this->init();
+        $this->next();
+    }
+
+    private function init()
+    {
+        if (!$this->valid()) {
+            throw new \LogicException('The CSV file must have at least 1 heading line.');
+        }
+
+        /** @var \SplFileObject $file */
+        $file = $this->getInnerIterator();
+
+        // Determine the CSV delimiter used in the file
+        // The READ_CSV flag is removed temporarily so that ->current() returns the raw line
+        $flags = $file->getFlags();
+        $file->setFlags($flags & ~\SplFileObject::READ_CSV);
+
+        $firstLine = $file->current();
+
+        $delimiter = false !== strpos($firstLine, ';') ? ';' : ',';
+
+        $file->setFlags($flags);
+        $file->setCsvControl($delimiter);
+    }
+}
+
+-- COMMENTS --
+Line 47: ``$firstLine`` of type ``string|array`` is not a sub-type of ``string``.
