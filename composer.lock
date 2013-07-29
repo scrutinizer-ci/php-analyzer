@@ -1,18 +1,22 @@
 {
-    "hash": "6f265e2f3d6df730e80e13cdb61fa8ca",
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "9a499a383f8ba44af191b057f7cb9947",
     "packages": [
         {
             "name": "doctrine/annotations",
-            "version": "v1.0",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "v1.0"
+                "reference": "v1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/annotations/archive/v1.0.zip",
-                "reference": "v1.0",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/v1.1.2",
+                "reference": "v1.1.2",
                 "shasum": ""
             },
             "require": {
@@ -23,12 +27,17 @@
                 "doctrine/cache": "1.*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Doctrine\\Common\\Annotations\\": "lib/"
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -54,7 +63,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -65,7 +74,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2013-01-12 19:23:32"
+            "time": "2013-06-16 21:33:03"
         },
         {
             "name": "doctrine/common",
@@ -95,7 +104,7 @@
                     "Doctrine\\Common": "lib/"
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -121,7 +130,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -142,12 +151,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "569f1aed578585df904c7dbfc43aa39cb09877cc"
+                "reference": "6a62fefefde6b2c0d8b3df70151d6a81fc028d28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/569f1aed578585df904c7dbfc43aa39cb09877cc",
-                "reference": "569f1aed578585df904c7dbfc43aa39cb09877cc",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/6a62fefefde6b2c0d8b3df70151d6a81fc028d28",
+                "reference": "6a62fefefde6b2c0d8b3df70151d6a81fc028d28",
                 "shasum": ""
             },
             "require": {
@@ -197,32 +206,37 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-03-04 22:37:48"
+            "time": "2013-05-21 05:53:02"
         },
         {
             "name": "doctrine/lexer",
-            "version": "v1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "v1.0"
+                "reference": "bc0e1f0cc285127a38c6c8ea88bc5dba2fd53e94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/lexer/archive/v1.0.zip",
-                "reference": "v1.0",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/bc0e1f0cc285127a38c6c8ea88bc5dba2fd53e94",
+                "reference": "bc0e1f0cc285127a38c6c8ea88bc5dba2fd53e94",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Doctrine\\Common\\Lexer\\": "lib/"
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -239,7 +253,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -249,7 +263,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2013-01-12 18:59:04"
+            "time": "2013-03-07 12:15:25"
         },
         {
             "name": "doctrine/orm",
@@ -257,12 +271,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "304acf0a1af15ebe049231b84a7630c75ecbe62d"
+                "reference": "de59307b8e8d689d7ca146feb52c62653e9b2b00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/304acf0a1af15ebe049231b84a7630c75ecbe62d",
-                "reference": "304acf0a1af15ebe049231b84a7630c75ecbe62d",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/de59307b8e8d689d7ca146feb52c62653e9b2b00",
+                "reference": "de59307b8e8d689d7ca146feb52c62653e9b2b00",
                 "shasum": ""
             },
             "require": {
@@ -289,7 +303,7 @@
                     "Doctrine\\ORM": "lib/"
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -319,7 +333,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2013-02-21 18:03:42"
+            "time": "2013-06-30 08:43:27"
         },
         {
             "name": "jms/composer-deps-analyzer",
@@ -327,12 +341,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/composer-deps-analyzer.git",
-                "reference": "3170c1fba8067f18971972c55bcd52439206ba38"
+                "reference": "0.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/composer-deps-analyzer/zipball/3170c1fba8067f18971972c55bcd52439206ba38",
-                "reference": "3170c1fba8067f18971972c55bcd52439206ba38",
+                "url": "https://api.github.com/repos/schmittjoh/composer-deps-analyzer/zipball/0.1.0",
+                "reference": "0.1.0",
                 "shasum": ""
             },
             "require": {
@@ -354,20 +368,20 @@
                 "Apache2"
             ],
             "description": "Builds a Dependency Graph from a composer.json file",
-            "time": "2013-01-21 16:28:25"
+            "time": "2013-05-15 18:04:27"
         },
         {
             "name": "jms/metadata",
-            "version": "1.2.0-RC",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/schmittjoh/metadata",
-                "reference": "1.2.0-RC"
+                "url": "https://github.com/schmittjoh/metadata.git",
+                "reference": "0979c7d9eb7f0031a3c5ffed1d6e1fa4eb846e4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/schmittjoh/metadata/zipball/1.2.0-RC",
-                "reference": "1.2.0-RC",
+                "url": "https://api.github.com/repos/schmittjoh/metadata/zipball/0979c7d9eb7f0031a3c5ffed1d6e1fa4eb846e4e",
+                "reference": "0979c7d9eb7f0031a3c5ffed1d6e1fa4eb846e4e",
                 "shasum": ""
             },
             "require": {
@@ -379,7 +393,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
@@ -387,7 +401,7 @@
                     "Metadata\\": "src/"
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache"
             ],
@@ -395,7 +409,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -406,7 +420,7 @@
                 "xml",
                 "yaml"
             ],
-            "time": "2012-08-21 05:40:10"
+            "time": "2013-03-28 16:32:37"
         },
         {
             "name": "jms/parser-lib",
@@ -436,7 +450,7 @@
                     "JMS\\": "src/"
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache2"
             ],
@@ -498,17 +512,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "0aded9426d08c920e299c302914f702fad6f8ee6"
+                "reference": "af613f8779fee306ef5bdbc224cd5217d1c73265"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/0aded9426d08c920e299c302914f702fad6f8ee6",
-                "reference": "0aded9426d08c920e299c302914f702fad6f8ee6",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/af613f8779fee306ef5bdbc224cd5217d1c73265",
+                "reference": "af613f8779fee306ef5bdbc224cd5217d1c73265",
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "1.*",
-                "jms/metadata": ">=1.1.0,<1.3-dev",
+                "jms/metadata": "~1.1",
                 "jms/parser-lib": "1.*",
                 "php": ">=5.3.2",
                 "phpcollection/phpcollection": ">=0.1,<0.3-dev"
@@ -528,7 +542,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.12-dev"
+                    "dev-master": "0.13-dev"
                 }
             },
             "autoload": {
@@ -557,33 +571,39 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2013-03-01 10:16:05"
+            "time": "2013-07-29 10:26:34"
         },
         {
             "name": "nikic/php-parser",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/schmittjoh/PHP-Parser.git",
-                "reference": "958e1f4e2355ed22245920a8057a3d7c34a0fb4c"
+                "url": "https://github.com/nikic/PHP-Parser.git",
+                "reference": "01123ae6af005009d1c5fd37e06130bd85aad5dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/PHP-Parser/zipball/958e1f4e2355ed22245920a8057a3d7c34a0fb4c",
-                "reference": "958e1f4e2355ed22245920a8057a3d7c34a0fb4c",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/01123ae6af005009d1c5fd37e06130bd85aad5dc",
+                "reference": "01123ae6af005009d1c5fd37e06130bd85aad5dc",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "PHPParser": "lib/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -595,10 +615,7 @@
                 "parser",
                 "php"
             ],
-            "support": {
-                "source": "https://github.com/schmittjoh/PHP-Parser/tree/master"
-            },
-            "time": "2012-11-06 00:18:13"
+            "time": "2013-07-27 16:50:08"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -606,12 +623,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-collection.git",
-                "reference": "3ce8ffb990e9511c7a843f20740373eb27e4c3bd"
+                "reference": "0.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-collection/zipball/3ce8ffb990e9511c7a843f20740373eb27e4c3bd",
-                "reference": "3ce8ffb990e9511c7a843f20740373eb27e4c3bd",
+                "url": "https://api.github.com/repos/schmittjoh/php-collection/zipball/0.3.0",
+                "reference": "0.3.0",
                 "shasum": ""
             },
             "require": {
@@ -628,7 +645,7 @@
                     "PhpCollection": "src/"
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache2"
             ],
@@ -636,7 +653,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -648,7 +665,7 @@
                 "sequence",
                 "set"
             ],
-            "time": "2013-02-25 13:15:41"
+            "time": "2013-07-16 08:26:26"
         },
         {
             "name": "phpoption/phpoption",
@@ -656,12 +673,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "c8829c3b675f17aa465557f721d909deb67d904f"
+                "reference": "1c7e8016289d17d83ced49c56d0f266fd0568941"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/c8829c3b675f17aa465557f721d909deb67d904f",
-                "reference": "c8829c3b675f17aa465557f721d909deb67d904f",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/1c7e8016289d17d83ced49c56d0f266fd0568941",
+                "reference": "1c7e8016289d17d83ced49c56d0f266fd0568941",
                 "shasum": ""
             },
             "require": {
@@ -670,7 +687,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -697,7 +714,7 @@
                 "php",
                 "type"
             ],
-            "time": "2013-03-03 09:30:51"
+            "time": "2013-05-19 11:09:35"
         },
         {
             "name": "psr/log",
@@ -743,17 +760,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/scrutinizer-ci/utils.git",
-                "reference": "a2f336f59c37bbaa379e86bc1e452d05dd6b94df"
+                "reference": "b49c7e0117c1bff14b8f99d61a7cbf04b2d8f87c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scrutinizer-ci/utils/zipball/a2f336f59c37bbaa379e86bc1e452d05dd6b94df",
-                "reference": "a2f336f59c37bbaa379e86bc1e452d05dd6b94df",
+                "url": "https://api.github.com/repos/scrutinizer-ci/utils/zipball/b49c7e0117c1bff14b8f99d61a7cbf04b2d8f87c",
+                "reference": "b49c7e0117c1bff14b8f99d61a7cbf04b2d8f87c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4",
-                "symfony/process": "2.*"
+                "symfony/process": "~2.0",
+                "symfony/yaml": "~2.0"
             },
             "type": "library",
             "autoload": {
@@ -762,7 +780,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2013-03-05 08:41:33"
+            "time": "2013-06-22 16:12:25"
         },
         {
             "name": "symfony/config",
@@ -771,21 +789,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Config.git",
-                "reference": "2b8694ad7f46072b154faaf5e74f2a06cb828fa7"
+                "reference": "1c24c71801c8f7d3b0c788d161a921d365db19bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/2b8694ad7f46072b154faaf5e74f2a06cb828fa7",
-                "reference": "2b8694ad7f46072b154faaf5e74f2a06cb828fa7",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/1c24c71801c8f7d3b0c788d161a921d365db19bf",
+                "reference": "1c24c71801c8f7d3b0c788d161a921d365db19bf",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.3",
+                "symfony/filesystem": "~2.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -809,7 +828,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-01 10:42:20"
+            "time": "2013-07-21 20:19:01"
         },
         {
             "name": "symfony/console",
@@ -818,21 +837,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "fae82dad073a491b91a2ad6cda2ef5d8b19a5152"
+                "reference": "470446b34c029c7cd1933a55c9bdd887b9f5ec0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/fae82dad073a491b91a2ad6cda2ef5d8b19a5152",
-                "reference": "fae82dad073a491b91a2ad6cda2ef5d8b19a5152",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/470446b34c029c7cd1933a55c9bdd887b9f5ec0d",
+                "reference": "470446b34c029c7cd1933a55c9bdd887b9f5ec0d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
+            "require-dev": {
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "suggest": {
+                "symfony/event-dispatcher": ""
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -856,7 +881,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-01 06:43:27"
+            "time": "2013-07-21 20:19:01"
         },
         {
             "name": "symfony/filesystem",
@@ -865,12 +890,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "414e4f741f2b0750a92925ada7a1864f94715388"
+                "reference": "59ee050f3dd735d040f6b02a1422c98050e13a20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/414e4f741f2b0750a92925ada7a1864f94715388",
-                "reference": "414e4f741f2b0750a92925ada7a1864f94715388",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/59ee050f3dd735d040f6b02a1422c98050e13a20",
+                "reference": "59ee050f3dd735d040f6b02a1422c98050e13a20",
                 "shasum": ""
             },
             "require": {
@@ -879,7 +904,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -887,7 +912,7 @@
                     "Symfony\\Component\\Filesystem\\": ""
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -903,7 +928,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2013-01-31 21:39:01"
+            "time": "2013-07-21 20:19:01"
         },
         {
             "name": "symfony/finder",
@@ -912,12 +937,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "0b33214ce24e33b6d11fd7de8784ff34ba16711f"
+                "reference": "6b6564a27b23daa5fa3dc12db7a4b0eeabf13f1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/0b33214ce24e33b6d11fd7de8784ff34ba16711f",
-                "reference": "0b33214ce24e33b6d11fd7de8784ff34ba16711f",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/6b6564a27b23daa5fa3dc12db7a4b0eeabf13f1f",
+                "reference": "6b6564a27b23daa5fa3dc12db7a4b0eeabf13f1f",
                 "shasum": ""
             },
             "require": {
@@ -926,7 +951,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -950,7 +975,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-01 06:43:27"
+            "time": "2013-07-21 20:19:01"
         },
         {
             "name": "symfony/process",
@@ -959,12 +984,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "6ebe4ba544cfc0dd25bfe49402da4d5267ee1b43"
+                "reference": "808d38aba6063f7e04d1592d923bbf3a007ef54d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/6ebe4ba544cfc0dd25bfe49402da4d5267ee1b43",
-                "reference": "6ebe4ba544cfc0dd25bfe49402da4d5267ee1b43",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/808d38aba6063f7e04d1592d923bbf3a007ef54d",
+                "reference": "808d38aba6063f7e04d1592d923bbf3a007ef54d",
                 "shasum": ""
             },
             "require": {
@@ -973,7 +998,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -981,7 +1006,7 @@
                     "Symfony\\Component\\Process\\": ""
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -997,7 +1022,54 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-02-18 21:28:20"
+            "time": "2013-07-21 20:19:01"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml.git",
+                "reference": "4d80b4f4c447e8ad7cab8b3afb0b51aad0431f7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/4d80b4f4c447e8ad7cab8b3afb0b51aad0431f7f",
+                "reference": "4d80b4f4c447e8ad7cab8b3afb0b51aad0431f7f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-07-21 20:19:01"
         }
     ],
     "packages-dev": [
@@ -1007,12 +1079,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "689bc2ae2a41dff1107d9d50e2daa4c349222869"
+                "reference": "b4a135c7db56ecc4602b54a2184368f440cac33e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/689bc2ae2a41dff1107d9d50e2daa4c349222869",
-                "reference": "689bc2ae2a41dff1107d9d50e2daa4c349222869",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/b4a135c7db56ecc4602b54a2184368f440cac33e",
+                "reference": "b4a135c7db56ecc4602b54a2184368f440cac33e",
                 "shasum": ""
             },
             "require": {
@@ -1054,7 +1126,7 @@
             "keywords": [
                 "database"
             ],
-            "time": "2013-02-12 02:52:36"
+            "time": "2013-07-10 17:04:07"
         }
     ],
     "aliases": [
@@ -1065,6 +1137,7 @@
         "scrutinizer/utils": 20,
         "jms/composer-deps-analyzer": 20,
         "jms/php-manipulator": 20,
+        "jms/serializer": 20,
         "nikic/php-parser": 20,
         "doctrine/data-fixtures": 20
     },
