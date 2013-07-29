@@ -16,7 +16,7 @@
     "require": {
         "php": ">=5.4",
         "scrutinizer/utils": "dev-master",
-        "jms/composer-deps-analyzer": "dev-master",
+        "jms/composer-deps-analyzer": "~0.1",
         "jms/php-manipulator": "dev-master",
         "jms/parser-lib": "1.*",
         "jms/serializer": "dev-master",

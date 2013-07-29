@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "9a499a383f8ba44af191b057f7cb9947",
+    "hash": "06b34d0ce334f853551f91977a81cbe7",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -337,7 +337,7 @@
         },
         {
             "name": "jms/composer-deps-analyzer",
-            "version": "dev-master",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/composer-deps-analyzer.git",
@@ -578,32 +578,26 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "01123ae6af005009d1c5fd37e06130bd85aad5dc"
+                "url": "https://github.com/schmittjoh/PHP-Parser.git",
+                "reference": "958e1f4e2355ed22245920a8057a3d7c34a0fb4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/01123ae6af005009d1c5fd37e06130bd85aad5dc",
-                "reference": "01123ae6af005009d1c5fd37e06130bd85aad5dc",
+                "url": "https://api.github.com/repos/schmittjoh/PHP-Parser/zipball/958e1f4e2355ed22245920a8057a3d7c34a0fb4c",
+                "reference": "958e1f4e2355ed22245920a8057a3d7c34a0fb4c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.9-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "PHPParser": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause"
+                "BSD"
             ],
             "authors": [
                 {
@@ -615,7 +609,10 @@
                 "parser",
                 "php"
             ],
-            "time": "2013-07-27 16:50:08"
+            "support": {
+                "source": "https://github.com/schmittjoh/PHP-Parser/tree/master"
+            },
+            "time": "2012-11-06 00:18:13"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -1135,7 +1132,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "scrutinizer/utils": 20,
-        "jms/composer-deps-analyzer": 20,
         "jms/php-manipulator": 20,
         "jms/serializer": 20,
         "nikic/php-parser": 20,
