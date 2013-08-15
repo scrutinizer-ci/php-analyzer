@@ -141,6 +141,11 @@ class FileCollection implements \IteratorAggregate, \Countable
         $memoryThreshold = self::getMemoryThreshold();
         foreach ($traversable as $file) {
             assert($file instanceof SplFileInfo);
+
+            if ($file->isLink()) {
+                continue;
+            }
+
             $col->add(File::create(substr($file->getRealPath(), $prefixLength), $file->getContents()));
 
             if ($i % 50 === 0 && $memoryThreshold < $memoryUsage = memory_get_usage()) {
