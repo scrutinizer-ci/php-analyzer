@@ -21,7 +21,7 @@
         "jms/parser-lib": "1.*",
         "jms/serializer": "dev-master",
         "nikic/php-parser": "dev-master",
-        "doctrine/common": "2.3.*",
+        "doctrine/common": "~2.3",
         "doctrine/dbal": "*",
         "doctrine/orm": "*",
         "symfony/finder": "2.*",
