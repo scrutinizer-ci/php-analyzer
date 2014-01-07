@@ -7,15 +7,37 @@ Learn more in the [documentation](https://scrutinizer-ci.com/docs/tools/php/php-
 
 ## Installation
 
+Please note that PHP Analyzer itself needs a PHP 5.4 runtime; this  requirement only applies to the system that is
+running PHP Analyzer, not the code that is analyzed.
+
+### Standalone
+
 PHPAnalyzer can be installed via composer very easily:
 
 ```
 composer create-project scrutinizer/php-analyzer:dev-master
 ```
 
-Please note that PHP Analyzer cannot be installed as a dependency of your root project currently, but
-must be installed as a standalone project. Also, PHP Analyzer itself needs a PHP 5.4 runtime; this 
-requirement only applies to the system that is running PHP Analyzer, not the code that is analyzed.
+### Embedded
+
+PHPAnalyzer can also be embedded in an existing project:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/schmittjoh/PHP-Parser"
+        }
+    ],
+    "require-dev": {
+        "scrutinizer/php-analyzer": "*@dev",
+        "scrutinizer/utils": "*@dev",
+        "jms/php-manipulator": "*@dev",
+        "nikic/php-parser": "*@dev"
+    }
+}
+```
 
 ## Usage
 
