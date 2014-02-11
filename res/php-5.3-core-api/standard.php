@@ -6427,7 +6427,7 @@ function fwrite ($handle, $string, $length = null) {}
  *
  * @jms-builtin
  */
-function fputs ($fp, $str, $length) {}
+function fputs ($fp, $str, $length = null) {}
 
 /**
  * Makes directory

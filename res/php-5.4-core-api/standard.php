@@ -6887,7 +6887,7 @@ function fwrite ($handle, $string, $length = null) {}
  * @param $length [optional]
  * @jms-builtin
  */
-function fputs ($fp, $str, $length) {}
+function fputs ($fp, $str, $length = null) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
