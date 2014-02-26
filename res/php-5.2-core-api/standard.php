@@ -3971,19 +3971,25 @@ function dechex ($number) {}
 function base_convert ($number, $frombase, $tobase) {}
 
 /**
+ * (PHP 4, PHP 5)<br/>
  * Format a number with grouped thousands
- * @link http://www.php.net/manual/en/function.number-format.php
- * @param number float <p>
+ * @link http://php.net/manual/en/function.number-format.php
+ * @param float $number <p>
  * The number being formatted.
  * </p>
- * @param decimals int[optional] <p>
+ * @param int $decimals [optional] <p>
  * Sets the number of decimal points.
  * </p>
- * @return string A formatted version of number.
- *
+ * @param string $dec_point [optional] <p>
+ * Sets the separator for the decimal point.
+ * </p>
+ * @param string $thousands_sep [optional] <p>
+ * Sets the thousands separator.
+ * </p>
+ * @return string A formatted version of <i>number</i>.
  * @jms-builtin
  */
-function number_format ($number, $decimals = null) {}
+function number_format ($number, $decimals = 0, $dec_point = '.', $thousands_sep = ',') {}
 
 /**
  * Returns the floating point remainder (modulo) of the division
