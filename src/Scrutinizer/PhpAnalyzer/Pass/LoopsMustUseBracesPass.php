@@ -18,15 +18,45 @@
 
 namespace Scrutinizer\PhpAnalyzer\Pass;
 
+use JMS\PhpManipulator\TokenStream;
+use Scrutinizer\PhpAnalyzer\Analyzer;
+use Scrutinizer\PhpAnalyzer\AnalyzerAwareInterface;
 use Scrutinizer\PhpAnalyzer\Config\NodeBuilder;
 use JMS\PhpManipulator\TokenStream\PhpToken;
 use Scrutinizer\PhpAnalyzer\Model\Comment;
+use Scrutinizer\PhpAnalyzer\Model\File;
+use Scrutinizer\PhpAnalyzer\Model\PhpFile;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
 // TODO: This should either be removed completely, or moved to a general style check pass.
-class LoopsMustUseBracesPass extends TokenStreamAnalyzerPass implements ConfigurablePassInterface
+class LoopsMustUseBracesPass implements ConfigurablePassInterface, AnalyzerAwareInterface
 {
     use ConfigurableTrait;
+
+    protected $analyzer;
+    protected $phpFile;
+    protected $stream;
+
+    public function __construct()
+    {
+        $this->stream = new TokenStream();
+    }
+
+    public function setAnalyzer(Analyzer $analyzer)
+    {
+        $this->analyzer = $analyzer;
+    }
+
+    public function analyze(File $file)
+    {
+        if (!$file instanceof PhpFile || !$this->getSetting('enabled')) {
+            return;
+        }
+
+        $this->phpFile = $file;
+        $this->stream->setCode($file->getContent());
+        $this->analyzeStream();
+    }
 
     public function getConfiguration()
     {
@@ -41,10 +71,6 @@ class LoopsMustUseBracesPass extends TokenStreamAnalyzerPass implements Configur
 
     protected function analyzeStream()
     {
-        if ( ! $this->getSetting('enabled')) {
-            return;
-        }
-
         while ($this->stream->moveNext()) {
             if ( ! $this->stream->token instanceof PhpToken) {
                 continue;
