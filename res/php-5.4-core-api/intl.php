@@ -2206,110 +2206,110 @@ function locale_get_default () {}
 function locale_set_default ($name) {}
 
 /**
- * @param $arg1
+ * @param $locale
  * @jms-builtin
  */
-function locale_get_primary_language ($arg1) {}
+function locale_get_primary_language ($locale) {}
 
 /**
- * @param $arg1
+ * @param $locale
  * @jms-builtin
  */
-function locale_get_script ($arg1) {}
+function locale_get_script ($locale) {}
 
 /**
- * @param $arg1
+ * @param $locale
  * @jms-builtin
  */
-function locale_get_region ($arg1) {}
+function locale_get_region ($locale) {}
 
 /**
- * @param $arg1
+ * @param $locale
  * @jms-builtin
  */
-function locale_get_keywords ($arg1) {}
+function locale_get_keywords ($locale) {}
 
 /**
- * @param $arg1
- * @param $arg2
+ * @param $locale
+ * @param $in_locale
  * @jms-builtin
  */
-function locale_get_display_script ($arg1, $arg2) {}
+function locale_get_display_script ($locale, $in_locale) {}
 
 /**
- * @param $arg1
- * @param $arg2
+ * @param $locale
+ * @param $in_locale
  * @jms-builtin
  */
-function locale_get_display_region ($arg1, $arg2) {}
+function locale_get_display_region ($locale, $in_locale) {}
 
 /**
- * @param $arg1
- * @param $arg2
+ * @param $locale
+ * @param $in_locale
  * @jms-builtin
  */
-function locale_get_display_name ($arg1, $arg2) {}
+function locale_get_display_name ($locale, $in_locale) {}
 
 /**
- * @param $arg1
- * @param $arg2
+ * @param $locale
+ * @param $in_locale
  * @jms-builtin
  */
-function locale_get_display_language ($arg1, $arg2) {}
+function locale_get_display_language ($locale, $in_locale) {}
 
 /**
- * @param $arg1
- * @param $arg2
+ * @param $locale
+ * @param $in_locale
  * @jms-builtin
  */
-function locale_get_display_variant ($arg1, $arg2) {}
+function locale_get_display_variant ($locale, $in_locale) {}
 
 /**
- * @param $arg1
+ * @param $subtags
  * @jms-builtin
  */
-function locale_compose ($arg1) {}
+function locale_compose (array $subtags) {}
 
 /**
- * @param $arg1
+ * @param $locale
  * @jms-builtin
  */
-function locale_parse ($arg1) {}
+function locale_parse ($locale) {}
 
 /**
- * @param $arg1
+ * @param $locale
  * @jms-builtin
  */
-function locale_get_all_variants ($arg1) {}
+function locale_get_all_variants ($locale) {}
 
 /**
- * @param $arg1
- * @param $arg2
- * @param $arg3
+ * @param $langtag
+ * @param $locale
+ * @param $canonicalize
  * @jms-builtin
  */
-function locale_filter_matches ($arg1, $arg2, $arg3) {}
+function locale_filter_matches ($langtag, $locale, $canonicalize = false) {}
 
 /**
- * @param $arg1
+ * @param $locale
  * @jms-builtin
  */
-function locale_canonicalize ($arg1) {}
+function locale_canonicalize ($locale) {}
 
 /**
- * @param $arg1
- * @param $arg2
- * @param $arg3
- * @param $arg4
+ * @param $langtag
+ * @param $locale
+ * @param $canonicalize
+ * @param $default
  * @jms-builtin
  */
-function locale_lookup ($arg1, $arg2, $arg3, $arg4) {}
+function locale_lookup ($langtag, $locale, $canonicalize = false, $default = null) {}
 
 /**
- * @param $arg1
+ * @param $header
  * @jms-builtin
  */
-function locale_accept_from_http ($arg1) {}
+function locale_accept_from_http ($header) {}
 
 /**
  * @param $locale
