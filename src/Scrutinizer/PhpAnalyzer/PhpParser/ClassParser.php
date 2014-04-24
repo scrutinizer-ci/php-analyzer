@@ -183,7 +183,10 @@ class ClassParser
         // To bad that there is no well defined structure, and also no well written
         // parser :-(
         if ( ! preg_match('/
-                # Syntax: [return type] [name]([type] [parameter], [...]) [<description>]
+                # Syntax: [static] [return type] [name]([type] [parameter], [...]) [<description>]
+                # Possibly a static comment
+                (?:(static)\s+)?
+
                 # Possible Type Name
                 (?:([^\s]+)\s+)?
 
@@ -199,13 +202,17 @@ class ClassParser
             return null;
         }
 
-        list(, $typeName, $methodName, $arguments) = $match;
+        list(, $static, $typeName, $methodName, $arguments) = $match;
 
         $method = new Method($methodName);
         if ( ! empty($typeName) && null !== $returnType = $this->commentParser->tryGettingType($typeName)) {
             $method->setReturnType($returnType);
         }
         $arguments = trim($arguments);
+
+        if( ! empty($static) ){
+            $method->setModifier(Method::MODIFIER_STATIC);
+        }
 
         if (empty($arguments)) {
             return $method;
