@@ -1405,41 +1405,47 @@ class mysqli_stmt  {
 }
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return int
  * @jms-builtin
  */
 function mysqli_affected_rows ($link) {}
 
 /**
- * @param $link
- * @param $mode
+ * @param $link mysqli
+ * @param $mode bool
+ * @return bool
  * @jms-builtin
  */
 function mysqli_autocommit ($link, $mode) {}
 
 /**
- * @param $link
- * @param $user
- * @param $password
- * @param $database
+ * @param $link mysqli
+ * @param $user string
+ * @param $password string
+ * @param $database string
+ * @return bool
  * @jms-builtin
  */
 function mysqli_change_user ($link, $user, $password, $database) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return string
  * @jms-builtin
  */
 function mysqli_character_set_name ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return bool
  * @jms-builtin
  */
 function mysqli_close ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return bool
  * @jms-builtin
  */
 function mysqli_commit ($link) {}
@@ -1454,55 +1460,69 @@ function mysqli_commit ($link) {}
  * @param $database [optional]
  * @param $port [optional]
  * @param $socket [optional]
+ * @return mysqli
  * @jms-builtin
  */
-function mysqli_connect ($host, $user, $password, $database, $port, $socket) {} 
+function mysqli_connect ($host, $user, $password, $database, $port, $socket) {}
 
-/** @jms-builtin */
-function mysqli_connect_errno () {} 
+/**
+ * @return int
+ * @jms-builtin
+ */
+function mysqli_connect_errno () {}
 
-/** @jms-builtin */
+/**
+ * @return string
+ * @jms-builtin
+ */
 function mysqli_connect_error () {}
 
 /**
- * @param $result
- * @param $offset
+ * @param $result object
+ * @param $offset int
+ * @return bool
  * @jms-builtin
  */
 function mysqli_data_seek ($result, $offset) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return bool
  * @jms-builtin
  */
 function mysqli_dump_debug_info ($link) {}
 
 /**
- * @param $debug_options
+ * @param $message string
+ * @return bool
  * @jms-builtin
  */
-function mysqli_debug ($debug_options) {}
+function mysqli_debug ($message) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return int
  * @jms-builtin
  */
 function mysqli_errno ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return string
  * @jms-builtin
  */
 function mysqli_error ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return array
  * @jms-builtin
  */
 function mysqli_error_list ($link) {}
 
 /**
  * @param $stmt
+ * @retrun bool
  * @jms-builtin
  */
 function mysqli_stmt_execute ($stmt) {}
@@ -1512,218 +1532,254 @@ function mysqli_stmt_execute ($stmt) {}
  * Alias for <b>mysqli_stmt_execute</b>
  * @link http://php.net/manual/en/function.mysqli-execute.php
  * @param $stmt
+ * @retrun bool
  * @jms-builtin
  */
 function mysqli_execute ($stmt) {}
 
 /**
- * @param $result
+ * @param $result mysqli_result
+ * @return object
  * @jms-builtin
  */
 function mysqli_fetch_field ($result) {}
 
 /**
- * @param $result
+ * @param $result mysqli_result
+ * @return array
  * @jms-builtin
  */
 function mysqli_fetch_fields ($result) {}
 
 /**
- * @param $result
- * @param $field_nr
+ * @param $result mysqli_result
+ * @param $field_nr int
+ * @return object
  * @jms-builtin
  */
 function mysqli_fetch_field_direct ($result, $field_nr) {}
 
 /**
- * @param $result
+ * @param $result mysqli_result
+ * @return array
  * @jms-builtin
  */
 function mysqli_fetch_lengths ($result) {}
 
 /**
- * @param $result
+ * @param $result mysqli_result
  * @param $result_type [optional]
+ * @return array
  * @jms-builtin
  */
 function mysqli_fetch_array ($result, $result_type) {}
 
 /**
- * @param $result
+ * @param $result mysqli_result
+ * @return array
  * @jms-builtin
  */
 function mysqli_fetch_assoc ($result) {}
 
 /**
- * @param $result
+ * @param $result mysqli_result
  * @param $class_name [optional]
  * @param $params [optional]
+ * @return object
  * @jms-builtin
  */
 function mysqli_fetch_object ($result, $class_namearray , $params) {}
 
 /**
- * @param $result
+ * @param $result mysqli_result
+ * @return mixed
  * @jms-builtin
  */
 function mysqli_fetch_row ($result) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return int
  * @jms-builtin
  */
 function mysqli_field_count ($link) {}
 
 /**
- * @param $result
- * @param $field_nr
+ * @param $result mysqli_result
+ * @param $field_nr int
+ * @return bool
  * @jms-builtin
  */
 function mysqli_field_seek ($result, $field_nr) {}
 
 /**
- * @param $result
+ * @param $result mysqli_result
+ * @return int
  * @jms-builtin
  */
 function mysqli_field_tell ($result) {}
 
 /**
- * @param $result
+ * @param $result mysqli_result
+ * @return bool
  * @jms-builtin
  */
 function mysqli_free_result ($result) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return object
  * @jms-builtin
  */
 function mysqli_get_charset ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return string
  * @jms-builtin
  */
 function mysqli_get_client_info ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return int
  * @jms-builtin
  */
 function mysqli_get_client_version ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
  * @jms-builtin
  */
 function mysqli_get_host_info ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return string
  * @jms-builtin
  */
 function mysqli_get_proto_info ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return string
  * @jms-builtin
  */
 function mysqli_get_server_info ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return int
  * @jms-builtin
  */
 function mysqli_get_server_version ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return mysqli_warning
  * @jms-builtin
  */
-function mysqli_get_warnings ($link) {} 
+function mysqli_get_warnings ($link) {}
 
-/** @jms-builtin */
+/**
+ * @return mysql
+ * @jms-builtin
+ */
 function mysqli_init () {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return string
  * @jms-builtin
  */
 function mysqli_info ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return int
  * @jms-builtin
  */
 function mysqli_insert_id ($link) {}
 
 /**
- * @param $link
- * @param $connection_id
+ * @param $link mysqli
+ * @param $connection_id int
+ * @return bool
  * @jms-builtin
  */
 function mysqli_kill ($link, $connection_id) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return void
  * @jms-builtin
  */
 function mysqli_set_local_infile_default ($link) {}
 
 /**
- * @param $link
- * @param $read_callback
+ * @param $link mysqli
+ * @param $read_callback callable
+ * @return bool
  * @jms-builtin
  */
 function mysqli_set_local_infile_handler ($link, $read_callback) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return bool
  * @jms-builtin
  */
 function mysqli_more_results ($link) {}
 
 /**
- * @param $link
- * @param $query
+ * @param $link mysqli
+ * @param $query string
+ * @return bool
  * @jms-builtin
  */
 function mysqli_multi_query ($link, $query) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return bool
  * @jms-builtin
  */
 function mysqli_next_result ($link) {}
 
 /**
- * @param $result
+ * @param $result mysqli_result
+ * @return int
  * @jms-builtin
  */
 function mysqli_num_fields ($result) {}
 
 /**
- * @param $result
+ * @param $result mysqli_result
+ * @return int
  * @jms-builtin
  */
 function mysqli_num_rows ($result) {}
 
 /**
- * @param $link
- * @param $option
- * @param $value
+ * @param $link mysqli
+ * @param $option int
+ * @param $value mixed
+ * @return bool
  * @jms-builtin
  */
 function mysqli_options ($link, $option, $value) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return bool
  * @jms-builtin
  */
 function mysqli_ping ($link) {}
 
 /**
- * @param $link
- * @param $query
+ * @param $link mysqli
+ * @param $query string
+ * @param mysql_stmt
  * @jms-builtin
  */
 function mysqli_prepare ($link, $query) {}
@@ -1770,55 +1826,62 @@ function mysqli_prepare ($link, $query) {}
 function mysqli_report ($flags) {}
 
 /**
- * @param $link
- * @param $query
+ * @param $link mysqli
+ * @param $query string
+ * @return mixed
  * @jms-builtin
  */
 function mysqli_query ($link, $query) {}
 
 /**
- * @param $link
- * @param $host [optional]
- * @param $user [optional]
- * @param $password [optional]
- * @param $database [optional]
- * @param $port [optional]
- * @param $socket [optional]
- * @param $flags [optional]
+ * @param $link mysqli
+ * @param $host [optional] string
+ * @param $user [optional] string
+ * @param $password [optional] string
+ * @param $database [optional] string
+ * @param $port [optional] int
+ * @param $socket [optional] string
+ * @param $flags [optional] int
+ * @return bool
  * @jms-builtin
  */
 function mysqli_real_connect ($link, $host, $user, $password, $database, $port, $socket, $flags) {}
 
 /**
- * @param $link
- * @param $string_to_escape
+ * @param $link mysqli
+ * @param $string_to_escape string
+ * @return string
  * @jms-builtin
  */
 function mysqli_real_escape_string ($link, $string_to_escape) {}
 
 /**
- * @param $link
- * @param $query
+ * @param $link mysqli
+ * @param $query string
+ * @return bool
  * @jms-builtin
  */
 function mysqli_real_query ($link, $query) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return bool
  * @jms-builtin
  */
 function mysqli_rollback ($link) {}
 
 /**
- * @param $link
- * @param $database
+ * @param $link mysqli
+ * @param $database string
+ * @return bool
  * @jms-builtin
  */
 function mysqli_select_db ($link, $database) {}
 
 /**
- * @param $link
- * @param $charset
+ * @param $link mysqli
+ * @param $charset string
+ * @return bool
  * @jms-builtin
  */
 function mysqli_set_charset ($link, $charset) {}
@@ -1913,7 +1976,7 @@ function mysqli_stmt_free_result ($stmt) {}
 function mysqli_stmt_get_warnings ($stmt) {}
 
 /**
- * @param $link
+ * @param $link mysqli
  * @jms-builtin
  */
 function mysqli_stmt_init ($link) {}
@@ -1976,57 +2039,62 @@ function mysqli_stmt_store_result ($stmt) {}
 function mysqli_stmt_sqlstate ($stmt) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return string
  * @jms-builtin
  */
 function mysqli_sqlstate ($link) {}
 
 /**
- * @param $link
- * @param $key
- * @param $cert
- * @param $certificate_authority
- * @param $certificate_authority_path
- * @param $cipher
+ * @param $link mysqli
+ * @param $key string
+ * @param $cert string
+ * @param $certificate_authority string
+ * @param $certificate_authority_path string
+ * @param $cipher string
+ * @return bool
  * @jms-builtin
  */
 function mysqli_ssl_set ($link, $key, $cert, $certificate_authority, $certificate_authority_path, $cipher) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return string
  * @jms-builtin
  */
 function mysqli_stat ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return mysqli_result
  * @jms-builtin
  */
 function mysqli_store_result ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
+ * @return int
  * @jms-builtin
  */
-function mysqli_thread_id ($link) {} 
+function mysqli_thread_id ($link) {}
 
 /** @jms-builtin */
 function mysqli_thread_safe () {}
 
 /**
- * @param $link
+ * @param $link mysqli
  * @jms-builtin
  */
 function mysqli_use_result ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
  * @jms-builtin
  */
 function mysqli_warning_count ($link) {}
 
 /**
- * @param $link
+ * @param $link mysqli
  * @param $options
  * @jms-builtin
  */
@@ -2036,8 +2104,9 @@ function mysqli_refresh ($link, $options) {}
  * (PHP 5)<br/>
  * Alias of <b>mysqli_real_escape_string</b>
  * @link http://php.net/manual/en/function.mysqli-escape-string.php
- * @param $link
- * @param $query
+ * @param $link mysqli
+ * @param $query string
+ * @return string
  * @jms-builtin
  */
 function mysqli_escape_string ($link, $query) {}
