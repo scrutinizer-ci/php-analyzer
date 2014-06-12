@@ -8144,7 +8144,7 @@ function readdir ($dir_handle = null) {}
  * @link http://www.php.net/manual/en/class.dir.php
  * @param directory
  * @param context[optional]
- * @return string
+ * @return Directory
  *
  * @jms-builtin
  */
