@@ -58,6 +58,40 @@ class ZipArchive  {
 	const ER_REMOVE = 22;
 	const ER_DELETED = 23;
 
+	/**
+	 * Status of the Zip Archive
+	 * @link http://www.php.net/manual/en/class.ziparchive.php#ziparchive.props.status
+	 * @var int
+	 */
+	public $status;
+
+	/**
+	 * System status of the Zip Archive
+	 * @link http://www.php.net/manual/en/class.ziparchive.php#ziparchive.props.statussys
+	 * @var int
+	 */
+	public $statusSys
+
+	/**
+	 * Number of files in archive
+	 * @link http://www.php.net/manual/en/class.ziparchive.php#ziparchive.props.numfiles
+	 * @var int
+	 */
+	public $numFiles
+
+	/**
+	 * File name in the file system
+	 * @link http://www.php.net/manual/en/class.ziparchive.php#ziparchive.props.filename
+	 * @var string
+	 */
+	public $filename
+
+	/**
+	 * Comment for the archive
+	 * @link http://www.php.net/manual/en/class.ziparchive.php#ziparchive.props.comment
+	 * @var string
+	 */
+	public $comment
 
 	/**
 	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>

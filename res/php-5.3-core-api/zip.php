@@ -48,6 +48,40 @@ class ZipArchive  {
 	const ER_REMOVE = 22;
 	const ER_DELETED = 23;
 
+	/**
+	 * Status of the Zip Archive
+	 * @link http://www.php.net/manual/en/class.ziparchive.php#ziparchive.props.status
+	 * @var int
+	 */
+	public $status;
+
+	/**
+	 * System status of the Zip Archive
+	 * @link http://www.php.net/manual/en/class.ziparchive.php#ziparchive.props.statussys
+	 * @var int
+	 */
+	public $statusSys
+
+	/**
+	 * Number of files in archive
+	 * @link http://www.php.net/manual/en/class.ziparchive.php#ziparchive.props.numfiles
+	 * @var int
+	 */
+	public $numFiles
+
+	/**
+	 * File name in the file system
+	 * @link http://www.php.net/manual/en/class.ziparchive.php#ziparchive.props.filename
+	 * @var string
+	 */
+	public $filename
+
+	/**
+	 * Comment for the archive
+	 * @link http://www.php.net/manual/en/class.ziparchive.php#ziparchive.props.comment
+	 * @var string
+	 */
+	public $comment
 
 	/**
 	 * Open a ZIP file archive
@@ -438,7 +472,7 @@ function zip_open ($filename) {}
  * @param zip resource <p>
  * A ZIP file previously opened with zip_open.
  * </p>
- * @return void 
+ * @return void
  *
  * @jms-builtin
  */
@@ -507,7 +541,7 @@ function zip_entry_close ($zip_entry) {}
  * A directory entry returned by zip_read.
  * </p>
  * @param length int[optional] <p>
- * The number of bytes to return. If not specified, this function will 
+ * The number of bytes to return. If not specified, this function will
  * attempt to read 1024 bytes.
  * </p>
  * <p>
