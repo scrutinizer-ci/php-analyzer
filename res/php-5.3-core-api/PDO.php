@@ -183,6 +183,15 @@ class PDO  {
 	public function rollBack () {}
 
 	/**
+	 * (PHP 5 &gt;= 5.3.3, Bundled pdo_pgsql)<br/>
+	 * Checks if inside a transaction
+	 * @link http://php.net/manual/en/pdo.intransaction.php
+	 * @return bool <b>TRUE</b> if a transaction is currently active, and <b>FALSE</b> if not.
+	 * @note Documentation says bool, but actually returns int 1 / 0 according to http://www.php.net/manual/en/pdo.intransaction.php#108361
+	 */
+	public function inTransaction () {}
+	
+	/**
 	 * Set an attribute
 	 * @link http://www.php.net/manual/en/pdo.setattribute.php
 	 * @param attribute int
