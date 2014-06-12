@@ -8209,7 +8209,7 @@ function readdir ($dir_handle = null) {}
  *
  * @jms-builtin
  */
-function dir ($directory, $context) {}
+function dir ($directory, $context = null) {}
 
 /**
  * List files and directories inside the specified path
