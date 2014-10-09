@@ -3601,7 +3601,7 @@ class MongoRegex  {
 	 * Creates a new regular expression
 	 * @link http://www.php.net/manual/en/mongoregex.construct.php
 	 */
-	public function __construct () {}
+	public function __construct ($regex) {}
 
 	/**
 	 * A string representation of this regular expression
@@ -3622,7 +3622,7 @@ class MongoDate  {
 	 * Creates a new date.
 	 * @link http://www.php.net/manual/en/mongodate.construct.php
 	 */
-	public function __construct () {}
+	public function __construct ($sec = 'time()', $usec = 0) {}
 
 	/**
 	 * Returns a string representation of this date
