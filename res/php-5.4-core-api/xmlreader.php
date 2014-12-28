@@ -10,29 +10,196 @@
  * @jms-builtin
  */
 class XMLReader  {
+
+	/**
+	 * No node type
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.none
+	 */
 	const NONE = 0;
+	/**
+	 * Start element
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.element
+	 */
 	const ELEMENT = 1;
+	/**
+	 * Attribute node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.attribute
+	 */
 	const ATTRIBUTE = 2;
+	/**
+	 * Attribute node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.text
+	 */
 	const TEXT = 3;
+	/**
+	 * CDATA node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.cdata
+	 */
 	const CDATA = 4;
+	/**
+	 * Entity Reference node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.entity-ref
+	 */
 	const ENTITY_REF = 5;
+	/**
+	 * Entity Declaration node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.entity
+	 */
 	const ENTITY = 6;
+	/**
+	 * Processing Instruction node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.pi
+	 */
 	const PI = 7;
+	/**
+	 * Comment node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.comment
+	 */
 	const COMMENT = 8;
+	/**
+	 * Document node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.doc
+	 */
 	const DOC = 9;
+	/**
+	 * Document Type node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.doc-type
+	 */
 	const DOC_TYPE = 10;
+	/**
+	 * Document Fragment node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.doc-fragment
+	 */
 	const DOC_FRAGMENT = 11;
+	/**
+	 * Notation node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.notation
+	 */
 	const NOTATION = 12;
+	/**
+	 * Whitespace node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.whitespace
+	 */
 	const WHITESPACE = 13;
+	/**
+	 * Significant Whitespace node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.significant-whitespace
+	 */
 	const SIGNIFICANT_WHITESPACE = 14;
+	/**
+	 * End Element
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.end-element
+	 */
 	const END_ELEMENT = 15;
+	/**
+	 * End Entity
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.end-entity
+	 */
 	const END_ENTITY = 16;
+	/**
+	 * XML Declaration node
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.xml-declaration
+	 */
 	const XML_DECLARATION = 17;
+	/**
+	 * Load DTD but do not validate
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.loaddtd
+	 */
 	const LOADDTD = 1;
+	/**
+	 * Load DTD and default attributes but do not validate
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.defaultattrs
+	 */
 	const DEFAULTATTRS = 2;
+	/**
+	 * Load DTD and validate while parsing
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.validate
+	 */
 	const VALIDATE = 3;
+	/**
+	 * Substitute entities and expand references
+	 *
+	 * @link http://php.net/manual/en/class.xmlreader.php#xmlreader.constants.subst-entities
+	 */
 	const SUBST_ENTITIES = 4;
 
+	/**
+	 * @var int The number of attributes on the node
+	 */
+	public $attributeCount;
+	/**
+	 * @var string The base URI of the node
+	 */
+	public $baseURI;
+	/**
+	 * @var int Depth of the node in the tree, starting at 0
+	 */
+	public $depth;
+	/**
+	 * @var bool Indicates if node has attributes
+	 */
+	public $hasAttributes;
+	/**
+	 * @var bool Indicates if node has a text value
+	 */
+	public $hasValue;
+	/**
+	 * @var bool Indicates if attribute is defaulted from DTD
+	 */
+	public $isDefault;
+	/**
+	 * @var bool Indicates if node is an empty element tag
+	 */
+	public $isEmptyElement;
+	/**
+	 * @var string The local name of the node
+	 */
+	public $localName;
+	/**
+	 * @var string The qualified name of the node
+	 */
+	public $name;
+	/**
+	 * @var string The URI of the namespace associated with the node
+	 */
+	public $namespaceURI;
+	/**
+	 * @var int The node type for the node
+	 */
+	public $nodeType;
+	/**
+	 * @var string The prefix of the namespace associated with the node
+	 */
+	public $prefix;
+	/**
+	 * @var string The text value of the node
+	 */
+	public $value;
+	/**
+	 * @var string The xml:lang scope which the node resides
+	 */
+	public $xmlLang;
 
 	/**
 	 * (PHP 5 &gt;= 5.1.2)<br/>
