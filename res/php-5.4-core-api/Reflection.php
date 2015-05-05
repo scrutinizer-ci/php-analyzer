@@ -1534,7 +1534,7 @@ class ReflectionClass implements Reflector {
 	 * (PHP 5)<br/>
 	 * Gets parent class
 	 * @link http://php.net/manual/en/reflectionclass.getparentclass.php
-	 * @return object A <b>ReflectionClass</b>.
+	 * @return object|bool A <b>ReflectionClass</b>.
 	 */
 	public function getParentClass () {}
 
@@ -2034,7 +2034,7 @@ class ReflectionObject extends ReflectionClass implements Reflector {
 	 * (PHP 5)<br/>
 	 * Gets parent class
 	 * @link http://php.net/manual/en/reflectionclass.getparentclass.php
-	 * @return object A <b>ReflectionClass</b>.
+	 * @return object|bool A <b>ReflectionClass</b>.
 	 */
 	public function getParentClass () {}
 
