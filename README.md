@@ -1,8 +1,7 @@
 PHP Analyzer
 ============
 
-This repository is used for tracking bugs and feature requests for 
-[PHP Analyzer](https://scrutinizer-ci.com/docs/tools/php/php-analyzer/).
+Please report bugs or feature requests via our website support system ``?`` in bottom right or by emailing ``support@scrutinizer-ci.com``.
 
 
 Contributing Stubs
