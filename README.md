@@ -1,7 +1,9 @@
-PHP Analyzer
+PHP Analyzer Stubs
 ============
 
 Please report bugs or feature requests via our website support system ``?`` in bottom right or by emailing ``support@scrutinizer-ci.com``.
+
+PHP is a popular general-purpose scripting language that works particularly well for server-side web development.
 
 
 Contributing Stubs
